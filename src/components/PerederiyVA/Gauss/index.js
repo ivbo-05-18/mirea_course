@@ -6,7 +6,7 @@ class GaussianElimElement extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            matrix: [[1,1,1,3], [1,1,1,3], [1,1,1,3]]
+            matrix: [[2,3,1,17], [4,9,7,63], [-3,7,-4,-1]]
         };
     }
 
