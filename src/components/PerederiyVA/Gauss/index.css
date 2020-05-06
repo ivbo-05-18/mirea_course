@@ -1,3 +1,12 @@
+.gauss_input {
+    color: black;
+}
+
+.gauss_input table {
+    margin-left: auto;
+    margin-right: auto
+}
+
 .gauss_input input {
-    width: 60px
+    width: 60px;
 }

@@ -16,31 +16,30 @@ class GaussianElimElement extends React.Component {
         this.setState({
             matrix: updatedMatrix 
         })
-        console.log(this.state.matrix); // DEBUG
     }
 
     render() {
         return (
-            <div>
+            <div class="gauss_input">
                 <table>
                     {this.state.matrix.map((item, i) => (
                         <tr>
                             <td>
-                                <input type="number" value={item[0]} onChange={(e) => this.updateMatrix(e, i, 0)} /> +
+                                <input type="number" step="any" value={item[0]} onChange={(e) => this.updateMatrix(e, i, 0)} />x +
                             </td>
                             <td>
-                                <input type="number" value={item[1]} onChange={(e) => this.updateMatrix(e, i, 1)} /> +
+                                <input type="number" step="any" value={item[1]} onChange={(e) => this.updateMatrix(e, i, 1)} />y +
                             </td>
                             <td>
-                                <input type="number" value={item[2]} onChange={(e) => this.updateMatrix(e, i, 2)} /> =
+                                <input type="number" step="any" value={item[2]} onChange={(e) => this.updateMatrix(e, i, 2)} />z =
                             </td>
                             <td>
-                                <input type="number" value={item[3]} onChange={(e) => this.updateMatrix(e, i, 3)} />
+                                <input type="number" step="any" value={item[3]} onChange={(e) => this.updateMatrix(e, i, 3)} />
                             </td>
                         </tr>
                     ))}
-                </table>
-                <GaussianElimResult />
+                </table>   
+                <GaussianElimResult input={this.state.matrix} />
             </div>
         )
     }
