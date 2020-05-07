@@ -3,6 +3,8 @@ import Snake from './Snake';
 import GaussianElimElement from './Gauss';
 import Captcha from './Captcha/Captcha'
 
+
+
 const STYLE = {
     'border-radius' : '2px',
     background      : '#DFDFDF',
@@ -21,7 +23,6 @@ const SNAKE_STYLE = {
     height : 500,
     width  : 600
 };
-
 
 class PerederiyVAElement extends React.Component {
     render(){
