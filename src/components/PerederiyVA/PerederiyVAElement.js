@@ -1,6 +1,7 @@
 import React from 'react';
 import Snake from './Snake';
 import GaussianElimElement from './Gauss';
+import Captcha from './Captcha/Captcha'
 
 const STYLE = {
     'border-radius' : '2px',
@@ -21,6 +22,7 @@ const SNAKE_STYLE = {
     width  : 600
 };
 
+
 class PerederiyVAElement extends React.Component {
     render(){
         return (
@@ -34,6 +36,10 @@ class PerederiyVAElement extends React.Component {
                 <div style={SNAKE_STYLE}>
                     <Snake sound={false} />
                 </div> 
+                <h2 style={TEXT_STYLE}>Элемент от другого участника (Петров С.Д.)</h2>
+                <div className="playerplayer">
+                    <Captcha/>
+                </div>
             </div>
         )
     }
