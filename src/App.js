@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ExampleController from './components/Example';
-import PerederiyVAController from './components/PerederiyVA/Controller';
+import PerederiyVAController from './components/PerederiyVA';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import PerederiyVAElement from './Component.js';
+import PerederiyVAElement from './PerederiyVAElement.js';
 
 class PerederiyVAController extends React.Component {
     constructor ( props ) {
