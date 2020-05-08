@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ExampleController from './components/Example';
+import Murashev_Controller from './components/MurashevAS/controller';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         
-        <ExampleController/>
+        <Murashev_Controller/>
         
       </header>
     </div>
