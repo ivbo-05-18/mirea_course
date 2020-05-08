@@ -49,7 +49,7 @@ const Leader = (props) => {
 
     useEffect(()=>{
         fetchData(props,props.loadLink,setState)
-    })
+    },[props])
 
     if (state.isLoading === false) {
         return (
@@ -60,7 +60,7 @@ const Leader = (props) => {
                 <th>{state.platform}</th>
                 <th>{state.date}</th>
                 <th>
-                    <a href={state.link} target="_blank">
+                    <a href={state.link} target="_blank" rel='noopener noreferrer'>
                         {getService(state.link)}
                     </a>
                 </th>
