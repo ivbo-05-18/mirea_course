@@ -53,13 +53,13 @@ const Leader = (props) => {
 
     if (state.isLoading === false) {
         return (
-            <tr key={props.key} className="leader">
-                <th>{state.rank}</th>
-                <th>{state.player}</th>
-                <th>{state.igt}</th>
-                <th>{state.platform}</th>
-                <th>{state.date}</th>
-                <th>
+            <tr key={props.key} className="petrov_sd_tr-leader">
+                <th className="petrov_sd_th-leader">{state.rank}</th>
+                <th className="petrov_sd_th-leader">{state.player}</th>
+                <th className="petrov_sd_th-leader">{state.igt}</th>
+                <th className="petrov_sd_th-leader">{state.platform}</th>
+                <th className="petrov_sd_th-leader">{state.date}</th>
+                <th className="petrov_sd_th-leader">
                     <a href={state.link} target="_blank" rel='noopener noreferrer'>
                         {getService(state.link)}
                     </a>
