@@ -1,5 +1,4 @@
 import React from 'react'
-import './Leaderboard.css'
 import Leaderboard from './Leaderboard'
 
 

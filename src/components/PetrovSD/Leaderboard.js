@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import Leader from './Leader'
-import './Leaderboard.css'
+import Leader from './Leaderboard/Leader'
+import './Leaderboard/Leaderboard.css'
 
 const fetchData = async (stateUpdate) => {
     
