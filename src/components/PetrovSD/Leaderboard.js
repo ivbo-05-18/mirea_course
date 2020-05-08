@@ -16,10 +16,10 @@ const fetchData = async (stateUpdate) => {
     )
 }
 
-const Leaderboard = () => {
+const Leaderboard = (props) => {
     const [ state,setState ] = useState({
-        leaders: null,
-        isLoading: true
+        leaders: props.leaders || null,
+        isLoading: props.isLoading || true
     })
 
     useEffect(() => {
