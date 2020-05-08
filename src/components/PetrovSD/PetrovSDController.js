@@ -3,7 +3,7 @@ import PetrovSDElement from './PetrovSDElement'
 
 const PetrovSDController = () => {
     const [showState, switchState ] = useState({
-        show: true
+        show: false
     })
 
     const switchShowState = () => {
