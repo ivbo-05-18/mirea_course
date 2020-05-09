@@ -112,7 +112,9 @@ class Kramer extends Component {
         if (!this.validate()) {
             this.setState({
                 errorMessage: "Некорректно заполненное поле",
-                isResult: true
+                isResult: true,
+                determinant: "-",
+                result: []
             })
             return
         }
@@ -136,7 +138,9 @@ class Kramer extends Component {
             } else {
                 this.setState({
                     errorMessage: "Данная система уравнений не имеет решений!",
-                    isResult: true
+                    isResult: true,
+                    determinant: "-",
+                    result: []
                 })
                 return
             }
@@ -145,12 +149,16 @@ class Kramer extends Component {
         if (!d0) {
             this.setState({
                 errorMessage: "Данная система уравнений не имеет решений!",
-                isResult: true
+                isResult: true,
+                determinant: "-",
+                result: []
             })
             return
         }
-        for (let j = 0; j < matrix.type; j++)
+        for (let j = 0; j < matrix.type; j++) {
             roots[j] = this.compDeterm(this.formMatrix(newMatrix, j + 1)) / d0
+        }
+            
         this.setState({
             result: roots,
             isResult: true,

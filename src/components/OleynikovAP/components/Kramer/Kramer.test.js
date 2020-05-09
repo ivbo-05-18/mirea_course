@@ -92,8 +92,72 @@ describe('The first test', () => {
 
         wrapper.find('.resultt').simulate('click')
 
-        expect(wrapper.state('result')).toStrictEqual([-1.33333333333333, -0.666666666666667, 4.66666666666667])
-        expect(wrapper.state('determinant')).toBe(-12)
+        expect(wrapper.state('result')).toStrictEqual([-2, -0, 4])
+        expect(wrapper.state('determinant')).toBe(-14)
+
+    })
+    
+    it('6 it', () => {
+        const wrapper = shallow(<Kramer />)
+
+        expect(wrapper.state('matrix')).toStrictEqual({
+            matr: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+            res: [0, 0, 0],
+            type: 3
+        })
+
+        wrapper.setState({
+            matrix: {
+                matr: [[5]],
+                res: [10],
+                type: 1
+            }
+        })
+
+        wrapper.find('.resultt').simulate('click')
+
+        expect(wrapper.state('result')).toStrictEqual([2])
+        expect(wrapper.find('.det').length).toBe(0)
+        expect(wrapper.find('.res').length).toBe(1)
+
+    })
+    
+    it('7 it', () => {
+        const wrapper = shallow(<Kramer />)
+
+        expect(wrapper.state('matrix')).toStrictEqual({
+            matr: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+            res: [0, 0, 0],
+            type: 3
+        })
+
+        wrapper.find('.resultt').simulate('click')
+
+        expect(wrapper.state('result')).toStrictEqual([])
+        expect(wrapper.state('determinant')).toBe("-")
+    })
+
+    it('8 it', () => {
+        const wrapper = shallow(<Kramer />)
+
+        expect(wrapper.state('matrix')).toStrictEqual({
+            matr: [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+            res: [0, 0, 0],
+            type: 3
+        })
+
+        wrapper.setState({
+            matrix: {
+                matr: [[0, "0f", 0], [0, "z0", 0], [0, "q0", 0]],
+            res: [0, "p", 0],
+            type: 3
+            }
+        })
+
+        wrapper.find('.resultt').simulate('click')
+
+        expect(wrapper.state('result')).toStrictEqual([])
+        expect(wrapper.state('determinant')).toBe("-")
 
     })
 })
