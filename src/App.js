@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import ExampleController from './components/Example';
 import PerederiyVAController from './components/PerederiyVA';
+import PetrovSDController from './components/PetrovSD/PetrovSDController'
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <header className="App-header">
         
         <PerederiyVAController/>
+
+        <PetrovSDController/>
 
         <ExampleController/>
         
