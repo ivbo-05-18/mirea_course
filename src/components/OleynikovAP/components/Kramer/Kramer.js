@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
-import './Kramer.css'
 import Matrix from '../Matrix/Matrix'
 import slauResult from './slauResult'
+
+const KRAMER_STYLES = {
+    fontSize: "20px",
+    color: "#000",
+}
 
 class Kramer extends Component {
     state = {
@@ -41,6 +45,8 @@ class Kramer extends Component {
 
     onPlusHandler = () => {
         const matrix = this.createNewMatrix()
+        if (matrix.type === 9)
+            return
         for (let i = 0; i < matrix.type; i++) {
             matrix.matr[i].push(0)
         }
@@ -59,6 +65,8 @@ class Kramer extends Component {
 
     onMinusHandler = () => {
         const matrix = this.createNewMatrix()
+        if (matrix.type === 1)
+            return
         for (let i = 0; i < matrix.type; i++) {
             matrix.matr[i].pop()
         }
@@ -142,7 +150,7 @@ class Kramer extends Component {
 
     render() {
         return (
-            <div className="Kramer">
+            <div style={KRAMER_STYLES}>
                 <Matrix
                     matrix={this.state.matrix}
                     onChangeInput={event => this.onChangeInputHandler(event)}
@@ -162,7 +170,7 @@ class Kramer extends Component {
                 {
                     this.state.isResult
                         ? <p className="res">
-                            Ответ: {!!!this.state.errorMessage
+                            Ответ: {!this.state.errorMessage
                                 ? this.renderResult()
                                 : this.state.errorMessage} </p>
                         : null

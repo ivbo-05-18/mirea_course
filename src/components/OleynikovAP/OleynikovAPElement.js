@@ -1,5 +1,5 @@
 import React from 'react';
-import Groupmate from './components/Groupmate/App'
+import Groupmate from '../PerederiyVA/Gauss/GaussianElimElement'
 import ToggleElem from './hoc/ToggleElem/ToggleElem'
 import Kramer from './components/Kramer/Kramer'
 import Sweeper from './components/Sweeper/App'
