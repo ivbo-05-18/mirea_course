@@ -11,7 +11,11 @@ class GaussianElimElement extends React.Component {
     }
 
     updateMatrix = (e, i, index) => {
-        let updatedMatrix = this.state.matrix;
+
+        let updatedMatrix = new Array(3)
+        for (let i=0; i<3; i++) {
+            updatedMatrix[i] = this.state.matrix[i].slice();
+        }
 
         if (parseFloat(e.target.value) || parseFloat(e.target.value) === 0) {   
             updatedMatrix[i][index] = parseFloat(e.target.value);    
