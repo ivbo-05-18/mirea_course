@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Kramer.css'
 import Matrix from '../Matrix/Matrix'
+import slauResult from './slauResult'
 
 class Kramer extends Component {
     state = {
@@ -79,98 +80,51 @@ class Kramer extends Component {
         })
     }
 
-    compDeterm = (matrix) => {
-        let det = 0
-        if (matrix.length === 2)
-            return (matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0])
-        for (let j = 0; j < matrix.length; j++) {
-            let minor = matrix.slice(1)
-            for (let k = 1; k < matrix.length; k++)
-                minor[k - 1] = matrix[k].slice(0, j).concat(matrix[k].slice(j + 1))
-            det += Math.pow(-1, j) * matrix[0][j] * this.compDeterm(minor)
-        }
-        return det
-    }
-
-    formMatrix = (matrix, type) => {
-        let arr = []
-        for (let j = 0; j < matrix.length; j++) {
-            arr[j] = matrix[j].slice(0, matrix[j].length - 1)
-            if (type) arr[j][type - 1] = matrix[j][matrix[j].length - 1]
-        }
-        return arr
-    }
-
     validate() {
-        const { matrix } = this.state
+        const matrix = this.createNewMatrix()
         for (let i = 0; i < matrix.type; i++) {
             for (let j = 0; j < matrix.type; j++) {
-                if (isNaN(matrix.matr[i][j])) {
-                    return false
-                }
+                matrix.matr[i][j] = Number.parseFloat(matrix.matr[i][j])
             }
         }
-        for (let i = 0; i < matrix.type; i++) {
-            if (isNaN(matrix.res[i])) {
-                return false
-            }
-        }
-        return true
+        this.setState({
+            matrix
+        })
     }
 
     onResultHandler = () => {
-        if (!this.validate()) {
+        this.validate()
+        const matrix = this.createNewMatrix()
+        for (let i = 0; i < matrix.type; i++) {
+            matrix.matr[i].push(Number.parseFloat(matrix.res[i]))
+        }
+        let result = Array(matrix.type)
+        try {
+            result = slauResult(matrix.matr)
+        } catch (e) {
             this.setState({
-                errorMessage: "Некорректно заполненное поле",
+                errorMessage: e.message,
                 isResult: true,
                 determinant: "-",
                 result: []
             })
             return
         }
-        const matrix = this.createNewMatrix()
-        for (let i = 0; i < matrix.type; i++) {
-            matrix.matr[i].push(Number.parseFloat(matrix.res[i]))
-        }
-        let roots = new Array(matrix.type)
-        if (matrix.type === 1) {
-            if (matrix.matr[0][0] !== 0) {
-                roots[0] = matrix.res[0] / matrix.matr[0][0]
-                this.setState({
-                    isResult: true,
-                    result: roots,
-                })
-                return
-            } else {
-                this.setState({
-                    errorMessage: "Данная система уравнений не имеет решений!",
-                    isResult: true,
-                    determinant: "-",
-                    result: []
-                })
-                return
-            }
-        }
-        let d0 = this.compDeterm(this.formMatrix(matrix.matr, 0))
-        if (!d0) {
+        if (result.roots) {
+            this.setState({
+                result: result.roots,
+                isResult: true,
+                errorMessage: "",
+                determinant: result.det
+            })
+        } else {
             this.setState({
                 errorMessage: "Данная система уравнений не имеет решений!",
                 isResult: true,
                 determinant: "-",
                 result: []
             })
-            return
         }
-        for (let j = 0; j < matrix.type; j++) {
-            roots[j] = this.compDeterm(this.formMatrix(matrix.matr, j + 1)) / d0
-        }
-
-        this.setState({
-            result: roots,
-            isResult: true,
-            errorMessage: "",
-            determinant: d0
-        })
     }
 
     renderResult() {

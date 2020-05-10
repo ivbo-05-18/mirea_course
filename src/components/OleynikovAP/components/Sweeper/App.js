@@ -41,6 +41,7 @@ function App() {
     background: "transparent",
     color: "#fff",
     fontFamily: "'Montserrat', sans-serif",
+    cursor: "pointer",
   }
   
   const APP_HEADER_STYLES = {
@@ -127,7 +128,6 @@ function App() {
           </div>
         )}
         <button
-          style={{cursor: "pointer"}}
           style={GENERATE_STYLES}
           onClick={() => generateBombs()}>Generate New Game</button>
       </header>
