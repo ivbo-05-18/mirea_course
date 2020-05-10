@@ -1,6 +1,5 @@
 import React from 'react';
-
-const GaussianElim = require('./GaussianElim');
+import GaussianElim from './GaussianElim';
 
 const GaussianElimResult = (props) => {
   try {
