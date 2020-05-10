@@ -15,8 +15,22 @@ class Kramer extends Component {
         isResult: false
     }
 
-    onChangeInputHandler = (event) => {
+    createNewMatrix = () => {
         const { matrix } = this.state
+        const newMatrix = {
+            matr: [...matrix.matr.map(el => {
+                return [
+                    ...el.slice()
+                ]
+            })],
+            res: matrix.res.slice(),
+            type: matrix.type
+        }
+        return newMatrix
+    }
+
+    onChangeInputHandler = (event) => {
+        const matrix = this.createNewMatrix()
         matrix.matr[event.target.name[0] - 1][event.target.name[1] - 1] = event.target.value
         this.setState({
             matrix,
@@ -25,18 +39,16 @@ class Kramer extends Component {
     }
 
     onPlusHandler = () => {
-        let { matrix } = this.state
-        const newMatrix = matrix.matr.slice()
+        const matrix = this.createNewMatrix()
         for (let i = 0; i < matrix.type; i++) {
-            newMatrix[i].push(0)
+            matrix.matr[i].push(0)
         }
         matrix.type++
         const arr = []
         for (let i = 0; i < matrix.type; i++) {
             arr.push(0)
         }
-        newMatrix.push(arr)
-        matrix.matr = newMatrix
+        matrix.matr.push(arr)
         matrix.res.push(0)
         this.setState({
             matrix,
@@ -45,14 +57,12 @@ class Kramer extends Component {
     }
 
     onMinusHandler = () => {
-        let { matrix } = this.state
-        const newMatrix = matrix.matr.slice()
+        const matrix = this.createNewMatrix()
         for (let i = 0; i < matrix.type; i++) {
-            newMatrix[i].pop()
+            matrix.matr[i].pop()
         }
         matrix.type--
-        newMatrix.pop()
-        matrix.matr = newMatrix
+        matrix.matr.pop()
         matrix.res.pop()
         this.setState({
             matrix,
@@ -61,7 +71,7 @@ class Kramer extends Component {
     }
 
     onChageResHandler = (event) => {
-        const { matrix } = this.state
+        const matrix = this.createNewMatrix()
         matrix.res[event.target.name] = event.target.value
         this.setState({
             matrix,
@@ -108,7 +118,7 @@ class Kramer extends Component {
         return true
     }
 
-    onResultHandler() {
+    onResultHandler = () => {
         if (!this.validate()) {
             this.setState({
                 errorMessage: "Некорректно заполненное поле",
@@ -118,13 +128,9 @@ class Kramer extends Component {
             })
             return
         }
-        const { matrix } = this.state
-        let newMatrix = new Array(matrix.type)
+        const matrix = this.createNewMatrix()
         for (let i = 0; i < matrix.type; i++) {
-            newMatrix[i] = matrix.matr[i].slice()
-        }
-        for (let i = 0; i < matrix.type; i++) {
-            newMatrix[i].push(Number.parseFloat(matrix.res[i]))
+            matrix.matr[i].push(Number.parseFloat(matrix.res[i]))
         }
         let roots = new Array(matrix.type)
         if (matrix.type === 1) {
@@ -145,7 +151,7 @@ class Kramer extends Component {
                 return
             }
         }
-        let d0 = this.compDeterm(this.formMatrix(newMatrix, 0))
+        let d0 = this.compDeterm(this.formMatrix(matrix.matr, 0))
         if (!d0) {
             this.setState({
                 errorMessage: "Данная система уравнений не имеет решений!",
@@ -156,14 +162,27 @@ class Kramer extends Component {
             return
         }
         for (let j = 0; j < matrix.type; j++) {
-            roots[j] = this.compDeterm(this.formMatrix(newMatrix, j + 1)) / d0
+            roots[j] = this.compDeterm(this.formMatrix(matrix.matr, j + 1)) / d0
         }
-            
+
         this.setState({
             result: roots,
             isResult: true,
             errorMessage: "",
             determinant: d0
+        })
+    }
+
+    renderResult() {
+        return this.state.result.map((res, index) => {
+            return (
+                <React.Fragment key={index}>
+                    <br />
+                    <span key={index}>
+                        {index !== this.state.result.length - 1 ? `a${index + 1} = ${res}, ` : `a${index + 1} = ${res}`}
+                    </span>
+                </React.Fragment>
+            )
         })
     }
 
@@ -177,23 +196,21 @@ class Kramer extends Component {
                 />
                 <button className="countMinus" onClick={this.onMinusHandler}>-</button>
                 <button className="countPlus" onClick={this.onPlusHandler}>+</button>
-                <button className="resultt" onClick={() => this.onResultHandler()}>Решить</button>
+                <button className="resultt" onClick={this.onResultHandler}>Решить</button>
                 {
-                    this.state.matrix.type !== 1 &&  this.state.isResult ? <p className="det"><span>Det = {this.state.determinant}</span></p> : null
+                    this.state.matrix.type !== 1 && this.state.isResult
+                        ? <p className="det">
+                            <span>Det = {this.state.determinant}
+                            </span>
+                        </p>
+                        : null
                 }
                 {
                     this.state.isResult
                         ? <p className="res">
-                            Ответ: {!!!this.state.errorMessage ? this.state.result.map((res, index) => {
-                            return (
-                                <React.Fragment key={index}>
-                                    <br />
-                                    <span key={index}>
-                                        {index !== this.state.result.length - 1 ? `a${index + 1} = ${res}, ` : `a${index + 1} = ${res}`}
-                                    </span>
-                                </React.Fragment>
-                            )
-                        }) : this.state.errorMessage} </p>
+                            Ответ: {!!!this.state.errorMessage
+                                ? this.renderResult()
+                                : this.state.errorMessage} </p>
                         : null
                 }
             </div>

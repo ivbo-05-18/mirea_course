@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css';
 
 function App() {
   const [bombs, setBombs] = useState([])
@@ -31,6 +30,30 @@ function App() {
     fontFamily: 'Montserrat, sans-serif',
     display: 'inline-block'
   }
+
+  const APP_STYLES = {
+    textAlign: "center",
+  }
+  
+  const GENERATE_STYLES = {
+    width: "150px",
+    border: "2px solid white",
+    background: "transparent",
+    color: "#fff",
+    fontFamily: "'Montserrat', sans-serif",
+  }
+  
+  const APP_HEADER_STYLES = {
+    backgroundColor: "#282c34",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "calc(10px + 2vmin)",
+    color: "white",
+  }
+  
 
   const generateBombs = () => {
     let bombArr = Array(10).fill(0).map(elem => Array(10).fill(0))
@@ -89,8 +112,8 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div style={APP_STYLES}>
+      <header style={APP_HEADER_STYLES}>
 
         {bombs.map((arr, index) =>
           <div>
@@ -105,7 +128,7 @@ function App() {
         )}
         <button
           style={{cursor: "pointer"}}
-          className={'generate'}
+          style={GENERATE_STYLES}
           onClick={() => generateBombs()}>Generate New Game</button>
       </header>
 

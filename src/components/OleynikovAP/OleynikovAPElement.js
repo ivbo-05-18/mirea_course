@@ -1,25 +1,24 @@
 import React from 'react';
-import './App.css';
 import Groupmate from './components/Groupmate/App'
 import ToggleElem from './hoc/ToggleElem/ToggleElem'
 import Kramer from './components/Kramer/Kramer'
 import Sweeper from './components/Sweeper/App'
 
 const STYLE = {
-    borderRadius 	: '2px',
-    background      : '#DFDFDF',
-    margin          : '10px',
-	padding         : '5px 25px',
-	width			: '800px'
+    borderRadius: '2px',
+    background: '#DFDFDF',
+    margin: '10px',
+	padding: '5px 25px',
+	minWidth: '800px'
 }
 
 const TEXT_STYLE = {
-    fontSize 	: '16px',
-    color       : 'black',
-    margin      : '10px 0px'
+    fontSize: '16px',
+    color: 'black',
+    margin: '10px 0px'
 }
 
-function App() {
+const App = props => {
 	return (
 		<div style={STYLE}>
 			<ToggleElem componentName={"мой компонент"}>

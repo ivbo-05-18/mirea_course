@@ -1,13 +1,12 @@
 import React from 'react';
-import './App.css';
-import PerederiyVAController from './components/PerederiyVA/Controller';
+import PerederiyVA from './components/PerederiyVA/MainComponent';
 
-function App() {
+const App = props => {
   return (
     <div className="App">
       <header style={{minHeight: "0px"}} className="App-header">
         
-        <PerederiyVAController/>
+        <PerederiyVA/>
         
       </header>
     </div>

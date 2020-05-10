@@ -18,12 +18,10 @@ class PerederiyVAElement extends React.Component {
     render(){
         return (
             <div style={STYLE}>
-                <h2 style={TEXT_STYLE}>Собственный элемент - решение СЛАУ 3-го порядка методом Гаусса</h2>
+                <h2 style={TEXT_STYLE}>Решение СЛАУ 3-го порядка методом Гаусса</h2>
                 <div>
                     <GaussianElimElement />
                 </div>
-                <h2 style={TEXT_STYLE}>Заимствованный элемент - игра "Змейка"</h2>
-                <p style={TEXT_STYLE}>Управление: W S A D.</p>
             </div>
         )
     }

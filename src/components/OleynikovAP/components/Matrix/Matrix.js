@@ -1,8 +1,13 @@
 import React from 'react'
 import Input from '../Input/Input'
-import './Matrix.css'
 
-function renderMatrix(matrix, onChageInput) {
+const MATRIX_STYLE = {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+}
+
+const renderMatrix = (matrix, onChageInput) => {
     return <table>
         <tbody>
             {matrix.matr.map((row, i) => {
@@ -27,7 +32,7 @@ function renderMatrix(matrix, onChageInput) {
 
 const Matrix = props => {
     return (
-        <div className="Matrix">
+        <div style={MATRIX_STYLE}>
             {renderMatrix(props.matrix, props.onChangeInput)}
             <table>
                 <tbody>

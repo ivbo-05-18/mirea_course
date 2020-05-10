@@ -1,8 +1,7 @@
-import React from 'react';
+import React from 'react'
+import GaussianElim from './GaussianElim'
 
-const GaussianElim = require('./GaussianElim');
-
-const GaussianElimResult = (props) => {
+const GaussianElimResult = props => {
   try {
     if (props.input === undefined) throw new Error("matrix wasn't passed");
     else {
