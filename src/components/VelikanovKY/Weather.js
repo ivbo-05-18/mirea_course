@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import WindDirection from './WindDirection';
 const fetchData = async (weatherUpdate) => {
 
-    fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city + "&appid=719dddbed313225204fd616e1b75e83f")
+    fetch("https://api.openweathermap.org/data/2.5/weather?q=Moscow,ru&appid=719dddbed313225204fd616e1b75e83f")
     .then(response => response.json())
     .then(json => {
         weatherUpdate({
@@ -33,13 +33,14 @@ const Weather = (props) => {
         padding:                            '5px',
     }
     const [ weather,setWeather ] = useState({
-        city: props.city || 'Moscow,ru',
-        isLoading: props.isLoading || true
+        city:  'Moscow,ru',
+        isLoading:  true
         
     })
     useEffect(() => {
         fetchData(setWeather)
     },[])
+    
     if (!weather.isLoading){
         return (<div style = {DIV_STYLE}>
             Weather in {weather.city}

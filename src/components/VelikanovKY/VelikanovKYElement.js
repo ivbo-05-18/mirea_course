@@ -9,7 +9,7 @@ const VelikanovKYElement = () => {
     return(
         <div>
             <h2> Собственный элемент </h2>  
-                <Weather  /> 
+                <Weather /> 
             
             <hr />
             <h2 >Элемент из-вне</h2>
