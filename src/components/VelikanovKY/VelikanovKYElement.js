@@ -6,12 +6,10 @@ const VelikanovKYElement = () => {
 
     return(
         <div>
-            <h2> Собственный элемент </h2>
-
-                
-                <Weather  />
-            
+            <h2> Собственный элемент </h2>               
+                <Weather  />          
             <hr />
+            <h2 >Элемент из-внеп</h2>
         </div>
     )
 }

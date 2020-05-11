@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import WindDirection from './WindDirection';
 const city = 'Moscow,ru';
 const fetchData = async (weatherUpdate) => {
+
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city + "&appid=719dddbed313225204fd616e1b75e83f")
     .then(response => response.json())
     .then(json => {
@@ -42,7 +43,7 @@ const Weather = (props) => {
     },[])
     if (!weather.isLoading){
         return (<div style = {DIV_STYLE}>
-            Weather in {city}
+            Weather in {weather.city}
             <div>
                 <img className="weather-widget__img" src={weather.icon} alt="Weather in Moscow, RU" width="50" height="50" />
                 {parseInt(weather.temperature -273.15)}°C <br />
@@ -52,7 +53,7 @@ const Weather = (props) => {
         </div>
         )
     }
-    else return <h3>Weather in {city}</h3>
+    else return <h3>Weather in {weather.city}</h3>
     
 
 }

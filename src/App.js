@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ExampleController from './components/Example';
-import VelikanovKYController from './components/VelikanovKY/Velikanov';
+import VelikanovKYController from './components/VelikanovKY/VelikanovKYController';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController'
 
