@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[RENDER] Captcha - Snapshot test Matches the snapshot 1`] = `
+<div
+  className="perederiy_va_captcha"
+>
+  <div />
+</div>
+`;
