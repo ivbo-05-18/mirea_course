@@ -42,7 +42,7 @@ const testData = {"coord": { "lon": 139,"lat": 35},
 },
 "timezone": 32400,
 "id": 1851632,
-"name": "Moscow,ru",
+"name": "London,uk",
 "cod": 200
 }
 
@@ -60,12 +60,12 @@ afterEach(() => {
   container = null;
 });
 
-it('Fetch test. City value should be Moscow',() =>{
+it('Fetch test. City value should be London',() =>{
   const component = renderer.create(<Weather city = {testData.name} />);
 
   console.log(component.toJSON());
 
-  expect(component.toJSON().children[1]).toBe("Moscow,ru");
+  expect(component.toJSON().children[1]).toBe("London,uk");
   });
 
 it('WindDirection return correct direction',() =>{

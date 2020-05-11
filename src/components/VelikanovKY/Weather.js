@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import WindDirection from './WindDirection';
-const city = 'Moscow,ru';
 const fetchData = async (weatherUpdate) => {
 
     fetch("https://api.openweathermap.org/data/2.5/weather?q="+ city + "&appid=719dddbed313225204fd616e1b75e83f")
