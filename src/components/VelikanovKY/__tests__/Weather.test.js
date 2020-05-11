@@ -1,9 +1,8 @@
-import React from 'react';
-import { act } from "react-dom/test-utils";
-import { render, unmountComponentAtNode } from "react-dom";
+import React, { useEffect } from 'react';
+import { unmountComponentAtNode } from "react-dom";
 import renderer from "react-test-renderer";
-import { createEvent } from '@testing-library/react';
-import Weather from '../Weather';
+import { act } from "@testing-library/react"
+import Weather, {fetchData} from '../Weather';
 import WindDirection from '../WindDirection';
 
 const testData = {"coord": { "lon": 139,"lat": 35},
@@ -60,19 +59,15 @@ afterEach(() => {
   container = null;
 });
 
-it('Fetch test. City value should be London',() =>{
-  const component = renderer.create(<Weather city = {testData.name} />);
-
-  console.log(component.toJSON());
-
-  expect(component.toJSON().children[1]).toBe("London,uk");
+it('Fetch test. City value should be Moscow',() =>{
+    const component = renderer.create(<Weather />);
+    expect(component.toJSON().children[1]).toBe("Moscow,ru");
   });
 
 it('WindDirection return correct direction',() =>{
     const direction = renderer.create(<WindDirection deg = {testData.wind.deg} />);
     console.log(direction.toJSON());
     expect(direction.toJSON()).toBe("East-southeast");
-
     });
   
    

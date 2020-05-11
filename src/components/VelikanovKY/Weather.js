@@ -34,8 +34,7 @@ const Weather = (props) => {
     }
     const [ weather,setWeather ] = useState({
         city:  'Moscow,ru',
-        isLoading:  true
-        
+        isLoading:  true    
     })
     useEffect(() => {
         fetchData(setWeather)
@@ -54,8 +53,6 @@ const Weather = (props) => {
         )
     }
     else return <h3>Weather in {weather.city}</h3>
-    
-
 }
 
 export default Weather;
