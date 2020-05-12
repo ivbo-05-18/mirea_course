@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import WindDirection from './WindDirection';
 const fetchData = async (weatherUpdate) => {
-
-    fetch("https://api.openweathermap.org/data/2.5/weather?q=Moscow,ru&appid=719dddbed313225204fd616e1b75e83f")
+    const src = "https://api.openweathermap.org/data/2.5/weather?";
+    const city = "q=Moscow,ru";
+    const appid = "appid=719dddbed313225204fd616e1b75e83f";
+    fetch(src+city+"&"+appid)
     .then(response => response.json())
     .then(json => {
         weatherUpdate({
@@ -14,15 +16,11 @@ const fetchData = async (weatherUpdate) => {
             wind: json.wind.speed,
             deg: json.wind.deg,
             isLoading: false
-
-        })
-        console.log(json)    
+        })  
     })
-    .catch(error =>
-        console.error() );
 }
 
-const Weather = (props) => {
+const Weather = () => {
     const STYLE = {
         fontSize: '10pt',
     }

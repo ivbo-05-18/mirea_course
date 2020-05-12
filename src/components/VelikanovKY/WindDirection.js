@@ -1,6 +1,5 @@
- const WindDirection = (deg) =>{
+ const WindDirection = ({deg}) =>{
     let direction = 'No way';
-    deg = deg.deg  
     if(deg >= 349 || deg < 12)
         direction = 'North';
     else if(deg >= 12 && deg < 34)
@@ -35,4 +34,4 @@
         direction = 'Nortn-northwest';
     return(direction)
 }
-export default WindDirection;
+export default WindDirection
