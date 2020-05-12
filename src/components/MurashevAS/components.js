@@ -1,6 +1,6 @@
 import React from 'react';
 import Money_Element from './mon_change';
-import Draw_Element from './paint';
+import Game_Element from './ping-pong';
 
 const STYLE = {
     margin_top: '20px',
@@ -14,9 +14,9 @@ class Murashev_Element extends React.Component {
                 <div>
                 <Money_Element/>
                 </div>
-                <h3 style={STYLE}>Заимствованный элемент - Элемент для рисования</h3>
+                <h3 style={STYLE}>Заимствованный элемент - Ping-Pong</h3>
                 <div>
-                <Draw_Element/>
+                <Game_Element/>
                 </div>
             </div>
         )
