@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import WindDirection from './WindDirection';
+const APP_ID = "719dddbed313225204fd616e1b75e83f";
+const getUpdateUrl = (city, countryCode = '') => `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${APP_ID}`;
 const fetchData = async (weatherUpdate) => {
-    const src = "https://api.openweathermap.org/data/2.5/weather?";
-    const city = "q=Moscow,ru";
-    const appid = "appid=719dddbed313225204fd616e1b75e83f";
-    fetch(src+city+"&"+appid)
+    fetch(getUpdateUrl('Moscow','ru'))
     .then(response => response.json())
     .then(json => {
         weatherUpdate({
