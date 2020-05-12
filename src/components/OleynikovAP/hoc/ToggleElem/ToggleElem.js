@@ -7,7 +7,7 @@ class ToggleElem extends Component {
     }
 
     toggleHandler = () => {
-        const state = Object.assign({}, this.state)
+        const state = { ...this.state }
         state.buttonLabel = state.isShown ? "Показать" : "Скрыть"
         state.isShown = !state.isShown
         this.setState(state)
