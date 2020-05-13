@@ -102,7 +102,7 @@ const playAudioClip = (name) => {
   }
 };
 
-module.exports = {
+export default {
   attachEvent,
   detachEvent,
   addCommas,

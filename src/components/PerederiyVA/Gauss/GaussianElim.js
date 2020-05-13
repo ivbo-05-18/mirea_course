@@ -87,4 +87,4 @@ function GaussianElim(matrixToSolve) {
   return x;
 }
 
-module.exports = GaussianElim;
+export default GaussianElim;
