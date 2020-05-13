@@ -1,4 +1,4 @@
-const GaussianElim = require('./GaussianElim');
+import GaussianElim from './GaussianElim';
 
 describe('Solve linear equation systems with n = 1:', () => {
   test('System 1', () => {
