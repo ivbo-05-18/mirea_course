@@ -7,7 +7,7 @@ const fetchData = async (stateUpdate) => {
   const host = 'https://www.speedrun.com';
   // internal API game id - can be obtained only through API
   // **********************************************************
-  // https://github.com/speedruncomorg/api/tree/master/version1 
+  // https://github.com/speedruncomorg/api/tree/master/version1
   // **********************************************************
   const gameID = 'lde3woe6';
   // internal API category ID - can only be obtained through API
