@@ -4,14 +4,18 @@ import Leader from './Leaderboard/Leader';
 import './Leaderboard/Leaderboard.css';
 
 const fetchData = async (stateUpdate) => {
-  fetch('https://www.speedrun.com/api/v1/leaderboards/lde3woe6/category/ndx1pm52?top=10')
-    .then((response) => response.json())
-    .then((json) => {
-      stateUpdate({
-        leaders: json.data.runs,
-        isLoading: false,
-      });
-    });
+  const host = 'https://www.speedrun.com';
+  const gameID = 'lde3woe6';
+  const categoryID = 'ndx1pm52';
+  const runAmountLimit = '10';
+  const URL = `${host}/api/v1/leaderboards/${gameID}/category/${categoryID}?top=${runAmountLimit}`;
+  const data = await fetch(URL);
+  const parsedData = data.json();
+
+  stateUpdate({
+    leaders: parsedData.data.runs,
+    isLoading: false,
+  });
 };
 
 const Leaderboard = (props) => {

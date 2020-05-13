@@ -19,22 +19,18 @@ const getTime = (time) => {
 };
 
 const fetchData = async (props, link, stateUpdate) => {
-  fetch(link)
-    .then((response) => response.json())
-    .then((json) => {
-      stateUpdate(
-        {
-          isLoading: false,
-          rank: props.rank,
-          player: json.data.names.international,
-          igt: getTime(props.igt),
-          platform: props.platform,
-          date: props.date,
-          link: props.link,
-          loadLink: props.loadLink,
-        },
-      );
-    });
+  const response = await fetch(link);
+  const parsedResponse = response.json();
+  stateUpdate({
+    isLoading: false,
+    rank: props.rank,
+    player: parsedResponse.data.names.international,
+    igt: getTime(props.igt),
+    platform: props.platform,
+    date: props.date,
+    link: props.link,
+    loadLink: props.loadLink,
+  });
 };
 
 const Leader = (props) => {
