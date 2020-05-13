@@ -1,21 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ExampleController from './components/Example';
+import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-        <PerederiyVAController/>
 
-        <PetrovSDController/>
+        <PerederiyVAController />
 
-        <ExampleController/>
-        
+        <PetrovSDController />
+
+        <ExampleController />
+
       </header>
     </div>
   );
