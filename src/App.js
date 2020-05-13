@@ -1,14 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Murashev_Controller from './components/MurashevAS/controller';
+import ExampleController from './components/Example';
+import PerederiyVAController from './components/PerederiyVA';
+import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import Murashev_Controller from './components/MurashevAS/controller.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         
+        <PerederiyVAController/>
+
+        <PetrovSDController/>
+
         <Murashev_Controller/>
+
+        <ExampleController/>
         
       </header>
     </div>

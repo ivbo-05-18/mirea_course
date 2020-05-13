@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './style.css';
+import './pp_style.css';
 
 class App extends Component {
   constructor(props){
@@ -154,9 +154,9 @@ class App extends Component {
       this.drawAll(ctx);
       this.isGameOver = true;
     }
-    ctx.font = "72px Roboto Mono";
-    ctx.fillText("Click anywhere to start a new game.", this.Width / 2, 200);
-    document.addEventListener("mousedown", () => {
+    ctx.font = "50px Roboto Mono";
+    ctx.fillText("Click w or s to start a new game.", this.Width / 2, 200);
+    document.addEventListener("keypress", (e) => {
       this.isGameOver = false;
       this.winner = "";
     });

@@ -1,5 +1,5 @@
 import React from 'react';
-import Money_Controller from './money_change';
+import Money_Controller from './moneychange';
 
 class Money_Element extends React.Component {
     render() {

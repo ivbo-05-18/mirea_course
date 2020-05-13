@@ -1,7 +1,7 @@
 import React from 'react';
-import MurashevElement from './components.js';
+import PerederiyVAElement from './PerederiyVAElement.js';
 
-class MurashevController extends React.Component {
+class PerederiyVAController extends React.Component {
     constructor ( props ) {
         super ( props )
         this.state = { show: false }
@@ -14,11 +14,11 @@ class MurashevController extends React.Component {
     
     render() {
         return (<div className=''>
-            <button onClick={ this.toggleDiv }> Мурашев А.С. </button>
+            <button onClick={ this.toggleDiv }> Передерий В.А. </button>
 
-            { this.state.show && <MurashevElement/> }
+            { this.state.show && <PerederiyVAElement/> }
         </div>)
     }
 }
 
-export default MurashevController;
+export default PerederiyVAController;
