@@ -20,7 +20,7 @@ const getTime = (time) => {
 
 const fetchData = async (props, link, stateUpdate) => {
   const response = await fetch(link);
-  const parsedResponse = response.json();
+  const parsedResponse = await response.json();
   stateUpdate({
     isLoading: false,
     rank: props.rank,

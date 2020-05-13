@@ -10,7 +10,7 @@ const fetchData = async (stateUpdate) => {
   const runAmountLimit = '10';
   const URL = `${host}/api/v1/leaderboards/${gameID}/category/${categoryID}?top=${runAmountLimit}`;
   const data = await fetch(URL);
-  const parsedData = data.json();
+  const parsedData = await data.json();
 
   stateUpdate({
     leaders: parsedData.data.runs,
@@ -41,7 +41,7 @@ const Leaderboard = (props) => {
         <th>Date</th>
         <th>Link</th>
         {state.isLoading === false ? state.leaders.map((chunk) => (
-          <Leader rank={chunk.place} igt={chunk.run.times.ingame_t} platform="PC" date={chunk.run.date} loadLink={chunk.run.players[0].uri} link={chunk.run.videos.links[0].uri} />
+          <Leader rank={chunk.place} igt={chunk.run.times.ingame_t} platform="PC" date={chunk.run.date} LoadLink={chunk.run.players[0].uri} link={chunk.run.videos.links[0].uri} />
         )) : null}
       </table>
     </div>
