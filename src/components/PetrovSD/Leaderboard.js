@@ -5,7 +5,12 @@ import './Leaderboard/Leaderboard.css';
 
 const fetchData = async (stateUpdate) => {
   const host = 'https://www.speedrun.com';
+  // internal API game id - can be obtained only through API
+  // **********************************************************
+  // https://github.com/speedruncomorg/api/tree/master/version1 
+  // **********************************************************
   const gameID = 'lde3woe6';
+  // internal API category ID - can only be obtained through API
   const categoryID = 'ndx1pm52';
   const runAmountLimit = '10';
   const URL = `${host}/api/v1/leaderboards/${gameID}/category/${categoryID}?top=${runAmountLimit}`;
