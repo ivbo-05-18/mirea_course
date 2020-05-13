@@ -2,7 +2,8 @@
     "extends": ["airbnb", "airbnb/hooks"],
     "plugins": ["react"],
     "env": {
-      "browser": true
+      "browser": true,
+      "jest": true
     },
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
