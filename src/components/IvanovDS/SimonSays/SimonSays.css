@@ -1,0 +1,134 @@
+
+  
+text {
+  font-weight: 700;
+  fill: #ECECEC;
+  font-size: 14px;
+}
+
+.simon {
+  width: 150%;
+}
+
+.active {
+  stroke: white !important;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.placeholders {
+  font-size: 32px;
+  fill: #450c0c;
+}
+
+.scoreboard {
+  stroke: #464646;
+  stroke-width: 2px;
+  fill: #270707;
+  width: 102px;
+  height: 33px;
+}
+
+.big-circle {
+  stroke-width: 8px;
+  fill: #2d2d2d;
+  stroke: #202020;
+  transform: translate(350px, 350px);
+  r: 403px;
+}
+
+#score {
+  text-align: right;
+  font-size: 32px;
+  fill: #DC3737;
+}
+
+.control-panel {
+  stroke: #393939;
+  stroke-width: 4px;
+  fill: #6c6c6c;
+  transform: translateX(-210px);
+}
+
+.author {
+  color: #ECECEC;
+}
+
+.yellow-panel {
+  stroke: #baba0b;
+  stroke-width: 8;
+  fill: #F3F338;
+  transform: rotate(-90deg) translateX(-695px);
+  cursor: pointer;
+}
+.yellow-panel:hover {
+  fill: #eaea0e;
+}
+
+.blue-panel {
+  stroke: #1120ab;
+  stroke-width: 8;
+  fill: #3748EB;
+  transform: rotate(180deg) translate(-695px, -695px);
+  cursor: pointer;
+}
+.blue-panel:hover {
+  fill: #1628d9;
+}
+
+.green-panel {
+  stroke: #129a37;
+  stroke-width: 8;
+  fill: #2CE65E;
+  transform: rotate(-90deg) translateX(0px, 0px);
+  cursor: pointer;
+}
+.green-panel:hover {
+  fill: #18c747;
+}
+
+.red-panel {
+  stroke: #931a1a;
+  stroke-width: 8;
+  fill: #DC3737;
+  transform: rotate(90deg) translate(0px, -695px);
+  cursor: pointer;
+}
+.red-panel:hover {
+  fill: #bf2121;
+}
+
+#btn-yellow {
+  stroke: #464646;
+  stroke-width: 2px;
+  r: 15px;
+  fill: #F3F338;
+  cursor: pointer;
+}
+#btn-yellow:hover {
+  fill: #eaea0e;
+}
+
+#btn-blue {
+  stroke: #464646;
+  stroke-width: 2px;
+  r: 15px;
+  fill: #3748EB;
+  cursor: pointer;
+}
+#btn-blue:hover {
+  fill: #1628d9;
+}
+
+#btn-red {
+  stroke: #464646;
+  stroke-width: 2px;
+  r: 15px;
+  fill: #DC3737;
+  cursor: pointer;
+}
+#btn-red:hover {
+  fill: #bf2121;
+}
