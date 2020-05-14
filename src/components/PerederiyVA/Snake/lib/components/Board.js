@@ -101,7 +101,9 @@ class Board extends Component {
     };
 
     playSound = (action) => {
-      if (this.props.sound !== true) return;
+      if (this.props.sound !== true) {
+        return;
+      }
 
       let audioClipName = null;
       switch (action) {
@@ -121,7 +123,9 @@ class Board extends Component {
           break;
       }
 
-      if (audioClipName == null) return;
+      if (audioClipName == null) {
+        return;
+      }
 
       utils.playAudioClip(audioClipName);
     }
@@ -200,7 +204,9 @@ class Board extends Component {
         typeof e === 'object'
             && e.keyCode === 13
             && this.state.dead
-      ) return this.restart();
+      ) {
+        return this.restart();
+      }
 
       const head = this.state.segments[0];
 
@@ -215,7 +221,9 @@ class Board extends Component {
         }
       }
 
-      if (nextDirection === this.state.direction) return;
+      if (nextDirection === this.state.direction) {
+        return;
+      }
 
       this.playSound('change-direction');
 
@@ -230,7 +238,9 @@ class Board extends Component {
     };
 
     move = () => {
-      if (this.state.dead) return;
+      if (this.state.dead) {
+        return;
+      }
 
       const segments = this.state.segments.slice(0);
       const removed = segments.pop();
@@ -261,10 +271,18 @@ class Board extends Component {
 
       let dead = false;
 
-      if (head.x < 0) dead = true;
-      if (head.y < 0) dead = true;
-      if (head.x > this.state.columns - 1) dead = true;
-      if (head.y > this.state.rows - 1) dead = true;
+      if (head.x < 0) {
+        dead = true;
+      }
+      if (head.y < 0) {
+        dead = true;
+      }
+      if (head.x > this.state.columns - 1) {
+        dead = true;
+      }
+      if (head.y > this.state.rows - 1) {
+        dead = true;
+      }
 
       segments.unshift(head);
 
@@ -329,7 +347,9 @@ class Board extends Component {
     enforceMinMax = (value, min, max) => Math.max(min, Math.min(max, value));
 
     getScoreLocation = () => {
-      if (this.state.scoreLocation == null) return null;
+      if (this.state.scoreLocation == null) {
+        return null;
+      }
 
       let top = this.state.scale * this.state.scoreLocation.y;
       let left = this.state.scale * this.state.scoreLocation.x;

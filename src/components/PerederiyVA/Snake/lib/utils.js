@@ -34,20 +34,24 @@ const getRandomCoordinates = (numColumns, numRows) => ({
 const getDirectionFromKeyCode = (currentDirection, keyCode) => {
   switch (keyCode) {
     case 65:
-      if (currentDirection === 'right') break;
-      if (currentDirection === 'left') break;
+      if (currentDirection === 'right' || currentDirection === 'left') {
+        break;
+      }
       return 'left';
     case 87:
-      if (currentDirection === 'down') break;
-      if (currentDirection === 'up') break;
+      if (currentDirection === 'down' || currentDirection === 'up') {
+        break;
+      }
       return 'up';
     case 68:
-      if (currentDirection === 'left') break;
-      if (currentDirection === 'right') break;
+      if (currentDirection === 'left' || currentDirection === 'right') {
+        break;
+      }
       return 'right';
     case 83:
-      if (currentDirection === 'up') break;
-      if (currentDirection === 'down') break;
+      if (currentDirection === 'up' || currentDirection === 'down') {
+        break;
+      }
       return 'down';
     default:
       break;
