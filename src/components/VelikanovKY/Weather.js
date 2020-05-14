@@ -3,9 +3,10 @@ import WindDirection from './WindDirection';
 const APP_ID = "719dddbed313225204fd616e1b75e83f";
 const getUpdateUrl = (city, countryCode = '') => `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${APP_ID}`;
 const fetchData = async (weatherUpdate) => {
-    fetch(getUpdateUrl('Moscow','ru'))
-    .then(response => response.json())
-    .then(json => {
+   try {
+    const response = await fetch(getUpdateUrl('Moscow','ru')) 
+    const json = await response.json();
+    console.log(json);
         weatherUpdate({
             temperature: json.main.temp,
             city: json.name,
@@ -15,8 +16,13 @@ const fetchData = async (weatherUpdate) => {
             wind: json.wind.speed,
             deg: json.wind.deg,
             isLoading: false
-        })  
-    })
+        }) 
+   } catch (error) {
+       console.log("Cathed error: " + error);
+   }
+    
+    
+    
 }
 
 const Weather = () => {
