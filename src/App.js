@@ -4,6 +4,7 @@ import './App.css';
 import ExampleController from './components/Example';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import KapyrinKAcontroller from './components/KapyrinKA/KapyrinKAcontroller.jsx'
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
 
         <PetrovSDController/>
 
+        <KapyrinKAcontroller/>
+    
         <ExampleController/>
         
       </header>
