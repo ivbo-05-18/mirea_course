@@ -14,7 +14,7 @@ class IvanovDSController extends React.Component {
     
     render() {
         return (<div className=''>
-            <button onClick={ this.toggleDiv }> Иванов Д.С. </button>
+            <button id='IDS' onClick={ this.toggleDiv }>Иванов Д.С.</button>
 
             { this.state.show && <IvanovDSElement/> }
         </div>)

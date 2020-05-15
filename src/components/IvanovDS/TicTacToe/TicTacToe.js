@@ -99,8 +99,8 @@ class TicTacToe extends Component {
                   <td style={TD}>O</td>
                 </thead>
                 <tr>
-                  <td style={TD}>{wins.X}</td>
-                  <td style={TD}>{wins.O}</td>
+                  <td id='X' style={TD}>{wins.X}</td>
+                  <td id='O' style={TD}>{wins.O}</td>
                 </tr>
             </table>
             <table style={{width: '600px',height: '600px'}}>
