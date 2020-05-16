@@ -8,7 +8,7 @@ const BUTTON = {
       color: "white"
 }
 
-const TABLE = {
+const WINS = {
       width: "600px",
       margin: "0 auto",
       textAlign: "center"
@@ -16,6 +16,12 @@ const TABLE = {
 const TD = {
       width: "300px"
 }
+const BOARD = {
+      width: '600px',
+      height: '600px', 
+      margin: '0 auto'
+}
+
 class TicTacToe extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +36,7 @@ class TicTacToe extends Component {
     };
   }
 
-    win=() => {
+    win = () => {
       const winComb = [
         [0, 1, 2],
         [3, 4, 5],
@@ -93,7 +99,7 @@ class TicTacToe extends Component {
       return (
         <div>
           <h4 id="status" style={{margin:"auto"}}>{status}</h4>
-          <table style={TABLE}>
+          <table style={WINS}>
                 <thead>
                   <td style={TD}>X</td>
                   <td style={TD}>O</td>
@@ -103,7 +109,7 @@ class TicTacToe extends Component {
                   <td id='O' style={TD}>{wins.O}</td>
                 </tr>
             </table>
-            <table style={{width: '600px',height: '600px'}}>
+            <table style={BOARD}>
               <tr>
                 <td className="td"><button style={BUTTON} type="button" id="0" onClick={this.changer} onKeyDown={this.changer}>{cells[0]}</button></td>
                 <td className="td"><button style={BUTTON} type="button" id="1" onClick={this.changer} onKeyDown={this.changer}>{cells[1]}</button></td>
