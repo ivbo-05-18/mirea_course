@@ -1,7 +1,7 @@
 import React from 'react';
 import TicTacToe from './TicTacToe/TicTacToe';
 import SymonSays from './SimonSays/SimonSays'
-
+import Gifs from './Gifs/Gifs.jsx'
 
 class IvanovDSElement extends React.Component {
     render(){
@@ -12,6 +12,9 @@ class IvanovDSElement extends React.Component {
                 <hr/>
                 <h5>Заимствованный элемент - игра "Simon Says"</h5>
                 <SymonSays/>
+                <hr/>
+                <h5>Заимствованный элемент - gif изображение с котом (Капырин К.А.) </h5>
+                <Gifs/>
                 <hr/>
             </div>
         )
