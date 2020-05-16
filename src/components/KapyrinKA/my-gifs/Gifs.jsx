@@ -14,24 +14,52 @@ let gifList = [
     'https://i.gifer.com/Az.gif'
 ]
 
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min; //Максимум и минимум включаются
+ //Максимум и минимум включаются
     //<div><iframe src={gifList[getRandomIntInclusive(0,gifList.length-1)]} ></iframe></div>
-}
+    /*
+      <img src={gifList[getRandomIntInclusive(0, gifList.length - 1)]} alt="If you see this text, the error has occured" />
+      */
 
-const Gifs = (props) => {
-    return (
-        <div className={styles.box}>
-            <div className={styles.border}>
-                <img src={gifList[getRandomIntInclusive(0, gifList.length - 1)]} alt="If you see this text, the error has occured" />
-            </div>
-            <div>
-                <p>Gif of the day!</p>
-            </div>
-        </div>
-    )
+
+// const Gifs = (props) => {
+//     return (
+//         <div className={styles.box}>
+//             <div className={styles.border}>
+//             <img src={gifList[getRandomIntInclusive(0, gifList.length - 1)]} alt="If you see this text, the error has occured" />
+//             </div>
+//             <div>
+//                 <p>Gif of the day!</p>
+//             </div>
+//         </div>
+//     )
+// }
+
+class Gifs extends React.PureComponent {
+    constructor(props){
+        super(props);
+        this.state = {num: props.num};
+    }
+    
+    componentDidUpdate(prevProps) {
+        const { num } = this.props;
+        if (num !== prevProps.num) {
+          this.setState({num: num});
+        }
+      }
+
+    render(){
+        const { num } = this.state;
+        return(
+                <div className={styles.box}>
+                    <div className={styles.border}>
+                        <img src={gifList[num]} alt="If you see this text, the error has occured" />
+                    </div>
+                    <div>
+                        <p>Gif of the day!</p>
+                    </div>
+                </div>
+        );
+    };
 }
 
 export default Gifs
