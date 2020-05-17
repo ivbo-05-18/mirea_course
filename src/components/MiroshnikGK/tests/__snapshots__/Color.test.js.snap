@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[RENDER] Color – Snapshot test Matches the snapshot 1`] = `
+<div
+  data-radium={true}
+>
+  <div
+    className="Color"
+    data-radium={true}
+  >
+    <div
+      className="inputGK"
+    >
+      <input
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="SquareGK"
+      data-radium={true}
+    >
+      <div
+        className="rectangleGK"
+        data-radium={true}
+        style={
+          Object {
+            "animation": "2s infinite alternate ease-in-out",
+            "animationName": "radium-animation-baec9553",
+            "background": "",
+            "border": "5px solid white",
+            "height": "300px",
+            "marginTop": "30px",
+            "width": "300px",
+          }
+        }
+      />
+      <h4
+        data-radium={true}
+        style={
+          Object {
+            "height": "25px",
+          }
+        }
+      >
+        CMYK:
+        <br />
+        
+      </h4>
+    </div>
+  </div>
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "@keyframes radium-animation-baec9553 {
+0%{transform: rotate(-3deg);}
+100%{transform: rotate(3deg);}
+}
+",
+      }
+    }
+  />
+</div>
+`;

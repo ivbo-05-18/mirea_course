@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
 import MiroshnikGKController from './components/MiroshnikGK/MiroshnikGKController';
 
 function App() {

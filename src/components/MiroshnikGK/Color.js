@@ -1,34 +1,39 @@
 import React, { Component } from 'react';
+import { StyleRoot } from 'radium';
 import Field from './Color/Field';
 import Square from './Color/Square';
 import hexToCMYK from './Color/hextocmyk';
-import { StyleRoot } from 'radium'
 
 class Color extends Component {
-
-  state = {
-    value: '',
-    CMYK: '',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: '',
+      CMYK: '',
+    };
+  }
 
   handleValueChange = (event) => {
     this.setState(
       {
         value: event.target.value,
         CMYK: hexToCMYK(event.target.value),
-      }
+      },
     );
   }
 
   render() {
+    const { value } = this.state;
+    const { CMYK } = this.state;
     return (
       <StyleRoot>
         <div className="Color">
-          <Field id="field" value={this.state.value} changed={this.handleValueChange} />
-          <Square id="square" value={this.state.value} CMYK={this.state.CMYK} />
+          <Field id="field" value={value} changed={this.handleValueChange} />
+          <Square id="square" value={value} CMYK={CMYK} />
         </div>
       </StyleRoot>
     );
   }
 }
+
 export default Color;
