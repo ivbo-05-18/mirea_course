@@ -4,18 +4,21 @@ import './App.css';
 import ExampleController from './components/Example';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import MiroshnikGKController from './components/MiroshnikGK/MiroshnikGKController';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-        <PerederiyVAController/>
 
-        <PetrovSDController/>
+        <PerederiyVAController />
 
-        <ExampleController/>
-        
+        <PetrovSDController />
+
+        <MiroshnikGKController />
+
+        <ExampleController />
+
       </header>
     </div>
   );
