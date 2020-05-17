@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[RENDER] Calculator – Snapshot test Matches the snapshot 1`] = `
+<div
+  className="Characters"
+>
+  <p>
+    Marvel vs. Capcom 2 character info
+  </p>
+  <table
+    className="CharTable"
+  >
+    <th>
+      Character
+    </th>
+    <th>
+      Icon
+    </th>
+    <th>
+      Universe
+    </th>
+    <th>
+      Info
+    </th>
+  </table>
+</div>
+`;
