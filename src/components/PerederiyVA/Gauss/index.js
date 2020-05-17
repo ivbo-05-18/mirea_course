@@ -1,1 +1,1 @@
-module.exports = require('./GaussianElimElement.js');
+export { default } from './GaussianElimElement';

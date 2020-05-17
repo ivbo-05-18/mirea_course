@@ -1,1 +1,1 @@
-module.exports = require('./PerederiyVAController.js');
+export { default } from './PerederiyVAController';
