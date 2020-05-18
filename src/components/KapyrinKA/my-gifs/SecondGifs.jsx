@@ -8,6 +8,27 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+export const checkErrors = (props) => {
+    if (props == null || props === '') {
+        //this.setState({ cats: this.makeAnError('Вы не ввели число!')});
+        return('Вы не ввели число!');
+    }
+    else
+        if (!props.match(/^[0-9]+$/)) {
+            //this.setState({ cats: this.makeAnError('Ошибка ввода!')});
+            return('Ошибка ввода!');
+        }
+        else
+            if (props > 9) {
+                //this.setState({ cats: this.makeAnError('Число больше девяти!')});
+                return('Число больше девяти!');
+            }
+            else
+                //this.setState({ cats: <Cats num={props} /> });
+                return(<Cats num={props}/>);
+}
+
 class Handle extends React.Component{
     constructor(props){
         super(props);
@@ -36,19 +57,7 @@ makeAnError(props){
 
 handleSubmit(event) {
     const { num } = this.state;
-    if (num == null || num === '') {
-        this.setState({ cats: this.makeAnError('Вы не ввели число!')});
-    }
-    else
-        if (!num.match(/^[0-9]+$/)) {
-            this.setState({ cats: this.makeAnError('Ошибка ввода!')});
-        }
-        else
-            if (num > 9) {
-                this.setState({ cats: this.makeAnError('Число больше девяти!')});
-            }
-            else
-                this.setState({ cats: <Cats num={num} /> });
+    this.setState({cats: checkErrors(num)})
     event.preventDefault();
 }
 
