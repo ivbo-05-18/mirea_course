@@ -32,11 +32,3 @@ describe("Result component check. Depending on the value of 'correct' prop, the 
     expect(container.textContent).toBe("Неверно!");
   });
 });
-
-describe("Snapshot testing", () => {
-  test("GuessTheSong", () => {
-    const component = create(<GuessTheSong />);
-    console.log(component.toJSON())
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-});
