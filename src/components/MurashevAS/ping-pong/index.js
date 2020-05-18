@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './src/ping-pong_app.js';
 
-class Game_Element extends React.Component {
+class GameElement extends React.Component {
     render(){
         return (
             <App />
@@ -9,4 +9,4 @@ class Game_Element extends React.Component {
     }
 }
 
-export default Game_Element;
+export default GameElement;

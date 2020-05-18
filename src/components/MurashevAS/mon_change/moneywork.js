@@ -1,19 +1,16 @@
-function money(rub,type,course){
-  if(type == 'dol'){
-    if(!isNaN(rub) && rub>0 && !isNaN(course) && course >0){
-      return (rub/course).toFixed(2)+"$";
-    }else{
-      return 'Доллары'
+function money(rub, type, course) {
+  if (type === 'dol') {
+    if (!Number.isNaN(rub) && rub > 0 && !Number.isNaN(course) && course > 0) {
+      return `${(rub / course).toFixed(2)}$`;
     }
-  }else if(type == 'eur'){
-    if(!isNaN(rub) && rub>0 && !isNaN(course) && course >0){
-      return (rub/course).toFixed(2)+"€";
-    }else{
-      return 'Евро'
+    return 'Доллары';
+  } if (type === 'eur') {
+    if (!Number.isNaN(rub) && rub > 0 && !Number.isNaN(course) && course > 0) {
+      return `${(rub / course).toFixed(2)}€`;
     }
-  }else{
-      return ' '
+    return 'Евро';
   }
+  return ' ';
 }
 
 module.exports = money;

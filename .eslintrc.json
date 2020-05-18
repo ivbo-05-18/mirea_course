@@ -1,13 +1,14 @@
 {
-    "extends": [
-      "airbnb"
-    ],
-    "plugins": ["react", "@typescript-eslint"],
+    "extends": ["airbnb", "airbnb/hooks"],
+    "plugins": ["react"],
     "env": {
-      "browser": true
+      "browser": true,
+      "jest": true
     },
     "rules": {
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}]
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
+      "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+      "curly": [2, "all"]
     },
-    "parser": "@typescript-eslint/parser"
+    "parser": "babel-eslint"
   }
