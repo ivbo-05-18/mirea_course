@@ -3,7 +3,7 @@ import Result from "./Result";
 
 const BODY_STYLE = {
   border: "1px solid black",
-  maxWidth: "550px",
+  maxWidth: "500px",
   margin: "auto",
 };
 
