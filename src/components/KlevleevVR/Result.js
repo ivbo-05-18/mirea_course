@@ -17,7 +17,7 @@ const WRONG = {
 const Result = (props) => {
   return (
     <div style={props.correct === 1 ? CORRECT : WRONG}>
-      {props.correct === 1 ? "Верно!" : "Неверно"}
+      {props.correct === 1 ? "Верно!" : "Неверно!"}
     </div>
   );
 };
