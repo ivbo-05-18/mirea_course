@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import Currency from './Currency';
 const VeselayaEAController = () =>  {
     
 
@@ -24,7 +24,9 @@ const VeselayaEAController = () =>  {
 
 const VeselayaEAElement = () => {
     
-        return (<p>HI there</p> )
+        return (
+            <Currency/>
+         )
     
 }
 
