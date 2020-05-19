@@ -1,17 +1,21 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import Clipboard from "clipboard";
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/static-property-placement */
+/* eslint-disable react/require-default-props */
+/* eslint-disable react/destructuring-assignment */
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import Clipboard from 'clipboard';
 
-import EmojiResultRow from "./EmojiResultRow";
-import "./EmojiResults.css";
+import EmojiResultRow from './EmojiResultRow';
+import './EmojiResults.css';
 
 export default class EmojiResults extends PureComponent {
   static propTypes = {
-    emojiData: PropTypes.array
+    emojiData: PropTypes.array,
   };
 
   componentDidMount() {
-    this.clipboard = new Clipboard(".copy-to-clipboard");
+    this.clipboard = new Clipboard('.copy-to-clipboard');
   }
 
   componentWillUnmount() {
@@ -21,7 +25,7 @@ export default class EmojiResults extends PureComponent {
   render() {
     return (
       <div className="component-emoji-results">
-        {this.props.emojiData.map(emojiData => (
+        {this.props.emojiData.map((emojiData) => (
           <EmojiResultRow
             key={emojiData.title}
             symbol={emojiData.symbol}

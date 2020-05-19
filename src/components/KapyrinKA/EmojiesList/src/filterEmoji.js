@@ -1,4 +1,5 @@
-import emojiList from "./emojiList.json";
+/* eslint-disable arrow-parens */
+import emojiList from './emojiList.json';
 
 export default function filterEmoji(searchText, maxResults) {
   return emojiList

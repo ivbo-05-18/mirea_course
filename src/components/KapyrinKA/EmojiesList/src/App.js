@@ -1,20 +1,21 @@
-import React, { PureComponent } from "react";
-import Header from "./Header";
-import SearchInput from "./SearchInput";
-import EmojiResults from "./EmojiResults";
-import filterEmoji from "./filterEmoji";
+/* eslint-disable react/destructuring-assignment */
+import React, { PureComponent } from 'react';
+import Header from './Header';
+import SearchInput from './SearchInput';
+import EmojiResults from './EmojiResults';
+import filterEmoji from './filterEmoji';
 
 export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      filteredEmoji: filterEmoji("", 20)
+      filteredEmoji: filterEmoji('', 20),
     };
   }
 
-  handleSearchChange = event => {
+  handleSearchChange = (event) => {
     this.setState({
-      filteredEmoji: filterEmoji(event.target.value, 20)
+      filteredEmoji: filterEmoji(event.target.value, 20),
     });
   };
 

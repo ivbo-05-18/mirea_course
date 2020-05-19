@@ -1,11 +1,14 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import "./EmojiResultRow.css";
+/* eslint-disable react/static-property-placement */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/require-default-props */
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import './EmojiResultRow.css';
 
 export default class EmojiResultsRow extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    symbol: PropTypes.string
+    symbol: PropTypes.string,
   };
 
   render() {

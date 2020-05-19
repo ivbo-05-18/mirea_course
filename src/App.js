@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
-import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
-import KapyrinKAcontroller from './components/KapyrinKA/KapyrinKAcontroller.jsx'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import KapyrinKAcontroller from './components/KapyrinKA/KapyrinKAcontroller';
 
 function App() {
   return (
@@ -14,11 +13,9 @@ function App() {
 
         <PetrovSDController />
 
-        <ExampleController />
+        <KapyrinKAcontroller />
 
-        <KapyrinKAcontroller/>
-    
-    
+
       </header>
     </div>
   );
