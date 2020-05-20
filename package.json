@@ -18,7 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "npx cypress run --spec cypress/integration/TicTacToe.spec.js",
+    "test": "react-scripts test",
+    "test_cypress": "npx cypress run --spec cypress/integration/*.spec.js",
     "lint": "eslint ./src/**/*.{js,jsx}",
     "eject": "react-scripts eject"
   },
