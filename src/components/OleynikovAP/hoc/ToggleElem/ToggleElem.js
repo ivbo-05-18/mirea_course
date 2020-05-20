@@ -1,42 +1,63 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ToggleElem extends Component {
-    state = {
-        isShown: false,
-        buttonLabel: "Показать"
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShown: false,
+      buttonLabel: 'Показать',
+    };
+  }
 
-    toggleHandler = () => {
-        const state = { ...this.state }
-        state.buttonLabel = state.isShown ? "Показать" : "Скрыть"
-        state.isShown = !state.isShown
-        this.setState(state)
-    }
+  toggleHandler = () => {
+    const state = { ...this.state };
+    state.buttonLabel = state.isShown ? 'Показать' : 'Скрыть';
+    state.isShown = !state.isShown;
+    this.setState(state);
+    return '';
+  }
 
-    hasComponentName = () => {
-        if (this.props.componentName)
-            return " " + this.props.componentName
-    }
+  hasComponentName = () => {
+    const { componentName } = this.props;
+    if (componentName) { return ` ${componentName}`; }
+    return '';
+  }
 
-    renderButton = props => {
-        return <button onClick={this.toggleHandler}> {this.state.buttonLabel} {this.hasComponentName()}</button>
-    }
+  renderButton = () => {
+    const { buttonLabel } = this.state;
+    return (
+      <button type="button" onClick={this.toggleHandler}>
+        {' '}
+        {buttonLabel}
+        {' '}
+        {this.hasComponentName()}
+      </button>
+    );
+  }
 
-    renderChildren = () => {
-        if (this.state.isShown)
-            return this.props.children
-    }
+  renderChildren = () => {
+    const { isShown } = this.state;
+    const { children } = this.props;
+    if (isShown) { return children; }
+    return '';
+  }
 
-    render() {
-        return (
-            <div style={{ marginBottom: "50px" }}>
-                { this.renderButton() }
-                <main>
-                    { this.renderChildren() }
-                </main>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div style={{ marginBottom: '50px' }}>
+        {this.renderButton()}
+        <main>
+          {this.renderChildren()}
+        </main>
+      </div>
+    );
+  }
 }
 
-export default ToggleElem
+ToggleElem.propTypes = {
+  componentName: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+};
+
+export default ToggleElem;

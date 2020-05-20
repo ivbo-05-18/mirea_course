@@ -1,53 +1,76 @@
-import React from 'react'
-import Input from '../Input/Input'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Input from '../Input/Input';
 
 const MATRIX_STYLE = {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-}
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+};
 
-const renderMatrix = (matrix, onChageInput) => {
-    return <table>
+const renderMatrix = (matrix, onChageInput) => (
+  <table>
+    <tbody>
+      {matrix.matr.map((row, i) => (
+        <tr key={Math.random()}>
+          {row.map((cell, j) => {
+            const k = `${i + 1}${j + 1}`;
+            return (
+              <td key={Math.random()}>
+                <Input
+                  key={Math.random()}
+                  value={cell}
+                  onChangeInput={onChageInput}
+                  name={k}
+                  span={j !== matrix.matr.length - 1 ? `a${k}` : `a${k} = `}
+                />
+              </td>
+            );
+          })}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+const Matrix = (props) => {
+  const {
+    matrix,
+    onChangeInput,
+    onChageResHandler,
+  } = props;
+
+  return (
+    <div style={MATRIX_STYLE}>
+      {renderMatrix(matrix, onChangeInput)}
+      <table>
         <tbody>
-            {matrix.matr.map((row, i) => {
-                return (
-                    <tr key={i}>
-                        {row.map((cell, j) => {
-                            const k = (i+1) + "" + (j+1)
-                            return <td key={j}><Input
-                                key={k}
-                                value={cell}
-                                onChangeInput={onChageInput}
-                                name={k}
-                                span={j !== matrix.matr.length - 1 ? "a" + k : "a" + k + " = "}
-                            /></td>;
-                        })}
-                    </tr>
-                );
-            })}
+          {matrix.res.map((res, index) => (
+            <tr key={Math.random()}>
+              <td key={Math.random()}>
+                <Input
+                  key={Math.random()}
+                  value={res}
+                  onChangeInput={onChageResHandler}
+                  name={index}
+                  span=""
+                />
+              </td>
+            </tr>
+          ))}
         </tbody>
-    </table>
-}
+      </table>
+    </div>
+  );
+};
 
-const Matrix = props => {
-    return (
-        <div style={MATRIX_STYLE}>
-            {renderMatrix(props.matrix, props.onChangeInput)}
-            <table>
-                <tbody>
-                    {props.matrix.res.map((res, index) => {
-                        return <tr key={index}><td key={index}><Input
-                            key={index}
-                            value={res}
-                            onChangeInput={props.onChageResHandler}
-                            name={index}
-                        /></td></tr>
-                    })}
-                </tbody>
-            </table>
-        </div>
-    )
-}
+Matrix.propTypes = {
+  matrix: PropTypes.objectOf(PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.number,
+  ])).isRequired,
+  onChangeInput: PropTypes.func.isRequired,
+  onChageResHandler: PropTypes.func.isRequired,
+};
 
-export default Matrix
+export default Matrix;

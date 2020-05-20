@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
-import OleynikovAPController from './components/OleynikovAP/OleynikovAPController'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import OleynikovAPController from './components/OleynikovAP/OleynikovAPController';
 
 function App() {
   return (
@@ -14,12 +14,10 @@ function App() {
 
         <PetrovSDController />
 
+        <OleynikovAPController />
+
         <ExampleController />
 
-        <OleynikovAPController/>
-
-        <ExampleController/>
-        
       </header>
     </div>
   );
