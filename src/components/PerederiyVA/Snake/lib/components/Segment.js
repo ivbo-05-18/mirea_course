@@ -6,8 +6,7 @@ const ALIVE_COLOR = '#a9ff70';
 const DEAD_COLOR = 'gray';
 
 export default ({
-  // eslint-disable-next-line no-unused-vars
-  scale, x, y, color, index, dead, ...props
+  scale, x, y, dead,
 }) => (
   <ReactCSSTransitionGroup
     transitionName="segment"

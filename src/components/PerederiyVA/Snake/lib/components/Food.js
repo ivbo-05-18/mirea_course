@@ -8,7 +8,9 @@ const DEAD_COLOR = 'gray';
 export default ({
   scale, x, y, dead, ...props
 }) => {
-  if (props.food == null) return false;
+  if (props.food == null) {
+    return false;
+  }
   return (
     <div
       className="food"

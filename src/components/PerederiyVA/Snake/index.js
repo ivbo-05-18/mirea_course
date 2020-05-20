@@ -1,1 +1,1 @@
-module.exports = require('./lib/components/Board.js');
+export { default } from './lib/components/Board';

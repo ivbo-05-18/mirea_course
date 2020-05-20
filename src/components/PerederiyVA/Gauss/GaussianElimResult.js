@@ -3,10 +3,13 @@ import GaussianElim from './GaussianElim';
 
 const GaussianElimResult = (props) => {
   try {
-    if (props.input === undefined) throw new Error("matrix wasn't passed");
-    else {
+    if (props.input === undefined) {
+      throw new Error("matrix wasn't passed");
+    } else {
       const resultVector = GaussianElim(props.input);
-      if (resultVector === undefined) throw new Error('решений нет');
+      if (resultVector === undefined) {
+        throw new Error('решений нет');
+      }
       return (
         <p className="result">
           x =
