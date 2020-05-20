@@ -1,1 +1,1 @@
-module.exports = require('./IvanovDSController.js');
+export { default } from './IvanovDSController';
