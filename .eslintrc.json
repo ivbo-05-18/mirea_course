@@ -8,7 +8,9 @@
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
       "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-      "curly": [2, "all"]
+      "curly": [ 2, "all" ],
+      "react/prop-types": "off",
+      "jsx-a11y/control-has-associated-label":  "off"
     },
     "parser": "babel-eslint"
   }

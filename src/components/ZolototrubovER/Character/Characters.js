@@ -33,7 +33,7 @@ const Characters = (props) => {
     return (
       <tr className="zolototrubov_er_tr">
         <th className="zolototrubov_er_th">{state.name}</th>
-        <th className="zolototrubov_er_th"><img src={state.head_shot} /></th>
+        <th className="zolototrubov_er_th"><img src={state.head_shot} alt="" /></th>
         <th className="zolototrubov_er_th">{state.universe}</th>
         <th className="zolototrubov_er_th">
           <a href={state.info} target="_blank" rel="noopener noreferrer">
