@@ -1,23 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ExampleController from './components/Example';
+import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
-import ZolototrubovERController from './components/ZolototrubovER/ZolototrubovERController'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import ZolototrubovERController from './components/ZolototrubovER/ZolototrubovERController';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
 
-        <PerederiyVAController/>
+        <PerederiyVAController />
 
-        <PetrovSDController/>
+        <PetrovSDController />
+    
+        <ZolototrubovERController />
 
-        <ZolototrubovERController/>
-
-        <ExampleController/>
+        <ExampleController />
 
       </header>
     </div>
