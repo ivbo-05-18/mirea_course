@@ -14,7 +14,7 @@ const IvanovDSController = () => {
 
   return (
     <div className="ivanov_ds">
-      <button id= "IDS" onClick={switchShowState} type="submit"> Иванов Д.С. </button>
+      <button id="IDS" onClick={switchShowState} type="submit"> Иванов Д.С. </button>
       {showState.show && <IvanovDSElement />}
     </div>
   );
