@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import './Cell.css';
 
-const Cell = ({color, size}) => {
-  let classString = "cell-" + size + " " + color;
+const Cell = ({ color, size }) => {
+  const classString = `cell-${size} ${color}`;
   return (
-    <div className={classString}></div>
+    <div className={classString} />
   );
-}
+};
 
 export default Cell;

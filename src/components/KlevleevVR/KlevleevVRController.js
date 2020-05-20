@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import KlevleevVRElement from "./KlevleevVRElement.js";
+import React, { useState } from 'react';
+import KlevleevVRElement from './KlevleevVRElement';
 
 const KLEVLEEV_VR_STYLE = {
-  width: "70%",
+  width: '70%',
 };
 
 const KlevleevVRController = () => {
@@ -17,10 +17,10 @@ const KlevleevVRController = () => {
   };
 
   return (
-      <div className="klevleev_vr" style={KLEVLEEV_VR_STYLE}>
-        <button onClick={switchShowState}> Клевлеев В.Р. </button>
-        {showState.show && <KlevleevVRElement />}
-      </div>
+    <div className="klevleev_vr" style={KLEVLEEV_VR_STYLE}>
+      <button type="button" onClick={switchShowState}> Клевлеев В.Р. </button>
+      {showState.show && <KlevleevVRElement />}
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
 import KlevleevVRController from './components/KlevleevVR/KlevleevVRController';
 
 function App() {
@@ -14,10 +14,9 @@ function App() {
 
         <PetrovSDController />
 
-        <KlevleevVRController/>
+        <KlevleevVRController />
 
-        <ExampleController/>
-        
+        <ExampleController />
       </header>
     </div>
   );

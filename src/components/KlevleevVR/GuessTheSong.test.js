@@ -1,13 +1,11 @@
-import React from "react";
-import { act } from "react-dom/test-utils";
-import { render, unmountComponentAtNode } from "react-dom";
-import { create } from "react-test-renderer";
-import Result from "./Result";
-import GuessTheSong from "./GuessTheSong";
+import React from 'react';
+import { act } from 'react-dom/test-utils';
+import { render, unmountComponentAtNode } from 'react-dom';
+import Result from './Result';
 
 let container = null;
 beforeEach(() => {
-  container = document.createElement("div");
+  container = document.createElement('div');
   document.body.appendChild(container);
 });
 
@@ -22,13 +20,13 @@ describe("Result component check. Depending on the value of 'correct' prop, the 
     act(() => {
       render(<Result correct={1} />, container);
     });
-    expect(container.textContent).toBe("Верно!");
+    expect(container.textContent).toBe('Верно!');
   });
 
   test("'correct' = 2", () => {
     act(() => {
       render(<Result correct={2} />, container);
     });
-    expect(container.textContent).toBe("Неверно!");
+    expect(container.textContent).toBe('Неверно!');
   });
 });

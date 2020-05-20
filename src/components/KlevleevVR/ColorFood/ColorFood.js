@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Grid from './components/Grid/Grid';
 import ColorPickers from './components/ColorPickers/ColorPickers';
-import { Graph } from './Graph';
+import Graph from './Graph';
 
 import './index.css';
 
 const SIZE = 12;
-const COLORS = ['blue','red','green','yellow','orange'];
+const COLORS = ['blue', 'red', 'green', 'yellow', 'orange'];
 
 class ColorFood extends Component {
   constructor(props) {
@@ -20,54 +20,69 @@ class ColorFood extends Component {
       graph: new Graph(SIZE),
       colors: COLORS,
       count: 0,
-    }
+    };
   }
 
   incrementCount() {
+    const { count } = this.state;
+
     this.setState({
-      count: this.state.count + 1
+      count: count + 1,
     });
   }
 
   restart() {
+    const { size } = this.state;
+
     this.setState({
-      graph: new Graph(this.state.size),
-      count: 0
+      graph: new Graph(size),
+      count: 0,
     });
   }
 
   sliderInput(value) {
+    const { colors } = this.state;
+
     this.setState({
       size: value,
-      graph: this.newGrid(value, this.state.colors),
-      count: 0
+      graph: this.newGrid(value, colors),
+      count: 0,
     });
   }
 
   colorFill(color) {
-    this.state.graph.colorFill(color);
+    const { graph } = this.state;
+    graph.colorFill(color);
   }
 
   render() {
+    const {
+      count, colors, graph, size,
+    } = this.state;
     return (
       <div className="content">
         <div className="header">
           <h1>Color Flood</h1>
-          <div className="newgame" onClick={(e) => this.restart()}>New Game</div>
-          <div className="count">Changes <span>{this.state.count}</span></div>
+          <div
+            className="newgame"
+            role="button"
+            tabIndex="0"
+            onClick={() => this.restart()}
+            onKeyDown={() => this.restart()}
+          >
+            New Game
+          </div>
+          <div className="count">
+            Changes
+            <span>{count}</span>
+          </div>
         </div>
-{/*        <div className="sizeChanger">
-          <span className="size-value">{this.state.size}</span>
-          <input
-            type="range"
-            value={this.state.size}
-            min={MIN}
-            max={MAX}
-            step="1"
-            onChange={(e) => this.sliderInput(e.target.value)} />
-        </div>*/}
-          <ColorPickers colors={this.state.colors} clickHandler={this.colorFill} incrementCount={this.incrementCount}/>
-        <Grid grid={this.state.graph} colors={this.state.colors} size={this.state.size}/>
+        <ColorPickers
+          colors={colors}
+          clickHandler={this.colorFill}
+          incrementCount={this.incrementCount}
+        />
+        <Grid grid={graph} colors={colors} size={size} />
       </div>
     );
   }
