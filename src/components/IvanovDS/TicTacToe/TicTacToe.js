@@ -51,7 +51,9 @@ class TicTacToe extends Component {
       const value = (flag === true) ? 'X' : 'O';
       for (let i = 0; i < winComb.length; i += 1) {
         const comb = winComb[i];
-        if (cells[comb[0]] === value && cells[comb[1]] === value && cells[comb[2]] === value) {
+        if (cells[comb[0]] === value
+           && cells[comb[1]] === value
+            && cells[comb[2]] === value) {
           if (value === 'X') { wins.X += 1; } else if (value === 'O') { wins.O += 1; }
           this.setState({ winner: value, wins });
         }
@@ -100,30 +102,36 @@ class TicTacToe extends Component {
           <h4 id="status" style={{ margin: 'auto' }}>{status}</h4>
           <table style={WINS}>
             <thead>
-              <td style={TD}>X</td>
-              <td style={TD}>O</td>
+              <tr>
+                <td style={TD}>X</td>
+                <td style={TD}>O</td>
+              </tr>
             </thead>
-            <tr>
-              <td id="X" style={TD}>{wins.X}</td>
-              <td id="O" style={TD}>{wins.O}</td>
-            </tr>
+            <tfoot>
+              <tr>
+                <td id="X" style={TD}>{wins.X}</td>
+                <td id="O" style={TD}>{wins.O}</td>
+              </tr>
+            </tfoot>
           </table>
           <table style={BOARD}>
-            <tr>
-              <td className="td"><button style={BUTTON} type="button" id="0" onClick={this.changer} onKeyDown={this.changer}>{cells[0]}</button></td>
-              <td className="td"><button style={BUTTON} type="button" id="1" onClick={this.changer} onKeyDown={this.changer}>{cells[1]}</button></td>
-              <td className="td"><button style={BUTTON} type="button" id="2" onClick={this.changer} onKeyDown={this.changer}>{cells[2]}</button></td>
-            </tr>
-            <tr>
-              <td className="td"><button style={BUTTON} type="button" id="3" onClick={this.changer} onKeyDown={this.changer}>{cells[3]}</button></td>
-              <td className="td"><button style={BUTTON} type="button" id="4" onClick={this.changer} onKeyDown={this.changer}>{cells[4]}</button></td>
-              <td className="td"><button style={BUTTON} type="button" id="5" onClick={this.changer} onKeyDown={this.changer}>{cells[5]}</button></td>
-            </tr>
-            <tr>
-              <td className="td"><button style={BUTTON} type="button" id="6" onClick={this.changer} onKeyDown={this.changer}>{cells[6]}</button></td>
-              <td className="td"><button style={BUTTON} type="button" id="7" onClick={this.changer} onKeyDown={this.changer}>{cells[7]}</button></td>
-              <td className="td"><button style={BUTTON} type="button" id="8" onClick={this.changer} onKeyDown={this.changer}>{cells[8]}</button></td>
-            </tr>
+            <tbody>
+              <tr>
+                <td className="td"><button style={BUTTON} type="button" id="0" onClick={this.changer} onKeyDown={this.changer}>{cells[0]}</button></td>
+                <td className="td"><button style={BUTTON} type="button" id="1" onClick={this.changer} onKeyDown={this.changer}>{cells[1]}</button></td>
+                <td className="td"><button style={BUTTON} type="button" id="2" onClick={this.changer} onKeyDown={this.changer}>{cells[2]}</button></td>
+              </tr>
+              <tr>
+                <td className="td"><button style={BUTTON} type="button" id="3" onClick={this.changer} onKeyDown={this.changer}>{cells[3]}</button></td>
+                <td className="td"><button style={BUTTON} type="button" id="4" onClick={this.changer} onKeyDown={this.changer}>{cells[4]}</button></td>
+                <td className="td"><button style={BUTTON} type="button" id="5" onClick={this.changer} onKeyDown={this.changer}>{cells[5]}</button></td>
+              </tr>
+              <tr>
+                <td className="td"><button style={BUTTON} type="button" id="6" onClick={this.changer} onKeyDown={this.changer}>{cells[6]}</button></td>
+                <td className="td"><button style={BUTTON} type="button" id="7" onClick={this.changer} onKeyDown={this.changer}>{cells[7]}</button></td>
+                <td className="td"><button style={BUTTON} type="button" id="8" onClick={this.changer} onKeyDown={this.changer}>{cells[8]}</button></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       );
