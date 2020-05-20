@@ -1,0 +1,167 @@
+ 
+.simon {
+    width: 150%;
+    font-family: monospace
+  }
+
+.bigCircle {
+    stroke-width: 8px;
+    fill: #2d2d2d;
+    stroke: #202020;
+    transform: translate(350px, 350px);
+    r: 403px;
+  }
+
+  .controlPanel {
+    stroke: #393939;
+    stroke-width: 4px;
+    fill: #6c6c6c;
+    transform: translateX(-210px);
+  }
+
+  .btn {
+    font-weight: 700;
+    fill: #ECECEC;
+    font-size: 14px;
+  }
+  
+  .title {
+    font-size: 32px;
+    fill: #ECECEC;
+    font-weight: 700;
+  }
+
+  .placeholders {
+    font-size: 32px;
+    fill: #450c0c;
+    font-weight: 700;
+  }
+  
+  .scoreboard {
+    stroke: #464646;
+    stroke-width: 2px;
+    fill: #270707;
+    width: 102px;
+    height: 33px;
+  }
+
+  .score {
+    text-align: right;
+    font-size: 32px;
+    fill: #DC3737;
+  }
+
+  .btnRed {
+    stroke: #464646;
+    stroke-width: 2px;
+    r: 15px;
+    fill: #DC3737;
+    cursor: pointer;
+  }
+
+  .btnRed:hover {
+    fill: #bf2121;
+  }
+    
+  .btnBlue {
+    stroke: #464646;
+    stroke-width: 2px;
+    r: 15px;
+    fill: #3748EB;
+    cursor: pointer;
+  }
+
+  .btnBlue:hover {
+    fill: #1628d9;
+  }
+  
+  .btnYellow {
+    stroke: #464646;
+    stroke-width: 2px;
+    r: 15px;
+    fill: #F3F338;
+    cursor: pointer;
+  }
+  
+  .btnYellow:hover {
+    fill: #eaea0e;
+  }
+
+  .yellowPanel {
+    stroke: #baba0b;
+    stroke-width: 8;
+    fill: #F3F338;
+    transform: rotate(-90deg) translateX(-695px);
+    cursor: pointer;
+  }
+
+  .yellowPanel_active {
+    stroke: white;
+    stroke-width: 8;
+    fill: #F3F338;
+    transform: rotate(-90deg) translateX(-695px);
+    cursor: pointer;
+  }
+
+  .yellowPanel:hover {
+    fill: #eaea0e;
+  }
+  
+  .bluePanel {
+    stroke: #1120ab;
+    stroke-width: 8;
+    fill: #3748EB;
+    transform: rotate(180deg) translate(-695px, -695px);
+    cursor: pointer;
+  }
+
+  .bluePanel_active {
+    stroke: white;
+    stroke-width: 8;
+    fill: #3748EB;
+    transform: rotate(180deg) translate(-695px, -695px);
+    cursor: pointer;
+  }
+
+  .bluePanel:hover {
+    fill: #1628d9;
+  }
+  
+  .greenPanel {
+    stroke: #129a37;
+    stroke-width: 8;
+    fill: #2CE65E;
+    transform: rotate(-90deg) translateX(0px, 0px);
+    cursor: pointer;
+  }
+
+  .greenPanel_active {
+    stroke: white;
+    stroke-width: 8;
+    fill: #2CE65E;
+    transform: rotate(-90deg) translateX(0px, 0px);
+    cursor: pointer;
+  }
+
+  .greenPanel:hover {
+    fill: #18c747;
+  }
+  
+  .redPanel {
+    stroke: #931a1a;
+    stroke-width: 8;
+    fill: #DC3737;
+    transform: rotate(90deg) translate(0px, -695px);
+    cursor: pointer;
+  }
+  .redPanel_active {
+    stroke: white;
+    stroke-width: 8;
+    fill: #DC3737;
+    transform: rotate(90deg) translate(0px, -695px);
+    cursor: pointer;
+  }
+  .redPanel:hover {
+    fill: #bf2121;
+  }
+  
