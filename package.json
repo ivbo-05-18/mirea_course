@@ -7,6 +7,7 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "cypress": "^4.5.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.13.1",
@@ -18,7 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npx cypress run --spec cypress/integration/TicTacToe.spec.js",
-    "lint": "eslint './src/**/*.{js,jsx}'",
+    "lint": "eslint --fix ./src/**/*.{js,jsx}",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

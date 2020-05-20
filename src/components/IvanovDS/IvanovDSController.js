@@ -1,24 +1,23 @@
-import React from 'react';
-import IvanovDSElement from './IvanovDSElement.js';
+import React, { useState } from 'react';
+import IvanovDSElement from './IvanovDSElement';
 
-class IvanovDSController extends React.Component {
-    constructor ( props ) {
-        super ( props )
-        this.state = { show: false }
-    }
+const IvanovDSController = () => {
+  const [showState, switchState] = useState({
+    show: false,
+  });
 
-    toggleDiv = () => {
-        const { show } = this.state;
-        this.setState ( { show: !show } )
-    }
-    
-    render() {
-        return (<div className=''>
-            <button id='IDS' onClick={ this.toggleDiv }>Иванов Д.С.</button>
+  const switchShowState = () => {
+    switchState({
+      show: !showState.show,
+    });
+  };
 
-            { this.state.show && <IvanovDSElement/> }
-        </div>)
-    }
-}
+  return (
+    <div className="ivanov_ds">
+      <button onClick={switchShowState} type="submit"> Иванов Д.С. </button>
+      {showState.show && <IvanovDSElement />}
+    </div>
+  );
+};
 
 export default IvanovDSController;
