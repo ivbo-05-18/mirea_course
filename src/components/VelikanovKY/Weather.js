@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WindDirection from './WindDirection';
 
-const APP_ID =process.env.REACT_APP_NOT_SECRET_ID;
+const APP_ID = process.env.REACT_APP_NOT_SECRET_ID;
 const getUpdateUrl = (city, countryCode = '') => `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${APP_ID}`;
 const fetchData = async (weatherUpdate) => {
   try {
@@ -20,9 +20,9 @@ const fetchData = async (weatherUpdate) => {
     });
   } catch (error) {
     weatherUpdate({
-      description: "Fetching has failed",
+      description: 'Fetching has failed',
       isLoaded: false,
-    })
+    });
   }
 };
 
@@ -39,7 +39,7 @@ const Weather = () => {
   const [weather, setWeather] = useState({
     city: 'Moscow,ru',
     isLoaded: false,
-    description: "Fetching..."
+    description: 'Fetching...',
   });
   useEffect(() => {
     fetchData(setWeather);

@@ -1,9 +1,9 @@
 import React from 'react';
 import { unmountComponentAtNode } from 'react-dom';
 import renderer from 'react-test-renderer';
+import { render } from '@testing-library/react';
 import Weather from '../Weather';
 import WindDirection from '../WindDirection';
-import { render } from '@testing-library/react';
 
 const testData = {
   coord: { lon: 139, lat: 35 },
@@ -62,7 +62,7 @@ afterEach(() => {
 
 it('Should be a word indicating the loading', () => {
   const { getByText } = render(<Weather />);
-  const linkElement = getByText("Fetching...");
+  const linkElement = getByText('Fetching...');
   expect(linkElement).toBeInTheDocument();
 });
 
