@@ -3,6 +3,7 @@ import { unmountComponentAtNode } from 'react-dom';
 import renderer from 'react-test-renderer';
 import Weather from '../Weather';
 import WindDirection from '../WindDirection';
+import { render } from '@testing-library/react';
 
 const testData = {
   coord: { lon: 139, lat: 35 },
@@ -59,13 +60,13 @@ afterEach(() => {
   container = null;
 });
 
-it('Fetch test. City value should be Moscow', () => {
-  const component = renderer.create(<Weather />);
-  expect(component.toJSON().children[1]).toBe('Moscow,ru');
+it('Should be a word indicating the loading', () => {
+  const { getByText } = render(<Weather />);
+  const linkElement = getByText("Fetching...");
+  expect(linkElement).toBeInTheDocument();
 });
 
-it('WindDirection return correct direction', () => {
+test('WeatherDirection Snapshot', () => {
   const direction = renderer.create(<WindDirection deg={testData.wind.deg} />);
-  console.log(direction.toJSON());
-  expect(direction.toJSON()).toBe('East-southeast');
+  expect(direction.toJSON()).toMatchSnapshot();
 });

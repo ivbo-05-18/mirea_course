@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import WindDirection from './WindDirection';
 
-const APP_ID = '719dddbed313225204fd616e1b75e83f';
+const APP_ID =process.env.REACT_APP_NOT_SECRET_ID;
 const getUpdateUrl = (city, countryCode = '') => `https://api.openweathermap.org/data/2.5/weather?q=${city},${countryCode}&appid=${APP_ID}`;
 const fetchData = async (weatherUpdate) => {
   try {
@@ -16,10 +16,13 @@ const fetchData = async (weatherUpdate) => {
       description: json.weather[0].description,
       wind: json.wind.speed,
       deg: json.wind.deg,
-      isLoading: false,
+      isLoaded: true,
     });
   } catch (error) {
-    console.log(`Catсhed error: ${error}`);
+    weatherUpdate({
+      description: "Fetching has failed",
+      isLoaded: false,
+    })
   }
 };
 
@@ -35,13 +38,14 @@ const Weather = () => {
   };
   const [weather, setWeather] = useState({
     city: 'Moscow,ru',
-    isLoading: true,
+    isLoaded: false,
+    description: "Fetching..."
   });
   useEffect(() => {
     fetchData(setWeather);
   }, []);
 
-  if (!weather.isLoading) {
+  if (weather.isLoaded) {
     return (
       <div style={DIV_STYLE}>
         Weather in
@@ -54,6 +58,7 @@ const Weather = () => {
           <br />
           {weather.description}
           , feels like
+          {' '}
           {parseInt(weather.feel - 273.15, 10)}
           °C
           <br />
@@ -75,10 +80,13 @@ const Weather = () => {
     );
   }
   return (
-    <h3>
-      Weather in
-      {weather.city}
-    </h3>
+    <div>
+      <h3>
+        Weather in
+        {weather.city}
+      </h3>
+      {weather.description}
+    </div>
   );
 };
 
