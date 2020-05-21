@@ -3,6 +3,7 @@ import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import VesyolkinASController from './components/VesyolkinAS/VesyolkinASController';
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
         <PerederiyVAController />
 
         <PetrovSDController />
+
+        <VesyolkinASController />
 
         <ExampleController />
 

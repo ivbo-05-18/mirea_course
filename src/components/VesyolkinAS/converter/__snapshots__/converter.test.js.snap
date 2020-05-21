@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[RENDER] Captcha - Snapshot test Matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "background": "#73716e",
+    }
+  }
+>
+  <h3>
+    Конвертер валют курс на 21.05.2020
+  </h3>
+  <p>
+    <select
+      name="type1"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        selected="selected"
+      >
+        Исходная валюта
+      </option>
+      <option
+        value="1"
+      >
+        $
+      </option>
+      <option
+        value="1.1"
+      >
+        €
+      </option>
+      <option
+        value="0.014"
+      >
+        ₽
+      </option>
+      <option
+        value="0.0093"
+      >
+        ￥
+      </option>
+    </select>
+    <input
+      name="num1"
+      onInput={[Function]}
+      placeholder="Число"
+      type="number"
+      value=""
+    />
+    <select
+      name="type2"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        selected="selected"
+      >
+        Конвертированая валюта
+      </option>
+      <option
+        value="1"
+      >
+        $
+      </option>
+      <option
+        value="1.1"
+      >
+        €
+      </option>
+      <option
+        value="0.014"
+      >
+        ₽
+      </option>
+      <option
+        value="0.0093"
+      >
+        ￥
+      </option>
+    </select>
+    <p>
+      0
+    </p>
+  </p>
+</div>
+`;
+
+exports[`[RENDER] Converter - Snapshot test Matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "background": "#73716e",
+    }
+  }
+>
+  <h3>
+    Конвертер валют курс на 21.05.2020
+  </h3>
+  <p>
+    <select
+      name="type1"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        selected="selected"
+      >
+        Исходная валюта
+      </option>
+      <option
+        value="1"
+      >
+        $
+      </option>
+      <option
+        value="1.1"
+      >
+        €
+      </option>
+      <option
+        value="0.014"
+      >
+        ₽
+      </option>
+      <option
+        value="0.0093"
+      >
+        ￥
+      </option>
+    </select>
+    <input
+      name="num1"
+      onInput={[Function]}
+      placeholder="Число"
+      type="number"
+      value=""
+    />
+    <select
+      name="type2"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        selected="selected"
+      >
+        Конвертированая валюта
+      </option>
+      <option
+        value="1"
+      >
+        $
+      </option>
+      <option
+        value="1.1"
+      >
+        €
+      </option>
+      <option
+        value="0.014"
+      >
+        ₽
+      </option>
+      <option
+        value="0.0093"
+      >
+        ￥
+      </option>
+    </select>
+    <p>
+      0
+    </p>
+  </p>
+</div>
+`;
