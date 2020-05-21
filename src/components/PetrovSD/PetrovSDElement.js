@@ -1,6 +1,6 @@
 import React from 'react'
 import Leaderboard from './Leaderboard'
-
+import Timer from './Timer'
 
 const PetrovSDElement = () => {
     const TEXT_STYLE = {
@@ -13,6 +13,8 @@ const PetrovSDElement = () => {
         <div className="petrov_sd_element">
             <p style={TEXT_STYLE}>Собственный компонент</p>
             <Leaderboard/>
+            <p style={TEXT_STYLE}>Компонент одногруппника (Передерий В.А.)</p>
+            <Timer/>
         </div>
     )
 }
