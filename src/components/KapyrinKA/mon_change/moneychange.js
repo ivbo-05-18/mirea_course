@@ -1,12 +1,9 @@
-/* eslint-disable camelcase */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/button-has-type */
 import React from 'react';
-import './money.css';
+import styles from './money.module.css';
 
 const money = require('./moneywork');
 
-class Money_Controller extends React.Component {
+class MoneyController extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,20 +13,22 @@ class Money_Controller extends React.Component {
   }
 
   render() {
+    const { dol } = this.state;
+    const { eur } = this.state;
     return (
-      <div className="conv">
-        <div className="conv-board">
+      <div className={styles.conv}>
+        <div className={styles.conv}>
           <div>
             <input id="rub" type="text" placeholder="Рубли" />
             <br />
-            <input id="dol" type="text" placeholder="Доллары" disabled value={this.state.dol} />
-            <input id="eur" type="text" placeholder="Евро" disabled value={this.state.eur} />
+            <input id="dol" type="text" placeholder="Доллары" disabled value={dol} />
+            <input id="eur" type="text" placeholder="Евро" disabled value={eur} />
           </div>
-          <button className="convert" onClick={() => this.setState({ dol: money(document.getElementById('rub').value, 'dol'), eur: money(document.getElementById('rub').value, 'eur') })}>Конвертировать</button>
+          <button type="submit" className={styles.convert} onClick={() => this.setState({ dol: money(document.getElementById('rub').value, 'dol'), eur: money(document.getElementById('rub').value, 'eur') })}>Конвертировать</button>
         </div>
       </div>
     );
   }
 }
 
-export default Money_Controller;
+export default MoneyController;

@@ -16,7 +16,6 @@ function App() {
 
         <KapyrinKAcontroller />
 
-
       </header>
     </div>
   );

@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Gifs.module.css';
+import getRandomIntInclusive from './getRandom';
 
 const gifList = [
   'http://www.reactiongifs.com/wp-content/uploads/2013/05/deal.gif',
@@ -24,9 +25,12 @@ class Gifs extends React.PureComponent {
   componentDidUpdate(prevProps) {
     const { num } = this.props;
     if (num !== prevProps.num) {
-      // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ num });
+      this.update({ num });
     }
+  }
+
+  update({ num }) {
+    this.setState({ num });
   }
 
   render() {
@@ -36,12 +40,17 @@ class Gifs extends React.PureComponent {
         <div className={styles.border}>
           <img src={gifList[num]} alt="If you see this text, the error has occured" />
         </div>
-        <div>
-          <p>Gif of the day!</p>
-        </div>
+        <p>Gif of the day!</p>
       </div>
     );
   }
 }
 
+Gifs.propTypes = {
+  num: PropTypes.string,
+};
+
+Gifs.defaultProps = {
+  num: getRandomIntInclusive(0, 9),
+};
 export default Gifs;
