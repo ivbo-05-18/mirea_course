@@ -44,7 +44,7 @@ exports[`[RENDER] Color – Snapshot test Matches the snapshot 1`] = `
           }
         }
       >
-        CMYK:
+        
         <br />
         
       </h4>

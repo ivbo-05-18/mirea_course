@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const square = (props) => {
   const { CMYK } = props;
   const { value } = props;
+  let cmyk = '';
   const h4style = {
     height: '25px',
   };
@@ -21,11 +22,14 @@ const square = (props) => {
     animation: '2s infinite alternate ease-in-out',
     animationName: rectKeyframes,
   };
+  if (CMYK !== '') {
+    cmyk = 'CMYK';
+  }
   return (
     <div className="SquareGK">
       <div className="rectangleGK" style={rectanglestyle} />
       <h4 style={h4style}>
-        CMYK:
+        {cmyk}
         <br />
         {CMYK}
       </h4>

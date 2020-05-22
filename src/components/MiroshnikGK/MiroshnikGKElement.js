@@ -1,6 +1,6 @@
 import React from 'react';
 import Color from './Color';
-import WithMoveValidation from './integrations/WithMoveValidation';
+import Chess from './integrations/WithMoveValidation';
 
 
 const MiroshnikGKElement = () => {
@@ -20,7 +20,7 @@ const MiroshnikGKElement = () => {
       <Color />
       <div style={boardsContainer}>
         <p style={TEXT_STYLE}>Заимствованный компонент</p>
-        <WithMoveValidation />
+        <Chess />
       </div>
     </div>
   );

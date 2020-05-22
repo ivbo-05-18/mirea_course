@@ -4,6 +4,10 @@ function hexToCMYK(color) {
   let computedY = 0;
   let computedK = 0;
 
+  if (typeof color !== 'string') {
+    return undefined;
+  }
+
   if (color.charAt(0) !== '#') {
     return '';
   }
