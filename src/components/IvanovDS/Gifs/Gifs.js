@@ -1,31 +1,18 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-param-reassign */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import Cats from './Cats';
-import styles from './Gifs.module.css';
+import getRandomIntInclusive from './getRandom';
 
-function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-export const checkErrors = (props) => {
-  if (props == null || props === '') {
-    // this.setState({ cats: this.makeAnError('Вы не ввели число!')});
+export const checkErrors = (value) => {
+  if (value == null || value === '') {
     return ('Вы не ввели число!');
   }
-  if (!props.match(/^[0-9]+$/)) {
-    // this.setState({ cats: this.makeAnError('Ошибка ввода!')});
+  if (!value.match(/^[0-9]+$/)) {
     return ('Ошибка ввода!');
   }
-  if (props > 9) {
-    // this.setState({ cats: this.makeAnError('Число больше девяти!')});
+  if (value > 9) {
     return ('Число больше девяти!');
   }
-  return (<Cats num={props} />);
+  return (<Cats num={value} />);
 };
 
 class Gifs extends Component {
@@ -41,22 +28,10 @@ class Gifs extends Component {
     this.setState({ num: event.target.value });
   }
 
-  makeAnError(props) {
-    return (
-      <div className={styles.box}>
-        <div>
-          <p>{props}</p>
-        </div>
-        <div>
-          <p>Ошибка!</p>
-        </div>
-      </div>
-    );
-  }
-
   handleSubmit(event) {
     const { num } = this.state;
     this.setState({ cats: checkErrors(num) });
+    // preventDefault() здесь необходим, чтобы предотвратить обновление страницы
     event.preventDefault();
   }
 
