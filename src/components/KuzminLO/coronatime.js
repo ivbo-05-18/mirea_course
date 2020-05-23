@@ -17,7 +17,7 @@ class CoronaTime extends React.Component {
   }
 
   async getFetch() {
-    const url = 'https://api.tvirustracker.com/free-api?countryTotal=RU';
+    const url = 'https://api.thevirustracker.com/free-api?countryTotal=RU';
     const response = await fetch(url);
     const data = await response.json();
     // if (!response.ok) {  ЛОМАЕТ ТЕСТЫ
