@@ -17,7 +17,7 @@ class CoronaTime extends React.Component {
   }
 
   async getFetch() {
-    const url = 'https://api.thevirustracker.com/free-api?countryTotal=RU';
+    const url = 'https://api.tvirustracker.com/free-api?countryTotal=RU';
     const response = await fetch(url);
     const data = await response.json();
     // if (!response.ok) {  ЛОМАЕТ ТЕСТЫ
@@ -40,8 +40,22 @@ class CoronaTime extends React.Component {
   render() {
     const { renderdata } = this.state;
     const { badresp } = this.state;
-    if (badresp) { return (<center><span>Ошибка запроса</span></center>); }
-    if (typeof renderdata.countrydata === 'undefined') { return (<center><span>Результаты не загружены</span></center>); }
+    if (badresp) {
+      return (
+        <center>
+          <p>Ошибка запроса</p>
+          <button type="button" onClick={() => this.handleRefresh()}>Попробовать ещё раз</button>
+        </center>
+      );
+    }
+    if (typeof renderdata.countrydata === 'undefined') {
+      return (
+        <center>
+          <p>Результаты не загружены</p>
+          <button type="button" onClick={() => this.handleRefresh()}>Попробовать ещё раз</button>
+        </center>
+      );
+    }
     return (
       <div style={STYLECOMP}>
         <center><p style={STYLESTAYHOME}>#ОставайтесьДома</p></center>
