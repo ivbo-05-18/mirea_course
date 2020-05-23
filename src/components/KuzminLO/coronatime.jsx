@@ -34,7 +34,7 @@ class CoronaTime extends React.Component {
     if (typeof renderdata.countrydata === 'undefined') { return (<center><span>Загрузка результатов...</span></center>); }
     return (
       <div style={STYLECOMP}>
-        <center><h style={STYLESTAYHOME}>#ОставайтесьДома</h></center>
+        <center><p style={STYLESTAYHOME}>#ОставайтесьДома</p></center>
         <p style={STYLETEXT}>Статистика по России</p>
         <p style={STYLETEXT}>
           Всего случаев

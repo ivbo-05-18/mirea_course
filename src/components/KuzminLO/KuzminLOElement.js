@@ -4,7 +4,7 @@ import GaussianElimElement from '../PerederiyVA/Gauss/GaussianElimElement';
 import App from './konvertilo-master/src/app/app';
 
 const STYLEBACKALL = {
-  'border-radius': '5px',
+  borderRadius: '5px',
   background: '#595a66',
   margin: '10px',
   padding: '5px 25px',
@@ -12,15 +12,15 @@ const STYLEBACKALL = {
 const STYLELAYBEL = {
   display: 'inline-block',
   padding: '.25em .4em',
-  'font-size': '16px',
-  'font-weight': '700',
-  'line-height': '1',
-  'text-align': 'center',
-  'white-space': 'nowrap',
-  'vertical-align': 'baseline',
-  'border-radius': '.25rem',
+  fontSize: '16px',
+  fontWeight: '700',
+  lineHeight: '1',
+  textAlign: 'center',
+  whiteSpace: 'nowrap',
+  verticalAlign: 'baseline',
+  borderRadius: '.25rem',
   color: '#FFF',
-  'background-color': '#45464f',
+  backgroundColor: '#45464f',
 };
 const STYLEA = {
   color: '#fff',
