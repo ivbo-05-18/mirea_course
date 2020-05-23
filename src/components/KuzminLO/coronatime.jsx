@@ -8,6 +8,7 @@ class CoronaTime extends React.Component {
     super(props);
     this.state = {
       renderdata: {},
+      badresp: false,
     };
   }
 
@@ -19,8 +20,16 @@ class CoronaTime extends React.Component {
     const url = 'https://api.thevirustracker.com/free-api?countryTotal=RU';
     const response = await fetch(url);
     const data = await response.json();
+    if(!response.ok)
+    {
+        this.setState(() => ({
+            badresp: true,
+          }));
+          return 0;
+    } 
     this.setState(() => ({
       renderdata: data,
+      badresp: false,
     }));
     return data;
   }
@@ -31,6 +40,8 @@ class CoronaTime extends React.Component {
 
   render() {
     const { renderdata } = this.state;
+    const { badresp } = this.state;
+    if (badresp) { return (<center><span>Ошибка запроса</span></center>); }
     if (typeof renderdata.countrydata === 'undefined') { return (<center><span>Загрузка результатов...</span></center>); }
     return (
       <div style={STYLECOMP}>
