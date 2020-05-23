@@ -28,9 +28,8 @@ it('Проверка работы с фейковым обращением', asy
     ],
   };
 
-  const mockJsonPromise = Promise.resolve(fakeResp); // 2
+  const mockJsonPromise = Promise.resolve(fakeResp);
   const mockFetchPromise = Promise.resolve({
-    // 3
     json: () => mockJsonPromise,
   });
   jest.spyOn(global, 'fetch').mockImplementation(() => mockFetchPromise);
