@@ -416,8 +416,8 @@ class Board extends Component {
               border: '2px solid #ccc',
               boxShadow: '1px 2px 8px 0px rgba(0, 0, 0, 0.2)',
               overflow: 'hidden',
-              'margin-left': 'auto',
-              'margin-right': 'auto',
+              marginLeft: 'auto',
+              marginRight: 'auto',
             }}
           >
 
