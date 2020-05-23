@@ -1,5 +1,4 @@
 import React from 'react';
-import request from 'request';
 import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import CoronaTime from '../coronatime';
@@ -19,13 +18,13 @@ afterEach(() => {
 it('Проверка работы с фейковым обращением', async () => {
   const fakeResp = {
     countrydata: [
-        {
-            total_cases: 0,
-            total_new_cases_today: 1,
-            total_recovered: 2,
-            total_active_cases: 3,
-            
-        },
+      {
+        total_cases: 0,
+        total_new_cases_today: 1,
+        total_recovered: 2,
+        total_active_cases: 3,
+
+      },
     ],
   };
 
@@ -39,6 +38,6 @@ it('Проверка работы с фейковым обращением', asy
   await act(async () => {
     render(<CoronaTime />, container);
   });
-  for (let i = 0; i < 4; i++) expect(container.querySelectorAll('span')[i].textContent).toBe(i + '');
+  for (let i = 0; i < 4; i++) { expect(container.querySelectorAll('span')[i].textContent).toBe(`${i}`); }
   global.fetch.mockRestore();
 });
