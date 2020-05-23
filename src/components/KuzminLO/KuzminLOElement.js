@@ -28,15 +28,15 @@ const STYLEA = {
 
 const KuzminLOElement = () => (
   <div style={STYLEBACKALL}>
-    <div>
+    <div id="my">
       <span style={STYLELAYBEL}>Собственный элемент:</span>
       <CoronaTime />
     </div>
-    <div>
+    <div id="notmy">
       <span style={STYLELAYBEL}>Элемент Передерия В.А.:</span>
       <GaussianElimElement />
     </div>
-    <div>
+    <div id="notmy2">
       <span style={STYLELAYBEL}>
         <a href="https://github.com/tecnobert/konvertilo" style={STYLEA}>Конвертер (чужое)</a>
       </span>
