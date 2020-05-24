@@ -3,29 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-    "@ant-design/icons": "^4.1.0",
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.9.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "antd": "^4.2.4",
-    "google-map-react": "^1.1.7",
-=======
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
->>>>>>> 701ca3299ebe013e52cff0eafcc77d73798bca4c
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.0.1",
-<<<<<<< HEAD
-    "react-scripts": "^3.4.1",
-=======
     "react-scripts": "3.4.1",
->>>>>>> 701ca3299ebe013e52cff0eafcc77d73798bca4c
     "react-test-renderer": "^16.13.1"
   },
   "scripts": {
