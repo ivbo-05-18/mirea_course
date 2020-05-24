@@ -7,9 +7,9 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from 'react';
-import './App.css';
+import styles from './styles.css';
 
-function App() {
+function Minesweeper() {
   const [bombs, setBombs] = useState([]);
   const [visited, setVisited] = useState([]);
 
@@ -97,10 +97,10 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="title"> REACT-SWEEPER </div>
-        <div className="subtext">
+    <div className={styles.App}>
+      <header className={styles.AppHeader}>
+        <div className={styles.title}> REACT-SWEEPER </div>
+        <div className={styles.subtext}>
           {' '}
           This is a React version of the classic Minesweeper game! Hit
           <i>Generate New Game</i>
@@ -114,13 +114,13 @@ function App() {
                 onClick={() => visitCell(index, i)}
                 style={visited[index][i] === 0 ? buttonStyle : visitStyle}
               >
-                {visited[index][i] === 0 ? null : bombs[index][i] === 0 ? '' : bombs[index][i] }
+                {visited[index][i] === 0 ? null : bombs[index][i] === 0 ? '' : bombs[index][i]}
               </div>
             ))}
           </div>
         ))}
         <button
-          className="generate"
+          className={styles.generate}
           onClick={() => generateBombs()}
         >
           Generate New Game
@@ -131,4 +131,4 @@ function App() {
   );
 }
 
-export default App;
+export default Minesweeper;

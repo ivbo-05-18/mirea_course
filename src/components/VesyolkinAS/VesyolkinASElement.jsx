@@ -1,10 +1,10 @@
 import React from 'react';
 import GaussianElimElement from '../PerederiyVA/Gauss';
 import Converter from './converter/converter';
-import App from './React-Sweeper-master/src/App';
+import Minesweeper from './React-Sweeper-master/src/App';
 
 const STYLE = {
-  'border-radius': '2px',
+  borderRadius: '2px',
   background: '#DFDFDF',
   margin: '10px',
   padding: '5px 25px',
@@ -23,7 +23,7 @@ const VesyolkinASElement = () => (
     </div>
     <h2> Элемент с GitHUB</h2>
     <div>
-      <App />
+      <Minesweeper />
     </div>
   </div>
 );
