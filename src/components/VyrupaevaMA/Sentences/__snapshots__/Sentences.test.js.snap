@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot match test Matches the snapshot 1`] = `
+<div>
+  <textarea
+    cols="40"
+    id="mainText"
+    name="mainText"
+    onChange={[Function]}
+    placeholder="Введите свой текст..."
+    rows="6"
+  />
+  <div>
+    <button
+      id="clear"
+      onClick={[Function]}
+      type="button"
+    >
+      Очистить
+    </button>
+  </div>
+  <p
+    id="shortest"
+  >
+    Самое короткое предложение:
+    пока не определено
+  </p>
+  <p
+    id="longest"
+  >
+    Самое длинное предложение:
+    пока не определено
+  </p>
+</div>
+`;
