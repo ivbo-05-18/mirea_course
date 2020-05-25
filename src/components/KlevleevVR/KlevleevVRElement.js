@@ -1,6 +1,7 @@
 import React from 'react';
 import GuessTheSong from './GuessTheSong';
 import ColorFood from './ColorFood/ColorFood';
+import SpacePeople from './SpacePeople/SpacePeople';
 
 const KlevleevVRElement = () => {
   const TEXT_STYLE = {
@@ -33,6 +34,10 @@ const KlevleevVRElement = () => {
         </p>
         <ColorFood width="5" height="5" />
       </div>
+      <hr />
+      <h5>Элемент от другого участника (Великанов К.Ю.)</h5>
+      <SpacePeople />
+      <hr />
     </div>
   );
 };
