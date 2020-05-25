@@ -1,0 +1,54 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: #555;
+}
+
+canvas {
+  padding: 0;
+  margin: auto;
+  display: block;
+}
+
+.buttons {
+  position: fixed;
+  bottom: 5px;
+  background: rgba(0, 0, 0, 0);
+  color: white;
+  font-family: "Roboto Mono", sans-serif;
+  border-radius: 4px;
+  border: 1px solid #fff;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.buttonLeft {
+  left: 10px;
+  width: 30px;
+}
+
+#buttonS {
+  left: 50px;
+}
+
+.buttonRight {
+  right: 10px;
+  padding: 0 5px;
+}
+
+#buttonUp {
+  right: 65px;
+}
+
+button {
+  right: 0;
+  left: 0;
+  width: 100px;
+  height: 45px;
+  margin: 0 auto;
+}
