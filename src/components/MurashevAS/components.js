@@ -2,7 +2,6 @@ import React from 'react';
 import MoneyElement from './mon_change/money';
 import GameElement from './ping-pong/ping-pong';
 import GaussianElimElement from '../PerederiyVA/Gauss';
-import Movies from './movies/Movies';
 
 const STYLE = {
   font_size: '10px',
@@ -44,10 +43,6 @@ const MurashevElement = () => (
     <div style={STYLE_TITLE}>Заимствованный элемент - решение СЛАУ методом Гаусса</div>
     <div style={STYLE}>
       <GaussianElimElement />
-    </div>
-    <div style={STYLE_TITLE}>Элемент от одногруппника - фильмотека</div>
-    <div style={STYLE}>
-      <Movies />
     </div>
   </div>
 );
