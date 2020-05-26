@@ -1,7 +1,7 @@
 import React from 'react';
-import DiceRoller from './Borrowed';
+import DiceRoller from './Borrowed/';
 import Sentences from './Sentences/Sentences';
-import Mate from './Mate/Mate';
+import PokeElement from './Mate/pokemon_main';
 
 const DEFAULT_STYLE = {
   'border-radius': '2px',
@@ -25,7 +25,7 @@ const VyrupaevaMAElement = () => (
     </div>
     <h2>Элемент от одногруппника</h2>
     <div className="mate">
-      <Mate />
+      <PokeElement />
     </div>
   </div>
 );
