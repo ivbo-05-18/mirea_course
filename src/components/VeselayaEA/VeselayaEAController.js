@@ -1,27 +1,26 @@
-import React, {useState} from 'react';
-import VeselayaEAElement from './VeselayaEAElement'
-const VeselayaEAController = () =>  {
-    
+import React, { useState } from 'react';
+import VeselayaEAElement from './VeselayaEAElement';
 
-    const [showState, switchState ] = useState({
-        show: false
-    })
+const VeselayaEAController = () => {
+  const [showState, switchState] = useState({
+    show: false,
+  });
 
-    const switchShowState = () => {
-        switchState({
-            show: !showState.show
-        })
-    }
-    
-   
-        return (<div className='VeselayaEADiv'>
-            <button onClick={ switchShowState }> Веселая Е.А. </button>
+  const switchShowState = () => {
+    switchState({
+      show: !showState.show,
+    });
+  };
 
-            { showState.show && <VeselayaEAElement/> }
-        </div>)
-    
-}
 
+  return (
+    <div className="VeselayaEADiv">
+      <button type="button" onClick={switchShowState}> Веселая Е.А. </button>
+
+      { showState.show && <VeselayaEAElement /> }
+    </div>
+  );
+};
 
 
 export default VeselayaEAController;
