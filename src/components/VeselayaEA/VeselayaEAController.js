@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Currency from './Currency';
+import VeselayaEAElement from './VeselayaEAElement'
 const VeselayaEAController = () =>  {
     
 
@@ -22,12 +22,6 @@ const VeselayaEAController = () =>  {
     
 }
 
-const VeselayaEAElement = () => {
-    
-        return (
-            <Currency/>
-         )
-    
-}
+
 
 export default VeselayaEAController;
