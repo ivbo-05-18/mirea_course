@@ -53,10 +53,10 @@ const PokeController = () => (
           <br />
           <span id="abil" />
           <br />
-          <img id="plus" src="http://cdn.onlinewebfonts.com/svg/img_416911.png" />
+          <img id="plus" />
           <span id="hp" />
           <span id="attack" />
-          <img id="sword" src="https://www.pngkey.com/png/full/95-951102_sword-free-vector-icons-designed-by-freepik-sword.png" />
+          <img id="sword" />
         </div>
       </div>
 

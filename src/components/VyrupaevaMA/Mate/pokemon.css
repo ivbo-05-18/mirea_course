@@ -55,6 +55,8 @@
 }
 
 #plus{
+  background-image: url(http://cdn.onlinewebfonts.com/svg/img_416911.png);
+  background-size: cover;
   height:15px;
   width:15px;
 }
@@ -70,6 +72,8 @@
 }
 
 #sword{
+  background-image: url(https://www.pngkey.com/png/full/95-951102_sword-free-vector-icons-designed-by-freepik-sword.png);
+  background-size: cover;
   height:15px;
   width:15px;
 }
