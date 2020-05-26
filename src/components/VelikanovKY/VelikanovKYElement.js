@@ -7,9 +7,8 @@ const VelikanovKYElement = () => (
   <div>
     <h2> Собственный элемент </h2>
     <Weather />
-
     <hr />
-    <h2>Элемент из-вне</h2>
+    <h2>Элемент извне</h2>
     <Trends />
     <hr />
   </div>
