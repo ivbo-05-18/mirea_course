@@ -8,8 +8,8 @@ async function magic() {
   document.getElementById('name').innerHTML = data.name;
   document.getElementById('weight').innerHTML = data.weight;
   document.getElementById('height').innerHTML = data.height;
-  document.getElementById('photo1').innerHTML = `<img src=${data.sprites.front_default}></img>`;
-  document.getElementById('photo2').innerHTML = `<img src=${data.sprites.back_default}></img>`;
+  document.getElementById('photo1').innerHTML = `<img src=${data.sprites.front_default} alt=""></img>`;
+  document.getElementById('photo2').innerHTML = `<img src=${data.sprites.back_default} alt=""></img>`;
   document.getElementById('form').innerHTML = data.forms[0].name;
   document.getElementById('hp').innerHTML = data.stats[5].base_stat;
   document.getElementById('attack').innerHTML = data.stats[4].base_stat;
@@ -53,10 +53,10 @@ const PokeController = () => (
           <br />
           <span id="abil" />
           <br />
-          <img id="plus" />
+          <img id="plus" alt=""/>
           <span id="hp" />
           <span id="attack" />
-          <img id="sword" />
+          <img id="sword" alt=""/>
         </div>
       </div>
 
