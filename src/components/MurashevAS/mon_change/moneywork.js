@@ -13,4 +13,4 @@ function money(rub, type, course) {
   return ' ';
 }
 
-module.exports = money;
+export default money;

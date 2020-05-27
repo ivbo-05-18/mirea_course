@@ -1,7 +1,6 @@
 import React from 'react';
-
-const key = require('./super_duper_key');
-const money = require('./moneywork');
+import key from './super_duper_key';
+import money from './moneywork';
 
 async function checktype(data, type) {
   if (type === 'euro') {
