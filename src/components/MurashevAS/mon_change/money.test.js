@@ -1,4 +1,4 @@
-const money = require('./moneywork');
+import money from './moneywork';
 
 describe('Standart test', () => {
   test('Test 1', () => {
