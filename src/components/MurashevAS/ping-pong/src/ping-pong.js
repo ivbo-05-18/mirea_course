@@ -1,1 +1,0 @@
-export { default } from './src/ping-pong_app.js'

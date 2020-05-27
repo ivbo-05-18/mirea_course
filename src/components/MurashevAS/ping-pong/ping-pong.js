@@ -1,12 +1,10 @@
 import React from 'react';
-import App from './src/ping-pong_app.js';
+import App from './ping-pong_app';
 
-class Game_Element extends React.Component {
-    render(){
-        return (
-            <App />
-        )
-    }
-}
+const GameElement = () => (
+  <div className="pp_game">
+    <App />
+  </div>
+);
 
-export default Game_Element;
+export default GameElement;

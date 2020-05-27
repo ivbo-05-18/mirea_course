@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './pp_style.css';
+import styles from './pp_style.module.css';
 
 class App extends Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     this.gameWidth = document.documentElement.clientWidth;
     this.gameHeight = document.documentElement.clientHeight;
     this.player1Score = 0;
     this.player2Score = 0;
     this.isGameOver = false;
-    this.winner = "";
+    this.winner = '';
     this.monkey = false;
 
     this.Width = this.gameWidth;
@@ -25,6 +25,7 @@ class App extends Component {
     this.paddle2Y = this.Height / 2 - this.paddleWidth / 2;
     this.paddleSpeed = this.Height > 800 ? 9 : 6;
   }
+
   componentDidMount() {
     this.btnRight.style.display = 'none';
     this.butt2.style.display = 'none';
@@ -37,25 +38,26 @@ class App extends Component {
     this.ballSpeedX = -this.ballSpeedX;
     this.ballSpeedY = 0;
   };
+
   // draw everything on screen
   drawAll = (ctx) => {
     // screen
-    ctx.fillStyle = "#333";
+    ctx.fillStyle = '#333';
     ctx.fillRect(0, 0, this.Width, this.Height);
     // middle dashed line
-    ctx.strokeStyle = "#fff";
+    ctx.strokeStyle = '#fff';
     ctx.setLineDash([10]);
     ctx.beginPath();
     ctx.moveTo(this.Width / 2, 0);
     ctx.lineTo(this.Width / 2, this.Height);
     ctx.stroke();
     // score
-    ctx.font = "60px Orbitron";
-    ctx.fillStyle = "#888";
+    ctx.font = '60px Orbitron';
+    ctx.fillStyle = '#888';
     ctx.fillText(this.player1Score, this.Width / 2 / 2, 100);
     ctx.fillText(this.player2Score, (this.Width / 2) * 1.5, 100);
     // 2 rects
-    ctx.fillStyle = "#fff";
+    ctx.fillStyle = '#fff';
     ctx.fillRect(0, this.paddle1Y, 10, this.paddleWidth);
     ctx.fillRect(this.Width - 10, this.paddle2Y, 10, this.paddleWidth);
     // ball
@@ -63,6 +65,7 @@ class App extends Component {
     ctx.arc(this.ballX, this.ballY, this.ballRadius, 0, Math.PI * 2);
     ctx.fill();
   };
+
   // move stuff begore drawing again
   moveAll = (keys) => {
     // ball movement
@@ -73,30 +76,30 @@ class App extends Component {
     if (this.ballX > this.Width || this.ballX < 0) {
       // right side collision
       if (
-        this.ballX > this.Width / 2 &&
-        (this.ballY >= this.paddle2Y && this.ballY <= this.paddle2Y + this.paddleWidth)
+        this.ballX > this.Width / 2
+        && (this.ballY >= this.paddle2Y && this.ballY <= this.paddle2Y + this.paddleWidth)
       ) {
         this.ballSpeedX = -this.ballSpeedX;
-        let deltaY = this.ballY - (this.paddle2Y + this.paddleWidth / 2);
+        const deltaY = this.ballY - (this.paddle2Y + this.paddleWidth / 2);
         this.ballSpeedY = deltaY * 0.2;
       } else if (
-        this.ballX < this.Width / 2 &&
-        (this.ballY >= this.paddle1Y && this.ballY <= this.paddle1Y + this.paddleWidth)
+        this.ballX < this.Width / 2
+        && (this.ballY >= this.paddle1Y && this.ballY <= this.paddle1Y + this.paddleWidth)
       ) {
         this.ballSpeedX = -this.ballSpeedX;
-        let deltaY = this.ballY - (this.paddle1Y + this.paddleWidth / 2);
+        const deltaY = this.ballY - (this.paddle1Y + this.paddleWidth / 2);
         this.ballSpeedY = deltaY * 0.2;
       } else {
         if (this.ballX < this.Width / 2) {
-          this.player2Score++;
+          this.player2Score += 1;
           if (this.player2Score === 11) {
-            this.winner = "PLAYER2";
+            this.winner = 'PLAYER2';
             this.isGameOver = true;
           }
         } else {
-          this.player1Score++;
+          this.player1Score += 1;
           if (this.player1Score === 11) {
-            this.winner = "PLAYER1";
+            this.winner = 'PLAYER1';
             this.isGameOver = true;
           }
         }
@@ -109,21 +112,19 @@ class App extends Component {
     // ai paddle movement, limits at canvas boundaries to make it more efficient
     if (!this.monkey) {
       if (
-        this.ballY > this.paddle2Y + this.paddleWidth / 3 &&
-        this.paddle2Y + this.paddleWidth < this.Height
+        this.ballY > this.paddle2Y + this.paddleWidth / 3
+        && this.paddle2Y + this.paddleWidth < this.Height
       ) {
         this.paddle2Y += this.paddleSpeed;
       } else if (this.ballY < this.paddle2Y + this.paddleWidth / 3 && this.paddle2Y > 0) {
         this.paddle2Y -= this.paddleSpeed;
       }
-    } else {
-      if (keys.isPressed(76) && this.paddle2Y + this.paddleWidth < this.Height) {
-        // DOWN
-        this.paddle2Y += this.paddleSpeed;
-      } else if (keys.isPressed(79) && this.paddle2Y > 0) {
-        // UP
-        this.paddle2Y -= this.paddleSpeed;
-      }
+    } else if (keys.isPressed(76) && this.paddle2Y + this.paddleWidth < this.Height) {
+      // DOWN
+      this.paddle2Y += this.paddleSpeed;
+    } else if (keys.isPressed(79) && this.paddle2Y > 0) {
+      // UP
+      this.paddle2Y -= this.paddleSpeed;
     }
     // player1 paddle movement thanks to
     // http://blog.mailson.org/2013/02/simple-pong-game-using-html5-and-canvas
@@ -136,6 +137,7 @@ class App extends Component {
       this.paddle1Y -= this.paddleSpeed;
     }
   };
+
   // draw default if changing game type, else save last draw
   GameOver = (ctx) => {
     this.ballSpeedY = 0;
@@ -143,41 +145,27 @@ class App extends Component {
     this.paddle2Y = this.Height / 2 - this.paddleWidth / 2;
     this.player1Score = 0;
     this.player2Score = 0;
-    ctx.textAlign = "center";
-    if (this.winner !== "") {
-      ctx.fillStyle = "#888";
-      ctx.font = "72px Orbitron";
-      ctx.fillText(this.winner + " WON!", this.Width / 2, 150);
+    ctx.textAlign = 'center';
+    if (this.winner !== '') {
+      ctx.fillStyle = '#888';
+      ctx.font = '72px Orbitron';
+      ctx.fillText(`${this.winner} WON!`, this.Width / 2, 150);
     } else {
       this.ballY = this.Height / 2;
       this.ballX = this.Width / 2;
       this.drawAll(ctx);
       this.isGameOver = true;
     }
-    ctx.font = "50px Roboto Mono";
-    ctx.fillText("Click w or s to start a new game.", this.Width / 2, 200);
-    document.addEventListener("keypress", (e) => {
+    ctx.font = '50px Roboto Mono';
+    ctx.fillText('Click w or s to start a new game.', this.Width / 2, 200);
+    document.addEventListener('keypress', () => {
       this.isGameOver = false;
-      this.winner = "";
+      this.winner = '';
     });
   };
 
   update() {
-    // const Width = this.gameWidth,
-    //   Height = this.gameHeight,
-    //   ctx = this.canvas.getContext("2d"),
-    //   fps = 60,
-    //   paddleWidth = Height > 800 ? 200 : 100;
-    // let ballY = Height / 2,
-    //   ballX = Width / 2,
-    //   ballRadius = 6,
-    //   ballSpeedY = 0,
-    //   ballSpeedX = Height / 75;
-    // let paddle1Y = Height / 2 - paddleWidth / 2,
-    //   paddle2Y = Height / 2 - paddleWidth / 2,
-    //   paddleSpeed = Height > 800 ? 9 : 6;
-
-    const ctx = this.canvas.getContext("2d");
+    const ctx = this.canvas.getContext('2d');
     function KeyListener() {
       this.pressedKeys = [];
       this.keydown = (e) => {
@@ -186,22 +174,22 @@ class App extends Component {
       this.keyup = (e) => {
         this.pressedKeys[e.keyCode] = false;
       };
-      document.addEventListener("keydown", this.keydown.bind(this));
-      document.addEventListener("keyup", this.keyup.bind(this));
+      document.addEventListener('keydown', this.keydown.bind(this));
+      document.addEventListener('keyup', this.keyup.bind(this));
     }
-    KeyListener.prototype.isPressed = function(key) {
-      return this.pressedKeys[key] ? true : false;
+    KeyListener.prototype.isPressed = function defaultname(key) {
+      return !!this.pressedKeys[key];
     };
-    KeyListener.prototype.addKeyPressListener = function(keyCode, callback) {
-      document.addEventListener("keypress", (e) => {
-        if (e.keyCode === keyCode) callback(e);
+    KeyListener.prototype.addKeyPressListener = function defaultname2(keyCode, callback) {
+      document.addEventListener('keypress', (e) => {
+        if (e.keyCode === keyCode) { callback(e); }
       });
     };
     const keys = new KeyListener();
 
-    
+
     // trigger 2 this.monkeys
-    this.butt1.addEventListener('click' ,() => {
+    this.butt1.addEventListener('click', () => {
       this.ballY = this.Height / 2;
       this.ballX = this.Width / 2;
       this.GameOver(ctx);
@@ -210,7 +198,7 @@ class App extends Component {
       this.butt2.style.display = 'initial';
     });
     // trigger AI
-    this.butt2.addEventListener('click' ,() => {
+    this.butt2.addEventListener('click', () => {
       this.GameOver(ctx);
       this.monkey = false;
       this.butt2.style.display = 'none';
@@ -234,37 +222,47 @@ class App extends Component {
     return (
       <div>
         <canvas
-          ref={(canvas) => {this.canvas = canvas}}
+          ref={(canvas) => { this.canvas = canvas; }}
           width={this.gameWidth}
           height={this.gameHeight}
-          id="gameCanvas"
+          id={styles.gameCanvas}
         />
-        <div className="buttons buttonLeft">W</div>
-        <div className="buttons buttonLeft" id="buttonS">S</div>
-        <div 
+        <div className={styles.buttonLeft}>W</div>
+        <div className={styles.buttonLeft} id={styles.button}>S</div>
+        <div
           ref={(element) => {
-            this.btnRight = element
+            this.btnRight = element;
           }}
-          className="buttons buttonRight" id="buttonUp"
-          >Up</div>
-        <div 
-          ref={(element) => {this.btnRight = element}}
-          className="buttons buttonRight"
-        >Down</div>
-        <button 
-          ref={(butt1) => {this.butt1 = butt1}}
-          className="buttons" 
-          id="butt1"
-        >vs Computer</button>
-        <button 
-          ref={(butt2) => {this.butt2 = butt2}}
-          className="buttons" 
-          id="butt2"
-        >2 Players</button>
+          className={styles.buttonRight}
+          id={styles.buttonUp}
+        >
+          Up
+        </div>
+        <div
+          ref={(element) => { this.btnRight = element; }}
+          className={styles.buttonRight}
+        >
+          Down
+        </div>
+        <button
+          type="button"
+          ref={(butt1) => { this.butt1 = butt1; }}
+          className={styles.buttons}
+          id={styles.butt1}
+        >
+          vs Computer
+        </button>
+        <button
+          type="button"
+          ref={(butt2) => { this.butt2 = butt2; }}
+          className={styles.buttons}
+          id={styles.butt2}
+        >
+          2 Players
+        </button>
       </div>
     );
   }
 }
 
 export default App;
-

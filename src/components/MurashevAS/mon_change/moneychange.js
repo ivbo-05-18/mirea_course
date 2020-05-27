@@ -1,5 +1,4 @@
 import React from 'react';
-import './money.css';
 
 const key = require('./super_duper_key');
 const money = require('./moneywork');
