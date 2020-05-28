@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.minesweeper {
+  text-align: center;
+  width: 500px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.title{
+  color: black;
+  font-size: 44px;
+  font-family: 'Fjalla One', sans-serif;
+  cursor: pointer;
+}
+.subtext {
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.generate {
+  width: 150px;
+  border: 2px solid black;
+  background: transparent;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.minesweeper-header {
+  color: black;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
