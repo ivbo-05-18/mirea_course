@@ -1,19 +1,18 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import Cell from '../Cell/Cell';
-import './Grid.css';
+import styles from './Grid.module.css';
 
 const Grid = ({ grid, colors }) => {
   const rows = Object.keys(grid.nodes).map((v) => (
     <Cell
       key={v}
       color={colors[grid.nodes[v].color]}
-      size={grid.size}
     />
   ));
 
   return (
-    <div className="grid">
+    <div className={styles.grid}>
       {rows}
     </div>
   );

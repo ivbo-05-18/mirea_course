@@ -3,7 +3,7 @@ import Grid from './components/Grid/Grid';
 import ColorPickers from './components/ColorPickers/ColorPickers';
 import Graph from './Graph';
 
-import './index.css';
+import styles from './index.module.css';
 
 const SIZE = 12;
 const COLORS = ['blue', 'red', 'green', 'yellow', 'orange'];
@@ -57,14 +57,14 @@ class ColorFood extends Component {
 
   render() {
     const {
-      count, colors, graph, size,
+      count, colors, graph,
     } = this.state;
     return (
-      <div className="content">
-        <div className="header">
+      <div className={styles.content}>
+        <div className={styles.header}>
           <h1>Color Flood</h1>
           <div
-            className="newgame"
+            className={styles.newgame}
             role="button"
             tabIndex="0"
             onClick={() => this.restart()}
@@ -72,7 +72,7 @@ class ColorFood extends Component {
           >
             New Game
           </div>
-          <div className="count">
+          <div className={styles.count}>
             Changes
             <span>{count}</span>
           </div>
@@ -82,7 +82,7 @@ class ColorFood extends Component {
           clickHandler={this.colorFill}
           incrementCount={this.incrementCount}
         />
-        <Grid grid={graph} colors={colors} size={size} />
+        <Grid grid={graph} colors={colors} />
       </div>
     );
   }

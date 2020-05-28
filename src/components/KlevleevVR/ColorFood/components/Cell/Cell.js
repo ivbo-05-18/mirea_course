@@ -1,12 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import './Cell.css';
+import classes from './Cell.module.css';
 
-const Cell = ({ color, size }) => {
-  const classString = `cell-${size} ${color}`;
-  return (
-    <div className={classString} />
-  );
-};
+const Cell = ({ color }) => (
+  <div className={classes[`${color}`]} />
+);
 
 export default Cell;
