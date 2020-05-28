@@ -6,9 +6,16 @@ export default function MemeCreator(props) {
   const [bottomText, setBottomText] = useState('');
   const [createdMeme, setCreatedMeme] = useState(null);
 
+  const TIP_STYLE = {
+    fontSize: '15px',
+    color: 'gray',
+    margin: '10px 0px',
+  };
+
   function objToQueryString(params) {
     return Object.keys(params).map((key) => `${key}=${params[key]}`).join('&');
   }
+
   async function submitMeme(e) {
     e.preventDefault();
     const body = {
@@ -25,15 +32,23 @@ export default function MemeCreator(props) {
   return (
     <>
       {createdMeme ? (
-        <img src={createdMeme} alt="your created meme!" />
+        <img src={createdMeme} alt="your created meme!" style={{ width: 350 }} />
       ) : (
-        <div className="meme-editor">
+        <div className="meme-editor" style={{ display: 'block' }}>
           <Meme meme={props.meme} />
+          <hr />
           <div className="meme-editor-inputs">
+            <p style={TIP_STYLE}>Добавьте надписи к мему</p>
             <form onSubmit={submitMeme}>
-              <input placeholder="надпись сверху" value={topText} onChange={(e) => { setTopText(e.target.value); }} />
-              <input placeholder="надпись снизу" value={bottomText} onChange={(e) => { setBottomText(e.target.value); }} />
-              <button type="submit">создать мемес</button>
+              <div>
+                <input placeholder="надпись сверху" value={topText} onChange={(e) => { setTopText(e.target.value); }} />
+              </div>
+              <div>
+                <input placeholder="надпись снизу" value={bottomText} onChange={(e) => { setBottomText(e.target.value); }} />
+              </div>
+              <div>
+                <button type="submit">создать мемес</button>
+              </div>
             </form>
           </div>
         </div>

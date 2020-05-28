@@ -27,7 +27,12 @@ export default function MemeCreator() {
   );
   return (
     <div className="meme-creator" style={MEMES_STYLE}>
-      {curMeme && <MemeEditor meme={curMeme} />}
+      {curMeme && (
+      <>
+        <button style={{ margin: 10 }} type="button" onClick={() => { setCurMeme(null); }}>назад</button>
+        <MemeEditor meme={curMeme} />
+      </>
+      )}
       {!curMeme && (
       <>
         <p style={DESC_STYLE}>Выберите мем</p>

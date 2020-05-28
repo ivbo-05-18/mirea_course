@@ -9,7 +9,7 @@ export default function KomarBGElement() {
   };
 
   const ELEMENT_STYLE = {
-    'border-radius': '2px',
+    borderRadius: '2px',
     background: '#DFDFDF',
     margin: '10px',
     padding: '5px 25px',
