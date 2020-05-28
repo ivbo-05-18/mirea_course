@@ -68,6 +68,7 @@ class GuessTheSong extends Component {
           .then((response) => response.json())
           .then((jsonLyrics) => {
             const lyrics = JSON.stringify(jsonLyrics.message.body.lyrics.lyrics_body)
+              .replace(/\\"/g, '"')
               .split('\\n')
               .filter((x) => x !== '');
 
@@ -103,12 +104,9 @@ class GuessTheSong extends Component {
       <div style={BODY_STYLE}>
         <h3>Угадай песню</h3>
 
-        <p
-          dangerouslySetInnerHTML={{
-            __html: lyrics,
-          }}
-          style={LYRICS_STYLE}
-        />
+        <div style={LYRICS_STYLE}>
+          {lyrics.split('<br/>').map((it) => <p>{it}</p>)}
+        </div>
 
         <fieldset style={FIELDSET_STYLE}>
           <legend style={LEGEND_STYLE}>Ваш ответ:</legend>
