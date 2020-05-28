@@ -19,7 +19,7 @@ const LYRICS_STYLE = {
 
 const FIELDSET_STYLE = {
   display: 'flex',
-  'flex-direction': 'column',
+  flexDirection: 'column',
   margin: '5px auto',
   width: '80%',
   maxWidth: '400px',
