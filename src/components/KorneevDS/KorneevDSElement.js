@@ -1,38 +1,44 @@
 import React from 'react';
+import Watch from './watch/watch';
+import Leaderboard from '../PetrovSD/Leaderboard';
+import TicTacToe from './react-tic-tac-toe';
 
-export default class KorneevDSElement extends React.Component {
-  static currentTime() {
-    const date = new Date();
-    const hours = date.getHours() < 10 ? `0${date.getHours()}` : date.getHours();
-    const minutes = date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes();
-    const seconds = date.getSeconds() < 10 ? `0${date.getSeconds()}` : date.getSeconds();
-    return `${hours}:${minutes}:${seconds}`;
-  }
+const STYLE = {
+  'border-radius': '2px',
+  background: '#999',
+  margin: '10px',
+  padding: '5px 25px',
+};
 
-  constructor(props) {
-    super(props);
+const BLOCK_STYLE = {
+  'max-width': 900,
+  display: 'flex',
+  'flex-direction': 'row',
+  'justify-content': 'center',
+  'font-size': '16px',
+};
 
-    window.setInterval(this.updateDate.bind(this), 500);
+const TEXT_STYLE = {
+  'font-size': '16px',
+  color: 'black',
+  margin: '10px 0px',
+};
 
-    this.state = {
-      time: KorneevDSElement.currentTime(),
-    };
-  }
+const KorneevDSElement = () => (
+  <div style={STYLE}>
+    <h2 style={TEXT_STYLE}>Собственный элемент - часы</h2>
+    <div style={BLOCK_STYLE}>
+      <Watch />
+    </div>
+    <h2 style={TEXT_STYLE}>Заимствованный элемент - игра &quot;Крестики-нолики&quot;</h2>
+    <div style={BLOCK_STYLE}>
+      <TicTacToe />
+    </div>
+    <h2 style={TEXT_STYLE}>Элемент одногруппника  (Петров С.Д.)</h2>
+    <div style={BLOCK_STYLE}>
+      <Leaderboard />
+    </div>
+  </div>
+);
 
-  updateDate() {
-    this.setState({
-      time: KorneevDSElement.currentTime(),
-    });
-  }
-
-  render() {
-    const { time } = this.state;
-
-    return (
-      <div className="timeContainer">
-        <h1>{time}</h1>
-        <p>Current Local Time</p>
-      </div>
-    );
-  }
-}
+export default KorneevDSElement;
