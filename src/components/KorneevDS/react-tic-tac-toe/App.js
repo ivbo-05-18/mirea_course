@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import './TicTacToe.css';
+import game_styles from './TicTacToe.css';
 import Game from './Game.js';
 
 class App extends Component {
@@ -9,7 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <p className="App-intro">
-          <Game />
+          <Game class={game_styles} />
         </p>
       </div>
     );
