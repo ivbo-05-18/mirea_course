@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshot match test Matches the snapshot 1`] = `
-<div>
+<div
+  type="vyrupaeva_div"
+>
   <textarea
     cols="40"
     id="mainText"
@@ -10,7 +12,9 @@ exports[`Snapshot match test Matches the snapshot 1`] = `
     placeholder="Введите свой текст..."
     rows="6"
   />
-  <div>
+  <div
+    className="vyrupaeva"
+  >
     <button
       id="clear"
       onClick={[Function]}
@@ -20,12 +24,14 @@ exports[`Snapshot match test Matches the snapshot 1`] = `
     </button>
   </div>
   <p
+    className="vyrupaeva_paragraph"
     id="shortest"
   >
     Самое короткое предложение:
     пока не определено
   </p>
   <p
+    className="vyrupaeva_paragraph"
     id="longest"
   >
     Самое длинное предложение:
