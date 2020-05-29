@@ -8,7 +8,7 @@ describe('Проверка верности расчётов', () => {
     expect(calculate(0, 5, 2)).toBe(`x1=${-0.4}`);
   });
   test('1x^2+5x+4', () => {
-    expect(calculate(1, 5, 4)).toBe(`x1=${-1};` + `x2=${-4}`);
+    expect(calculate(1, 5, 4)).toBe(`x1=${-1};x2=${-4}`);
   });
   test('2x', () => {
     expect(calculate(0, 2, 0)).toBe(`x1=${0}`);

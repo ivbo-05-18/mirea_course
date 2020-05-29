@@ -8,6 +8,6 @@ function calculate(a, b, c) {
   } if (D === 0) {
     return (`x1=x2=${-b / (2 * a)}`);
   }
-  return (`x1=${(-b + Math.sqrt(D)) / (2 * a)};` + `x2=${(-b - Math.sqrt(D)) / (2 * a)}`);
+  return (`x1=${(-b + Math.sqrt(D)) / (2 * a)};x2=${(-b - Math.sqrt(D)) / (2 * a)}`);
 }
 export default calculate;
