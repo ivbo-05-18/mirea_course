@@ -3,9 +3,8 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable no-nested-ternary */
 /* eslint-disable react/button-has-type */
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
-import './App.css';
+import './Dice.css';
 
 import Die from './Die';
 
@@ -37,18 +36,20 @@ class DiceRoller extends Component {
   }
 
   calcSum() {
-    return this.state.dice.reduce((acc, die) => acc + die.value, 0);
+    const { dice } = this.state;
+    return dice.reduce((acc, die) => acc + die.value, 0);
   }
 
   renderDie(key) {
+    const { dice } = this.state;
     return (
-      <div key={key} className="die col-2">
+      <div key={key} className="vyrupaeva_die">
         <button onClick={() => this.rollDie(key)}>
-          {this.state.dice[key].value}
+          Roll!
+          {dice[key].value}
         </button>
         <div className="die-label">
-          d
-          {this.state.dice[key].faces}
+          {dice[key].faces}
         </div>
         <div className="die-remove">
           <button onClick={() => this.removeDie(key)}>
@@ -60,27 +61,30 @@ class DiceRoller extends Component {
   }
 
   renderDesc() {
+    const { dice } = this.state;
+    const { mod } = this.state;
     const counts = {};
-    this.state.dice.forEach((die) => {
+    dice.forEach((die) => {
       counts[die.faces] = counts[die.faces] === undefined
         ? 1
         : counts[die.faces] + 1;
     });
     const pool = Object.keys(counts).map(
       (type) => `${counts[type]}d${type}`,
-    ).join(' + ');
-    const mod = this.state.mod
-      ? this.state.mod > 0
-        ? ` + ${this.state.mod}`
-        : ` - ${-this.state.mod}`
+    ).join(' + ')
+      ? mod > 0
+        ? ` + ${mod}`
+        : ` - ${-mod}`
       : '';
     return pool + mod;
   }
 
   render() {
+    const { dice } = this.state;
+    const { mod } = this.state;
     return (
       <div className="App container">
-        <div id="adders" className="row">
+        <div id="adders" className="vyrupaeva">
           {[4, 6, 8, 10, 100, 12, 20].map((faces, key) => (
             <button className="col" key={key} onClick={() => { this.addDie(faces); }}>
               +d
@@ -91,11 +95,11 @@ class DiceRoller extends Component {
         <div id="controllers">
           <div id="total-display" className="row">
             <div className="col-8" style={{ padding: 0 }}>
-              <button style={{ float: 'left' }} onClick={() => { this.setState({ mod: this.state.mod - 1 }); }}>
+              <button style={{ float: 'left' }} onClick={() => { this.setState({ mod: mod - 1 }); }}>
                 -
               </button>
               {this.renderDesc()}
-              <button style={{ float: 'right' }} onClick={() => { this.setState({ mod: this.state.mod + 1 }); }}>
+              <button style={{ float: 'right' }} onClick={() => { this.setState({ mod: mod + 1 }); }}>
                 +
               </button>
             </div>
@@ -105,12 +109,11 @@ class DiceRoller extends Component {
               {this.calcSum()}
             </div>
           </div>
-          <div className="row">
+          <div className="vyrupaeva">
             <button
               type="button"
-              className="col"
               onClick={() => {
-                this.state.dice.forEach((_, key) => {
+                dice.forEach((_, key) => {
                   this.rollDie(key);
                 });
               }}
@@ -119,9 +122,8 @@ class DiceRoller extends Component {
             </button>
             <button
               type="button"
-              className="col"
               onClick={() => {
-                while (this.state.dice.length) {
+                while (dice.length) {
                   this.removeDie(0);
                 }
                 this.setState({ mod: 0 });
@@ -131,9 +133,7 @@ class DiceRoller extends Component {
             </button>
             <button
               type="button"
-              className="col"
               onClick={() => {
-                const { dice } = this.state;
                 dice.forEach((d) => { d.value = 0; });
                 this.setState({ dice });
               }}
@@ -143,7 +143,7 @@ class DiceRoller extends Component {
           </div>
         </div>
         <div id="dicepool" className="row">
-          {this.state.dice.map((_, key) => this.renderDie(key))}
+          {dice.map((_, key) => this.renderDie(key))}
         </div>
       </div>
     );

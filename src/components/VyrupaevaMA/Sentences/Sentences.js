@@ -1,5 +1,4 @@
 /* eslint-disable no-trailing-spaces */
-/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import './Sentences.css';
 import getResult from './getResult';
@@ -26,19 +25,21 @@ class Sentences extends Component {
   }
 
   render() {
+    const { longest } = this.state;
+    const { shortest } = this.state;
     return (
-      <div>
+      <div type="vyrupaeva_div">
         <textarea onChange={this.change} id="mainText" name="mainText" cols="40" rows="6" placeholder="Введите свой текст..." />
-        <div>
+        <div className="vyrupaeva">
           <button type="button" id="clear" onClick={this.clear}>Очистить</button>
         </div>
-        <p id="shortest">
+        <p className="vyrupaeva_paragraph" id="shortest">
           Самое короткое предложение: 
-          {this.state.shortest}
+          {shortest}
         </p>
-        <p id="longest">
+        <p className="vyrupaeva_paragraph" id="longest">
           Самое длинное предложение: 
-          {this.state.longest}
+          {longest}
         </p>
       </div>
     );

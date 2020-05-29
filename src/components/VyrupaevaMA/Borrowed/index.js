@@ -1,4 +1,4 @@
-export { default } from './App';
+export { default } from './DiceRoller';
 
 /*
 --- This already was here ---

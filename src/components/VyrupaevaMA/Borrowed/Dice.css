@@ -1,18 +1,20 @@
-button {
-  font-size: inherit;
+/* It's all COURIER now! */
+.vyrupaeva button {
+  font-family: courier;
+  background-color: #EEE;
 }
 
-.App {
+.DiceRoller {
   text-align: center;
 }
 
-.App-logo {
+.Dice-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
 
-.App-header {
+.Dice-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -23,19 +25,20 @@ button {
   color: white;
 }
 
-.App-link {
+.Dice-link {
   color: #61dafb;
 }
 
-.die {
+.vyrupaeva_die {
   margin: 5px 0;
   background-color: #EEE;
   border: 1px solid white;
   padding: 0;
 }
 
-.die button {
-  background-color: lightblue;
+.vyrupaeva_die button {
+  font-family: courier;
+  background-color: #EEE;
   padding: 5px;
   width: 100%;
 }
@@ -45,24 +48,16 @@ button {
 }
 
 .die-remove button {
+  font-family: courier;
   font-size: small;
   padding: 5px;
   width: 100%;
-  background-color: pink;
 }
 
 #total-display {
   font-size: large;
   /* I just added color, white was too obscure */
   color: rgb(44, 22, 80)
-}
-
-#adders button {
-  background-color: yellowgreen;
-}
-
-#controllers button {
-  background-color: orange;
 }
 
 @keyframes App-logo-spin {

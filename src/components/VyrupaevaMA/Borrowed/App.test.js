@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import DiceRoller from './DiceRoller';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<DiceRoller />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
