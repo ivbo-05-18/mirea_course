@@ -377,6 +377,10 @@ class Board extends Component {
         }}
         >
 
+          <style type="text/css" scoped>
+            {'<Inject>../css/index.css</Inject>'}
+          </style>
+
           <div style={{
             height: 30,
             fontSize: Math.max(10, this.state.scale * 0.6),
