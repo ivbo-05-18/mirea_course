@@ -1,7 +1,7 @@
 import React from 'react';
 import MemeCreator from './MemeCreator/MemeCreator';
 import ChromeDinoComponent from './DinoGame';
-import Captcha from './Captcha/Captcha';
+import Captcha from '../PerederiyVA/Captcha/Captcha';
 
 export default function KomarBGElement() {
   const TEXT_STYLE = {
