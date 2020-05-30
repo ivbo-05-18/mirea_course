@@ -3,11 +3,14 @@ import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import KarpikAAController from './components/KarpikAA/KarpikAAController';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <KarpikAAController />
 
         <PerederiyVAController />
 
