@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Тестирование рендринга renders correctly 1`] = `
+<div
+  className="App"
+  style={
+    Object {
+      "height": "100%",
+      "width": "100%",
+    }
+  }
+>
+  <h1
+    style={
+      Object {
+        "color": "white",
+        "fontSize": "14px",
+        "marginTop": "3rem",
+        "textAlign": "center",
+      }
+    }
+  >
+    A void element tag walks into the bar, but the barmen says: "You are not allowed to have children!"
+  </h1>
+  <div
+    className="quote-box"
+    id="quote-box"
+    style={
+      Object {
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="quote-container"
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "flexFlow": "row wrap",
+          "height": 280,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <h2
+        className="setup"
+        id="setup"
+        style={
+          Object {
+            "display": "none",
+          }
+        }
+      >
+        
+      </h2>
+      <h2
+        className="punchline"
+        id="punchline"
+        style={
+          Object {
+            "background": "white",
+            "borderRadius": "50%",
+            "fontSize": "20px",
+            "margin": "1.5rem",
+            "padding": "3rem 4rem",
+            "textAlign": "center",
+            "width": 300,
+          }
+        }
+      >
+        
+      </h2>
+    </div>
+    <div
+      className="button-container"
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <div
+        className="button"
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "darkblue",
+            "border": "3px solid white",
+            "borderRadius": "0.5rem",
+            "color": "white",
+            "cursor": "pointer",
+            "fontSize": "1.2rem",
+            "margin": "1rem",
+            "padding": "0.5rem",
+          }
+        }
+      >
+        Get Joke
+      </div>
+    </div>
+  </div>
+</div>
+`;
