@@ -5,8 +5,8 @@ import './Chart_CSS_Element.css';
 
 const margin = {top: 20, right: 20, bottom: 30, left: 100};
 const data = [
-  {text: 'Man', value: 0.20}, 
-  {text: 'Woman', value: 0.330} 
+  {text: 'Men', value: 0.20}, 
+  {text: 'Women', value: 0.330} 
    ]
   
 class Chart extends React.Component {
@@ -14,10 +14,11 @@ class Chart extends React.Component {
 constructor(props) {
     super(props);
     this.state = {
-      isGoing: 0,
-      numberOfGuests: 2
+      Men: null,
+      Women: null
         
     };
+    
         this.handleInputChange = this.handleInputChange.bind(this);
   }
   
@@ -31,14 +32,13 @@ constructor(props) {
     this.setState({
       [name]: value
     })
-      if (name==='isGoing')
+      if (name==='Men')
       { data[0]['value'] = value; }
-       if (name==='numberOfGuests')
+       if (name==='Women')
       { data[1]['value'] = value; }
-//      console.log(value);
-//      console.log(target);
-//      console.log(name);
+
       console.log(data[0]['value']);
+         console.log(data[1]['value']);
           
   }
     
@@ -57,9 +57,10 @@ constructor(props) {
                 <label>
                 Men:
                    <input
-                        name="isGoing"
+                       
+                        name="Men1"
                         type="number"
-                        value={this.state.isGoing}
+                        value={this.state.Men}
                         onChange={this.handleInputChange} />
                 </label>
               </form> 
@@ -70,18 +71,19 @@ constructor(props) {
                 <label>
                 Women:
                     <input
-                        name="numberOfGuests"
+                        name="Women"
                         type="number"
-                        value={this.state.numberOfGuests}
+                        value={this.state.Women}
                         onChange={this.handleInputChange} />
                 </label>
               </form> 
             </td> 
         </tr>
         </table>
-        
-              <div>
-            <div > 
+       
+  
+            
+        <div > 
                 <BarChart 
                   ylabel='Quantity'
                   data={data}
@@ -90,7 +92,7 @@ constructor(props) {
                   margin={margin}
        
                   />
-            </div>
+           
         </div>
                
         
