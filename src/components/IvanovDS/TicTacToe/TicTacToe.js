@@ -1,26 +1,5 @@
 import React, { Component } from 'react';
-
-const BUTTON = {
-  width: '200px',
-  height: '200px',
-  fontSize: '200%',
-  backgroundColor: 'black',
-  color: 'white',
-};
-
-const WINS = {
-  width: '600px',
-  margin: '0 auto',
-  textAlign: 'center',
-};
-const TD = {
-  width: '300px',
-};
-const BOARD = {
-  width: '600px',
-  height: '600px',
-  margin: '0 auto',
-};
+import classes from './TicTacToe.module.css';
 
 class TicTacToe extends Component {
   constructor(props) {
@@ -99,37 +78,37 @@ class TicTacToe extends Component {
 
       return (
         <div>
-          <h4 id="status" style={{ margin: 'auto' }}>{status}</h4>
-          <table style={WINS}>
+          <h4 id="status" className={classes.status}>{status}</h4>
+          <table className={classes.wins}>
             <thead>
               <tr>
-                <td style={TD}>X</td>
-                <td style={TD}>O</td>
+                <td className={classes.td}>X</td>
+                <td className={classes.td}>O</td>
               </tr>
             </thead>
             <tfoot>
               <tr>
-                <td id="X" style={TD}>{wins.X}</td>
-                <td id="O" style={TD}>{wins.O}</td>
+                <td id="X" className={classes.td}>{wins.X}</td>
+                <td id="O" className={classes.td}>{wins.O}</td>
               </tr>
             </tfoot>
           </table>
-          <table style={BOARD}>
+          <table className={classes.board}>
             <tbody>
               <tr>
-                <td className="td"><button style={BUTTON} type="button" id="0" onClick={this.changer} onKeyDown={this.changer}>{cells[0]}</button></td>
-                <td className="td"><button style={BUTTON} type="button" id="1" onClick={this.changer} onKeyDown={this.changer}>{cells[1]}</button></td>
-                <td className="td"><button style={BUTTON} type="button" id="2" onClick={this.changer} onKeyDown={this.changer}>{cells[2]}</button></td>
+                <td><button className={classes.btn} type="button" id="0" onClick={this.changer} onKeyDown={this.changer}>{cells[0]}</button></td>
+                <td><button className={classes.btn} type="button" id="1" onClick={this.changer} onKeyDown={this.changer}>{cells[1]}</button></td>
+                <td><button className={classes.btn} type="button" id="2" onClick={this.changer} onKeyDown={this.changer}>{cells[2]}</button></td>
               </tr>
               <tr>
-                <td className="td"><button style={BUTTON} type="button" id="3" onClick={this.changer} onKeyDown={this.changer}>{cells[3]}</button></td>
-                <td className="td"><button style={BUTTON} type="button" id="4" onClick={this.changer} onKeyDown={this.changer}>{cells[4]}</button></td>
-                <td className="td"><button style={BUTTON} type="button" id="5" onClick={this.changer} onKeyDown={this.changer}>{cells[5]}</button></td>
+                <td><button className={classes.btn} type="button" id="3" onClick={this.changer} onKeyDown={this.changer}>{cells[3]}</button></td>
+                <td><button className={classes.btn} type="button" id="4" onClick={this.changer} onKeyDown={this.changer}>{cells[4]}</button></td>
+                <td><button className={classes.btn} type="button" id="5" onClick={this.changer} onKeyDown={this.changer}>{cells[5]}</button></td>
               </tr>
               <tr>
-                <td className="td"><button style={BUTTON} type="button" id="6" onClick={this.changer} onKeyDown={this.changer}>{cells[6]}</button></td>
-                <td className="td"><button style={BUTTON} type="button" id="7" onClick={this.changer} onKeyDown={this.changer}>{cells[7]}</button></td>
-                <td className="td"><button style={BUTTON} type="button" id="8" onClick={this.changer} onKeyDown={this.changer}>{cells[8]}</button></td>
+                <td><button className={classes.btn} type="button" id="6" onClick={this.changer} onKeyDown={this.changer}>{cells[6]}</button></td>
+                <td><button className={classes.btn} type="button" id="7" onClick={this.changer} onKeyDown={this.changer}>{cells[7]}</button></td>
+                <td><button className={classes.btn} type="button" id="8" onClick={this.changer} onKeyDown={this.changer}>{cells[8]}</button></td>
               </tr>
             </tbody>
           </table>
