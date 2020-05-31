@@ -2,16 +2,16 @@ import React from 'react';
 import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController'
-import BekinaMPController from './components/BekinaMP/BekinaMPController'
+import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import BekinaMPController from './components/BekinaMP/BekinaMPController';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BekinaMPController/>
+        <BekinaMPController />
 
-        <PerederiyVAController/>
+        <PerederiyVAController />
 
         <PerederiyVAController />
 
