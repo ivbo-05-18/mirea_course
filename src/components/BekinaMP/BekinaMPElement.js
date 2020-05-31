@@ -17,10 +17,10 @@ const BekinaMPElement = () => {
             <p style={TEXT_STYLE}>Компонент из GitHub</p>
             Через сколько мы получим дипломы?<br />
             <TimeAgo date='June 28, 2022'/>
-            <p style={TEXT_STYLE}>Компонент другого студента</p>
+            <p style={TEXT_STYLE}>Компонент другого студента (Веселая Е.А.)</p>
             <MUIDataTable />
         </div>
     )
-}
+};
 
-export default BekinaMPElement
+export default BekinaMPElement;
