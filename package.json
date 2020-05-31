@@ -12,13 +12,14 @@
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.0.1",
     "react-scripts": "3.4.1",
+    "react-select": "^3.1.0",
     "react-test-renderer": "^16.13.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "eslint './src/**/*.{js,jsx}'",
+    "lint": "eslint ./src",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
