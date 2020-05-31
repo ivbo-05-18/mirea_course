@@ -4,12 +4,14 @@ import './App.css';
 import ExampleController from './components/Example';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController'
+import BekinaMPController from './components/BekinaMP/BekinaMPController'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+      <BekinaMPController/>
+
         <PerederiyVAController/>
 
         <PetrovSDController/>
