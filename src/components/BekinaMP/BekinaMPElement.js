@@ -1,7 +1,7 @@
 import React from 'react'
 import TimeAgo from 'react-timeago'
 import TextTransformer  from './TextTransformer'
-
+import MUIDataTable from 'mui-datatables'
 
 const BekinaMPElement = () => {
     const TEXT_STYLE = {
@@ -18,6 +18,7 @@ const BekinaMPElement = () => {
             Через сколько мы получим дипломы?<br />
             <TimeAgo date='June 28, 2022'/>
             <p style={TEXT_STYLE}>Компонент другого студента</p>
+            <MUIDataTable />
         </div>
     )
 }
