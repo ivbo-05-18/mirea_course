@@ -47,7 +47,7 @@ class Cats extends PureComponent {
 }
 
 Cats.propTypes = {
-  num: PropTypes.string,
+  num: PropTypes.number,
 };
 
 Cats.defaultProps = {
