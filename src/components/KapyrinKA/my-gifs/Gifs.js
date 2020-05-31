@@ -47,7 +47,7 @@ class Gifs extends React.PureComponent {
 }
 
 Gifs.propTypes = {
-  num: PropTypes.string,
+  num: PropTypes.number,
 };
 
 Gifs.defaultProps = {

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Clipboard from 'clipboard';
 
 import EmojiResultRow from './EmojiResultRow';
-import './EmojiResults.css';
+
 
 export default class EmojiResults extends PureComponent {
   static propTypes = {
@@ -24,7 +24,7 @@ export default class EmojiResults extends PureComponent {
 
   render() {
     return (
-      <div className="component-emoji-results">
+      <div>
         {this.props.emojiData.map((emojiData) => (
           <EmojiResultRow
             key={emojiData.title}

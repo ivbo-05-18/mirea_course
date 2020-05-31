@@ -2,7 +2,6 @@ import React from 'react';
 import { checkErrors } from './SecondGifs';
 import Gifs from './Gifs';
 
-
 describe('Input not digit, semidiget, float numbers, negative number and etc', () => {
   test('Input a string', () => {
     expect(checkErrors('hello World!')).toBe('Ошибка ввода!');
