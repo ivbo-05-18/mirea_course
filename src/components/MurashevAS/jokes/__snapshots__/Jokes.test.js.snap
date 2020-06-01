@@ -97,7 +97,7 @@ exports[`Тестирование рендринга renders correctly 1`] = `
           }
         }
       >
-        Get Joke
+        Get Answer
       </div>
     </div>
   </div>

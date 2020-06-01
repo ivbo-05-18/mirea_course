@@ -1,5 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-console */
 import React from 'react';
 import Quotes from './Quotes';
 import Buttons from './Buttons';
@@ -40,19 +38,22 @@ class QuoteBox extends React.Component {
     }
 
     render() {
+      const { setup } = this.state;
+      const { punchline } = this.state;
+      const { newJoke } = this.state;
       return (
         <div className="quote-box" id="quote-box" style={{ width: '100%' }}>
 
           <Quotes
-            setup={this.state.setup}
-            punchline={this.state.punchline}
-            newJoke={this.state.newJoke}
+            setup={setup}
+            punchline={punchline}
+            newJoke={newJoke}
           />
 
           <Buttons
             getNewJoke={this.getNewJoke}
             getPunchline={this.getPunchline}
-            newJoke={this.state.newJoke}
+            newJoke={this.state}
           />
         </div>
       );
