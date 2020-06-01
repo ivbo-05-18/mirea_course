@@ -1,4 +1,3 @@
-/* eslint-disable no-trailing-spaces */
 import React, { Component } from 'react';
 import './Sentences.css';
 import getResult from './getResult';
@@ -34,11 +33,11 @@ class Sentences extends Component {
           <button type="button" id="clear" onClick={this.clear}>Очистить</button>
         </div>
         <p className="vyrupaeva_paragraph" id="shortest">
-          Самое короткое предложение: 
+          Самое короткое предложение:
           {shortest}
         </p>
         <p className="vyrupaeva_paragraph" id="longest">
-          Самое длинное предложение: 
+          Самое длинное предложение:
           {longest}
         </p>
       </div>

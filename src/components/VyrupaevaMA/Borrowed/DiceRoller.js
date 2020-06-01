@@ -1,8 +1,6 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable react/no-access-state-in-setstate */
 /* eslint-disable react/no-array-index-key */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-nested-ternary */
-/* eslint-disable react/button-has-type */
 import React, { Component } from 'react';
 import './Dice.css';
 
@@ -44,7 +42,7 @@ class DiceRoller extends Component {
     const { dice } = this.state;
     return (
       <div key={key} className="vyrupaeva_die">
-        <button onClick={() => this.rollDie(key)}>
+        <button type="button" onClick={() => this.rollDie(key)}>
           Roll!
           {dice[key].value}
         </button>
@@ -52,7 +50,7 @@ class DiceRoller extends Component {
           {dice[key].faces}
         </div>
         <div className="die-remove">
-          <button onClick={() => this.removeDie(key)}>
+          <button type="button" onClick={() => this.removeDie(key)}>
             Drop
           </button>
         </div>
@@ -86,7 +84,7 @@ class DiceRoller extends Component {
       <div className="App container">
         <div id="adders" className="vyrupaeva">
           {[4, 6, 8, 10, 100, 12, 20].map((faces, key) => (
-            <button className="col" key={key} onClick={() => { this.addDie(faces); }}>
+            <button type="button" className="col" key={key} onClick={() => { this.addDie(faces); }}>
               +d
               {faces}
             </button>
@@ -95,11 +93,11 @@ class DiceRoller extends Component {
         <div id="controllers">
           <div id="total-display" className="row">
             <div className="col-8" style={{ padding: 0 }}>
-              <button style={{ float: 'left' }} onClick={() => { this.setState({ mod: mod - 1 }); }}>
+              <button type="button" style={{ float: 'left' }} onClick={() => { this.setState({ mod: mod - 1 }); }}>
                 -
               </button>
               {this.renderDesc()}
-              <button style={{ float: 'right' }} onClick={() => { this.setState({ mod: mod + 1 }); }}>
+              <button type="button" style={{ float: 'right' }} onClick={() => { this.setState({ mod: mod + 1 }); }}>
                 +
               </button>
             </div>
