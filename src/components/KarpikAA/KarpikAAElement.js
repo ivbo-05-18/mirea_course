@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './Quiz/src/index';
+import App from './Quiz/src/quiz';
 import Game from './Game/game';
 
 const STYLE = {
@@ -31,15 +31,14 @@ const KarpikAAElement = () => (
   <div style={STYLE}>
     <h2 style={TEXT_STYLE}>Собственный элемент</h2>
     <div style={GAME_STYLE}>
-      <Game/>
+      <Game />
     </div>
     <h2 style={TEXT_STYLE}>Заимствованный элемент</h2>
     <div style={QUIZ_STYLE}>
-      <App/>
+      <App />
     </div>
     <h2 style={TEXT_STYLE}>Элемент от другого участника</h2>
-    <div>
-    </div>
+    <div />
   </div>
 );
 

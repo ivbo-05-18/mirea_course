@@ -1,34 +1,36 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from 'react';
 
 class Answer extends Component {
- 
-//  create state
-  state = {
-    Answers: this.props.anwer,
-    Clickcheck:true,
-    rightAnaswer: this.props.rightAnaswer
-  };
+  //  create state
+  constructor(props) {
+    super(props);
+    this.state = {
+      Answers: this.anwer,
+      Clickcheck: true,
+      rightAnaswer: this.rightAnaswer,
+    };
+  }
 
   // Event on button
   onAnswer = () => {
-   
-    this.setState({ 
-      Clickcheck:false
+    this.setState({
+      Clickcheck: false,
     });
-  
   };
-  
+
   render() {
-
-    
-
     return (
-      <Fragment>
-        { this.state.Clickcheck ? this.state.Answers.map(ans => {
-          return <button class="button" onClick={this.onAnswer}> {ans}</button>;
-        }) : <button class="button"> {this.state.rightAnaswer}</button>  } 
-
-      </Fragment>
+      <>
+        { this.state.Clickcheck ? this.state.Answers.map((ans) => (
+          <button type="submit" className="button" onClick={this.onAnswer}>
+            {ans}
+          </button>
+        )) : (
+          <button type="submit" className="button">
+            {this.state.rightAnaswer}
+          </button>
+        )}
+      </>
     );
   }
 }

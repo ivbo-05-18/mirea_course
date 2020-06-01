@@ -1,48 +1,45 @@
-import React, { Component, Fragment } from "react";
-import quizdata from './data'
-import Answer from "./Answer";
+import React, { Component } from 'react';
+import quizdata from './data';
+import Answer from './Answer';
 
-class Quiz extends Component{
-
-  state={
-    dataQuestion:[],
+class Quiz extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataQuestion: [],
+    };
   }
- 
 
- setStatefunstion = () =>{
-  
-//  use reactjs setState 
-  this.setState( {
-    dataQuestion:quizdata
-  })
-  
-
-}
-  componentDidMount(){
+  componentDidMount() {
     this.setStatefunstion();
+  }
 
+  setStatefunstion = () => {
+    //  use reactjs setState
+    this.setState({
+      dataQuestion: quizdata,
+    });
   }
 
   render() {
-    return(
-
-      <Fragment> 
-    
-         {
-          this.state.dataQuestion.map( data => {
-            console.log( data);
-          return <div key={ data.id} className=" mainDiv"> 
-                      <h2> { data.quiz}</h2> 
-                     <Answer key={ data.id} rightAnaswer={ data.rightAnaswer} anwer={ data.FindAnswer} />
-                 </div>
+    return (
+      <>
+        {
+          this.state.dataQuestion.map((data) => {
+            console.log(data);
+            return (
+              <div key={data.id} className="mainDiv">
+                <h2>
+                  {data.quiz}
+                </h2>
+                <Answer key={data.id} rightAnaswer={data.rightAnaswer} anwer={data.FindAnswer} />
+              </div>
+            );
           })
-         }
-        
-      </Fragment>
+        }
+      </>
     );
-
   }
-
 }
 
 export default Quiz;

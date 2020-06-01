@@ -1,13 +1,11 @@
-import React from "react";
- 
-  // header Component
+import React from 'react';
 
-const Header= () => {
-  return(
-    <header className="Header"> 
-      <h1>   Quiz App </h1>
-    </header>
-  );
-}
+// header Component
+
+const Header = () => (
+  <header className="Header">
+    <h1>   Quiz App </h1>
+  </header>
+);
 
 export default Header;
