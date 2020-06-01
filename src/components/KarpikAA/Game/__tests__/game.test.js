@@ -20,7 +20,7 @@ describe('Render Game', () => {
     expect(wrapper.state('steps')).toHaveLength(0);
   });
 
-  it('Should change round after click', () => {
+  it('Should push steps after click', () => {
     const wrapper = shallow(<Game />);
     wrapper.find('#start').simulate('click');
     expect(wrapper.state('round')).toEqual(1);

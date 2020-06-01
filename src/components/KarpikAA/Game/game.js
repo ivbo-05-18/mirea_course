@@ -24,7 +24,7 @@ class Game extends React.Component {
   playSound = (color) => {
     this.sounds[color].play();
     if (color === this.state.steps[this.state.index]) {
-      this.setState({ index: this.index + 1 }, () => {
+      this.setState({ index: this.state.index + 1 }, () => {
         if (this.state.index === this.state.round) {
           this.setState({
             index: 0,
@@ -35,7 +35,7 @@ class Game extends React.Component {
       });
     } else if (this.state.round !== 0) {
       this.setState({
-        text: `Game over! You reached round ${this.round}`,
+        text: `Game over! You reached round ${this.state.round}`,
       });
       this.resetSimon();
     }
@@ -45,7 +45,7 @@ class Game extends React.Component {
   generateStep = () => {
     this.state.steps.push(this.buttons[(Math.floor(Math.random() * 4))]);
     this.setState({
-      round: this.round + 1,
+      round: this.state.round + 1,
     });
   }
 
@@ -107,29 +107,25 @@ class Game extends React.Component {
                 ref="green"
                 className="buttons"
                 id={this.buttons[0]}
-                onClick={() => {}}
-                onKeyPress={this.playSound(this.buttons[0])}
+                onClick={() => this.playSound(this.buttons[0])}
               />
               <div
                 ref="red"
                 className="buttons"
                 id={this.buttons[1]}
-                onClick={() => {}}
-                onKeyPress={this.playSound(this.buttons[1])}
+                onClick={() => this.playSound(this.buttons[1])}
               />
               <div
                 ref="yellow"
                 className="buttons"
                 id={this.buttons[2]}
-                onClick={() => {}}
-                onKeyPress={this.playSound(this.buttons[2])}
+                onClick={() => this.playSound(this.buttons[2])}
               />
               <div
                 ref="blue"
                 className="buttons"
                 id={this.buttons[3]}
-                onClick={() => {}}
-                onKeyPress={this.playSound(this.buttons[3])}
+                onClick={() => this.playSound(this.buttons[3])}
               />
               <div className="round">{this.state.round}</div>
             </div>
@@ -137,7 +133,7 @@ class Game extends React.Component {
         </div>
         <div className="controls">
           <div className="text">{this.state.text}</div>
-          <button type="submit" id="start" onClick={() => this.resetSimon(1)}>
+          <button type="button" id="start" onClick={() => this.resetSimon(1)}>
             {!this.state.round ? 'Start Game' : 'Reset Game'}
           </button>
         </div>

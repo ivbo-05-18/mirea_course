@@ -41,11 +41,10 @@ body {
   padding: 8px;
 }
 
-
 .button:hover {
-  border:none;
+  border: none;
   outline: none;
-  background-color:transparent;
+  background-color: transparent;
   color: white;
   font-size: 17.5px; 
 }

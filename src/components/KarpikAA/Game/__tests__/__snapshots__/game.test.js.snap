@@ -53,6 +53,7 @@ exports[`Render Game Render correctly 1`] = `
     <button
       id="start"
       onClick={[Function]}
+      type="button"
     >
       Start Game
     </button>
