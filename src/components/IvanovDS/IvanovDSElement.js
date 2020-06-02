@@ -4,7 +4,7 @@ import SymonSays from './SimonSays/SimonSays';
 import Gifs from './Gifs/Gifs';
 
 const IvanovDSElement = () => (
-  <div>
+  <div style={{ width: '800px' }}>
     <h5>Собственный элемент - игра Крестики-нолики</h5>
     <TicTacToe />
     <hr />
