@@ -1,15 +1,3 @@
-
-/* simple css for react app */
-
-body {
-  font-family: monospace;
-  font-size: 20px;
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-
 /* for header  */
 
 .Header {
@@ -22,6 +10,9 @@ body {
 
 /* css for card  */
 .mainDiv{
+  font-family: monospace;
+  padding: 0px;
+  box-sizing: border-box;
   height: auto;
   font-size: 30px;
   background-color: blueviolet;

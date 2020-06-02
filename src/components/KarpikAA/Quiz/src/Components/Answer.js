@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import styles from '../quiz_styles.module.css';
 
 class Answer extends Component {
  
@@ -22,8 +23,8 @@ class Answer extends Component {
     return (
       <Fragment>
         { this.state.Clickcheck ? this.state.Answers.map(ans => {
-          return <button class="button" onClick={this.onAnswer}> {ans}</button>;
-        }) : <button class="button"> {this.state.rightAnaswer}</button>  } 
+          return <button class={styles.button} onClick={this.onAnswer}> {ans}</button>;
+        }) : <button class={styles.button}> {this.state.rightAnaswer}</button>  } 
 
       </Fragment>
     );

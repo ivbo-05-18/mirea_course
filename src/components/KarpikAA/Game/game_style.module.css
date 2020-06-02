@@ -41,38 +41,58 @@ h1 {
 	cursor: pointer;
 }
 
-#green {
+.green {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
     border-radius: 100% 3% 0 3%;
     background-color: #1ecd34;
 }
 
-#red {
+.red {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
     border-radius: 3% 100% 3% 0;
     background-color: #fe3e2b;
 }
 
-#yellow {
+.yellow {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
     border-radius: 3% 0 3% 100%;
     background-color: #fedd00;
 }
 
-#blue {
+.blue {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
     border-radius: 0 3% 100% 3%;
     background-color: #0070db;
 }
 
-#green:hover,
-#red:hover,
-#yellow:hover,
-#blue:hover,
+.green:hover,
+.red:hover,
+.yellow:hover,
+.blue:hover,
 .hover {
     box-shadow: 0 0 30px #979caf;
 }
 
-#green:active,
-#red:active,
-#yellow:active,
-#blue:active {
+.green:active,
+.red:active,
+.yellow:active,
+.blue:active {
     box-shadow: 0 0 15px #585b66;
     opacity: 0.9;
 }

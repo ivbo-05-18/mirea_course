@@ -1,5 +1,5 @@
 import React from 'react';
-import './game_style.css';
+import styles from './game_style.module.css';
 
 class Game extends React.Component {
   sounds = {
@@ -52,11 +52,11 @@ class Game extends React.Component {
   // Play current step
   playStep = (step) => {
     const buttons = this.refs[step];
-    buttons.classList.add('hover');
+    buttons.classList.add(styles['hover']);
     this.sounds[step].play();
     setTimeout(
       () => {
-        buttons.classList.remove('hover');
+        buttons.classList.remove(styles['hover']);
       },
       200,
     );
@@ -100,40 +100,40 @@ class Game extends React.Component {
     return (
       <div>
         <h1>Simon Says</h1>
-        <div className="simon">
-          <div className="circle">
-            <div className="inner">
+        <div className={styles.simon}>
+          <div className={styles.circle}>
+            <div className={styles.inner}>
               <div
                 ref="green"
-                className="buttons"
-                id={this.buttons[0]}
+                className={styles.green}
+                id="green"
                 onClick={() => this.playSound(this.buttons[0])}
               />
               <div
                 ref="red"
-                className="buttons"
-                id={this.buttons[1]}
+                className={styles.red}
+                id="red"
                 onClick={() => this.playSound(this.buttons[1])}
               />
               <div
                 ref="yellow"
-                className="buttons"
-                id={this.buttons[2]}
+                className={styles.yellow}
+                id="yellow"
                 onClick={() => this.playSound(this.buttons[2])}
               />
               <div
                 ref="blue"
-                className="buttons"
-                id={this.buttons[3]}
+                className={styles.blue}
+                id="blue"
                 onClick={() => this.playSound(this.buttons[3])}
               />
-              <div className="round">{this.state.round}</div>
+              <div className={styles.round}>{this.state.round}</div>
             </div>
           </div>
         </div>
-        <div className="controls">
-          <div className="text">{this.state.text}</div>
-          <button type="button" id="start" onClick={() => this.resetSimon(1)}>
+        <div className={styles.controls}>
+          <div className={styles.text}>{this.state.text}</div>
+          <button type="button" id={styles.start} onClick={() => this.resetSimon(1)}>
             {!this.state.round ? 'Start Game' : 'Reset Game'}
           </button>
         </div>

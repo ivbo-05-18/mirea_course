@@ -15,22 +15,22 @@ exports[`Render Game Render correctly 1`] = `
         className="inner"
       >
         <div
-          className="buttons"
+          className="green"
           id="green"
           onClick={[Function]}
         />
         <div
-          className="buttons"
+          className="red"
           id="red"
           onClick={[Function]}
         />
         <div
-          className="buttons"
+          className="yellow"
           id="yellow"
           onClick={[Function]}
         />
         <div
-          className="buttons"
+          className="blue"
           id="blue"
           onClick={[Function]}
         />
