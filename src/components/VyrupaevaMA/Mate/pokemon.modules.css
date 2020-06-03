@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Philosopher&subset=cyrillic);
 
-.conv-board {
+.conv_board {
   padding: 10px;
 }
 
@@ -11,7 +11,7 @@
   margin-right: auto;
 }
 
-#poke_button{
+#pokebutton {
   height: 40px;
   width: 210px;
   background-color:#0c224d;
@@ -19,7 +19,7 @@
   border-radius:3px;
 }
 
-#poke_button:hover {
+#pokebutton:hover {
   cursor: pointer;
   height: 40px;
   width: 210px;

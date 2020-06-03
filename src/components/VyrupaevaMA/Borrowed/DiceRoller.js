@@ -1,8 +1,9 @@
-/* eslint-disable react/no-array-index-key */
 /* eslint-disable no-param-reassign */
-/* eslint-disable no-nested-ternary */
+
+// Parameter reassign is used once to set all dices to zero.
+// forEach() method in this situation does not provide unexpected behaviour
 import React, { Component } from 'react';
-import './Dice.css';
+import styles from './Dice.module.css';
 
 import Die from './Die';
 
@@ -41,19 +42,17 @@ class DiceRoller extends Component {
   renderDie(key) {
     const { dice } = this.state;
     return (
-      <div key={key} className="vyrupaeva_die">
+      <div key={key} className={styles.dieRemAdd}>
         <button type="button" onClick={() => this.rollDie(key)}>
           Roll!
           {dice[key].value}
         </button>
-        <div className="die-label">
+        <div id="die-label">
           {dice[key].faces}
         </div>
-        <div className="die-remove">
-          <button type="button" onClick={() => this.removeDie(key)}>
-            Drop
-          </button>
-        </div>
+        <button type="button" onClick={() => this.removeDie(key)}>
+          Drop
+        </button>
       </div>
     );
   }
@@ -67,24 +66,26 @@ class DiceRoller extends Component {
         ? 1
         : counts[die.faces] + 1;
     });
-    const pool = Object.keys(counts).map(
+    let pool;
+
+    if (Object.keys(counts).map(
       (type) => `${counts[type]}d${type}`,
-    ).join(' + ')
-      ? mod > 0
-        ? ` + ${mod}`
-        : ` - ${-mod}`
-      : '';
-    return pool + mod;
+    ).join(' + ')) {
+      if (mod > 0) {
+        pool = ` + ${mod}`;
+      } else { pool = ` - ${-mod}`; }
+    } else { pool = ''; }
+    return pool;
   }
 
   render() {
     const { dice } = this.state;
     const { mod } = this.state;
     return (
-      <div className="App container">
-        <div id="adders" className="vyrupaeva">
-          {[4, 6, 8, 10, 100, 12, 20].map((faces, key) => (
-            <button type="button" className="col" key={key} onClick={() => { this.addDie(faces); }}>
+      <div className={styles.vyrupaeva}>
+        <div id="adders">
+          {[4, 6, 8, 10, 100, 12, 20].map((faces) => (
+            <button type="button" className="col" key={faces.key} onClick={() => { this.addDie(faces); }}>
               +d
               {faces}
             </button>
@@ -107,7 +108,7 @@ class DiceRoller extends Component {
               {this.calcSum()}
             </div>
           </div>
-          <div className="vyrupaeva">
+          <div className={styles.vyrupaeva}>
             <button
               type="button"
               onClick={() => {
@@ -132,6 +133,7 @@ class DiceRoller extends Component {
             <button
               type="button"
               onClick={() => {
+                // Parameter reassign here
                 dice.forEach((d) => { d.value = 0; });
                 this.setState({ dice });
               }}

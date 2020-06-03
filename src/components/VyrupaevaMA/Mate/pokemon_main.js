@@ -1,5 +1,5 @@
 import React from 'react';
-import './pokemon.css';
+import styles from './pokemon.modules.css';
 
 async function magic() {
   const ssilka = `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 20)}${1}`;
@@ -22,10 +22,10 @@ async function magic() {
 }
 
 const PokeController = () => (
-  <div className="pokemon_root">
-    <div className="conv-board">
-      <div>
-        <input type="button" id="poke_button" value="*Тык*" onClick={() => { magic(); }} />
+  <div className={styles.pokemon_root}>
+    <div align="center" id="conv_board">
+      <div id="poke">
+        <button id="pokebutton" type="button" onClick={() => { magic(); }}>Тык</button>
         <br />
         <div id="pokemon" hidden>
           <span id="name" />

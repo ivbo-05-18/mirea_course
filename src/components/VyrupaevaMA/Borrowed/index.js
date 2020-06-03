@@ -1,7 +1,7 @@
 export { default } from './DiceRoller';
 
 /*
---- This already was here ---
+--- This have already been here ---
 
 import React from 'react';
 import ReactDOM from 'react-dom';
