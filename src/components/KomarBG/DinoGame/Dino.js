@@ -26,16 +26,15 @@ class ChromeDinoComponent extends React.Component {
 
   render() {
     return (
-    /* eslint-disable no-return-assign */
-      <div ref={(el) => (this.startDiv = el)}>
+      <div ref={(el) => { this.startDiv = el; }}>
         <style>{DinoStyle}</style>
         <div id="main-frame-error" className="interstitial-wrapper">
           <Resources />
-          <div ref={(el) => (this.endDiv = el)} />
+          <div ref={(el) => { this.endDiv = el; }} />
         </div>
       </div>
     );
   }
 }
-/* eslint-disable no-return-assign */
+
 export default ChromeDinoComponent;
