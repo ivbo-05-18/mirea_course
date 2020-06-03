@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import game_styles from './TicTacToe.css';
+import game_styles from './TicTacToe.module.css';
 import Game from './Game.js';
 
 class App extends Component {
