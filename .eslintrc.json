@@ -9,12 +9,12 @@
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
       "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
       "curly": [2, "all"],
-	"linebreak-style":"off",
-        "react/destructuring-assignment": [0, "always"],
-        "react/prop-types": 0,
-        "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
-        "jsx-a11y/click-events-have-key-events": 0,
-"jsx-a11y/no-static-element-interactions": 0
+	    "linebreak-style":"off",
+      "react/destructuring-assignment": [0, "always"],
+      "react/prop-types": 0,
+      "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
+      "jsx-a11y/click-events-have-key-events": 0,
+      "jsx-a11y/no-static-element-interactions": 0
         
     },
     "parser": "babel-eslint"
