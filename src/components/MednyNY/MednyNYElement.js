@@ -1,6 +1,7 @@
 import React from 'react';
 import Forecast from './Forecast/weather';
 import Calculator from './Calculator/index';
+import GhibliElimElement from './Ghibli';
 
 
 const STYLE = {
@@ -25,6 +26,10 @@ const MednyNYElement = () => (
     <h2 style={TEXT_STYLE}>Заимствованный элемент</h2>
     <div>
       <Calculator />
+    </div>
+    <h2 style={TEXT_STYLE}>Элемент от другого учасника (Ладошкина Д. И.)</h2>
+    <div>
+      <GhibliElimElement />
     </div>
   </div>
 );
