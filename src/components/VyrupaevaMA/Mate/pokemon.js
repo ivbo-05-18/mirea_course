@@ -1,9 +1,9 @@
 import React from 'react';
-import PokeController from './pokemon_main';
+import Pokemon from './pokemon_main';
 
 const PokeElement = () => (
   <div className="pokemon_main">
-    <PokeController />
+    <Pokemon />
   </div>
 );
 

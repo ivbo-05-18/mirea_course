@@ -1,8 +1,6 @@
 import React from 'react';
 import VyrupaevaMAElement from './VyrupaevaMAElement';
 
-// !!! add tests !!!
-
 class VyrupaevaMAController extends React.Component {
   constructor(props) {
     super(props);

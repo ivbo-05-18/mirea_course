@@ -5,15 +5,15 @@ import getResult from './getResult';
 class Sentences extends Component {
   constructor(props) {
     super(props);
-    this.state = { shortest: 'пока не определено', longest: 'пока не определено' };
+    this.state = { txtvalue: '', shortest: 'пока не определено', longest: 'пока не определено' };
     this.change = this.change.bind(this);
     this.clear = this.clear.bind(this);
   }
 
-  change() {
-    const txArea = document.getElementById('mainText');
-    const text = txArea.value;
-    const results = getResult(text);
+  change(event) {
+    this.setState({ txtvalue: event.target.value });
+    const { txtvalue } = this.state;
+    const results = getResult(txtvalue);
     this.setState({ longest: results[1], shortest: results[0] });
   }
 

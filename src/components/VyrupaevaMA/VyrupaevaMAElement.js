@@ -1,5 +1,5 @@
 import React from 'react';
-import DiceRoller from './Borrowed';
+import DiceRoller from './Borrowed/DiceRoller';
 import Sentences from './Sentences/Sentences';
 import PokeElement from './Mate/pokemon_main';
 
