@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './pokemon.modules.css';
+import styles from './pokemon.module.css';
 import plus from './plus.png';
 import sword from './sword.png';
 
@@ -7,8 +7,9 @@ class Pokemon extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderpokemon: {},
+      renderpokemon: null,
     };
+    this.magic();
   }
 
   async magic() {
@@ -19,52 +20,59 @@ class Pokemon extends Component {
     }));
   }
 
-  render() {
+  abil() {
+    let abilStr = '';
     const { renderpokemon } = this.state;
     for (let i = 0; i < renderpokemon.abilities.length; i++) {
-      if (i === 0) {
-        document.getElementById('abil').innerHTML = 'Способности: ';
-      }
-      document.getElementById('abil').innerHTML += `${renderpokemon.abilities[i].ability.name},`;
+      abilStr += `${renderpokemon.abilities[i].ability.name},`;
     }
-    document.getElementById('photo1').innerHTML = `<img src=${renderpokemon.sprites.front_default} alt=""></img>`;
-    document.getElementById('photo2').innerHTML = `<img src=${renderpokemon.sprites.back_default} alt=""></img>`;
+    return abilStr;
+  }
+
+  render() {
+    const { renderpokemon } = this.state;
+    if (!renderpokemon) { return null; }
     return (
       <div className={styles.pokemon_root}>
-        <div align="center" id="conv_board">
+        <div align="center" className={styles.conv_board}>
           <div id="poke">
-            <button id="pokebutton" type="button" onClick={() => { this.magic(); }}>Тык</button>
+            <button className={styles.pokebutton} type="button" onClick={() => { this.magic(); }}>Тык</button>
             <br />
-            <div id="pokemon">
+            <div className={styles.pokemon}>
               <span id="name">{ renderpokemon.name }</span>
               <br />
-              <div id="photo">
+              <div className={styles.photo}>
                 <span id="photo1" />
+                <img src={renderpokemon.sprites.front_default} alt="" />
                 <span id="photo2" />
+                <img src={renderpokemon.sprites.back_default} alt="" />
               </div>
-              <span id="field">
+              <span className={styles.field}>
                 Вес:
                 <span id="weight">{ renderpokemon.weight }</span>
                 гр.
               </span>
               <br />
-              <span id="field">
+              <span className={styles.field}>
                 Рост:
                 <span id="height">{ renderpokemon.height }</span>
                 см.
               </span>
               <br />
-              <span id="field">
+              <span className={styles.field}>
                 Форма:
                 <span id="form">{ renderpokemon.forms[0].name }</span>
               </span>
               <br />
-              <span id="abil" />
+              <span className={styles.abil}>
+                Способности:
+                <span id="abil_count">{ this.abil() }</span>
+              </span>
               <br />
-              <img id="plus" alt="" src={plus} />
-              <span id="hp">{ renderpokemon.stats[5].base_stat }</span>
-              <span id="attack">{ renderpokemon.stats[4].base_stat }</span>
-              <img id="sword" alt="" src={sword} />
+              <img className={styles.plus} alt="" src={plus} />
+              <span className={styles.hp}>{ renderpokemon.stats[5].base_stat }</span>
+              <span className={styles.attack}>{ renderpokemon.stats[4].base_stat }</span>
+              <img className={styles.sword} alt="" src={sword} />
             </div>
           </div>
         </div>
