@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
-const APP_ID = '44c63c9175ce4468a7c7f64640361804';
+const APP_ID = process.env.REACT_APP_CURRENCY;
 const getURL = () => `https://openexchangerates.org/api/latest.json?app_id=${APP_ID}`;
 const fetchData = async (currencyUpdate) => {
   try {
     const response = await fetch(getURL());
     const json = await response.json();
     currencyUpdate({
-      euro: json.rates.EUR,
-      rub: json.rates.RUB,
-      bitcoin: json.rates.BTC,
+      euro: json.rates.EUR || 0,
+      rub: json.rates.RUB || 0,
+      bitcoin: json.rates.BTC || 0,
     });
   } catch (error) {
     currencyUpdate({
       euro: 'Ошибка',
+      rub: 'Ошибка',
+      bitcoin: 'Ошибка',
     });
   }
 };
@@ -38,16 +40,19 @@ const Currency = () => {
       <h4>1$</h4>
       <div>
         Евро:
-        {currency.euro}
         {' '}
+        {' '}
+        {currency.euro}
         <br />
         Рубль:
-        {currency.rub}
         {' '}
+        {' '}
+        {currency.rub}
         <br />
         Биткойн:
-        {currency.bitcoin}
         {' '}
+        {' '}
+        {currency.bitcoin}
         <br />
       </div>
     </div>

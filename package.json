@@ -11,9 +11,9 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.0.1",
-    "react-player": "^2.1.0",
     "react-scripts": "3.4.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "victory": "^34.3.9"
   },
   "scripts": {
     "start": "react-scripts start",
