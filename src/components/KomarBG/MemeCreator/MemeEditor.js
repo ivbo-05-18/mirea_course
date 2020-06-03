@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import queryString from 'qs';
 import Meme from './Meme';
-
-const queryString = require('qs');
 
 export default function MemeEditor(props) {
   const { meme } = props;
@@ -39,8 +38,8 @@ export default function MemeEditor(props) {
     const body = {
       template_id: props.meme.id,
       boxes: textInputs,
-      username: 'trpoCourse',
-      password: '12345678',
+      username: process.env.REACT_APP_API_USERNAME,
+      password: process.env.REACT_APP_API_PASSWORD,
     };
     const options = {
       indices: true,
