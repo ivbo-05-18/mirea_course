@@ -1,5 +1,5 @@
 import React from 'react';
-
+import board_styles from './TicTacToe.module.css';
 import Square from './Square';
 
 class Board extends React.Component {
@@ -10,17 +10,17 @@ class Board extends React.Component {
   render() {
     return (
       <div>
-        <div className="board-row">
+        <div className={board_styles.boardRow}>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
-        <div className="board-row">
+        <div className={board_styles.boardRow}>
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
         </div>
-        <div className="board-row">
+        <div className={board_styles.boardRow}>
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}

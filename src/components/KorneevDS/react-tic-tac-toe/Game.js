@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './Board';
+import game_styles from './TicTacToe.module.css';
 
 function calculateWinner(squares) {
   const lines = [
@@ -74,11 +75,11 @@ class Game extends React.Component {
     });
 
     return (
-      <div className="game">
-        <div className="game-board">
+      <div className={game_styles.game}>
+        <div>
           <Board squares={current.squares} onClick={(i)=>this.handleClick(i)}/>
         </div>
-        <div className="game-info">
+        <div className={game_styles.gameInfo}>
           <div>{ status }</div>
           <ol>{ moves }</ol>
         </div>
