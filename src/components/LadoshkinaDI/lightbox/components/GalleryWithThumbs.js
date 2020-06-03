@@ -1,7 +1,4 @@
 import React from 'react'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-
-import { snippets } from '../snippets'
 
 import { SRLWrapper } from 'simple-react-lightbox'
 
