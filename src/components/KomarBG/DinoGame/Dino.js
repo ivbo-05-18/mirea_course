@@ -1,10 +1,7 @@
 import React from 'react';
-
-
 import DinoScript from './DinoScript';
 import DinoStyle from './DinoStyle';
 import Resources from './Resources';
-import './Dino.css';
 
 class ChromeDinoComponent extends React.Component {
   componentDidMount() {
