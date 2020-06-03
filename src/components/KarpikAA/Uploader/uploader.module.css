@@ -1,0 +1,54 @@
+  .mainDiv {
+    font-family: 'Roboto';
+    display: flex;
+    width: 640px;
+    height: 360px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+  .mainDiv:hover {
+    background-color: #eee;
+  }
+  
+  .inputLabel {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 8px;
+  }
+  
+  .input {
+    opacity: 0;
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+  }
+
+  .uploadText{
+    color: #000;
+  }
+  
+  .preview {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 8px;
+  }
+  
+  .previewImage {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+  }

@@ -1,6 +1,7 @@
 import React from 'react';
 import App from './Quiz/src/quiz';
 import Game from './Game/game';
+import Uploader from './Uploader/uploader';
 
 const STYLE = {
   borderКadius: '2px',
@@ -37,7 +38,10 @@ const KarpikAAElement = () => (
     <div style={QUIZ_STYLE}>
       <App />
     </div>
-    <h2 style={TEXT_STYLE}>Элемент от другого участника</h2>
+    <h2 style={TEXT_STYLE}>Элемент от другого участника(Медный Н.Ю.)</h2>
+    <div>
+      <Uploader />
+    </div>
     <div />
   </div>
 );
