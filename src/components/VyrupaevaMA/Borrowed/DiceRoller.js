@@ -1,7 +1,3 @@
-/* eslint-disable no-param-reassign */
-
-// Parameter reassign is used once to set all dices to zero.
-// forEach() method in this situation does not provide unexpected behaviour
 import React, { Component } from 'react';
 import styles from './Dice.module.css';
 
@@ -133,8 +129,7 @@ class DiceRoller extends Component {
             <button
               type="button"
               onClick={() => {
-                // Parameter reassign here
-                dice.forEach((d) => { d.value = 0; });
+                dice.forEach((d) => { const diceval = d; diceval.value = 0; });
                 this.setState({ dice });
               }}
             >
