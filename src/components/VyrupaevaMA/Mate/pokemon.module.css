@@ -11,7 +11,7 @@
   margin-right: auto;
 }
 
-#pokebutton {
+.pokebutton {
   height: 40px;
   width: 210px;
   background-color:#0c224d;
@@ -19,7 +19,7 @@
   border-radius:3px;
 }
 
-#pokebutton:hover {
+.pokebutton:hover {
   cursor: pointer;
   height: 40px;
   width: 210px;
@@ -28,7 +28,7 @@
   border-radius:3px;
 }
 
-#pokemon {
+.pokemon {
   margin-top: 10px;
   border-radius: 3px;
   border: solid 1px gray;
@@ -39,7 +39,7 @@
   background-color: #fbff00;
 }
 
-#photo {
+.photo {
   display: block;
   margin: 10px;
   margin-left:auto;
@@ -50,35 +50,33 @@
   background-color: #449eda;
 }
 
-#abil{
+.abil{
   font-size: 10px;
 }
 
-#plus{
-  background-image: url(http://cdn.onlinewebfonts.com/svg/img_416911.png);
+.plus{
   background-size: cover;
   height:15px;
   width:15px;
 }
 
-#hp{
+.hp{
   color: green;
   margin-right:100px;
 }
 
-#attack{
+.attack{
   color: red;
   text-align: right;
 }
 
-#sword{
-  background-image: url(https://www.pngkey.com/png/full/95-951102_sword-free-vector-icons-designed-by-freepik-sword.png);
+.sword{
   background-size: cover;
   height:15px;
   width:15px;
 }
 
-#field {
+.field {
   width: 200px;
   height : 30px;
   color: black;
