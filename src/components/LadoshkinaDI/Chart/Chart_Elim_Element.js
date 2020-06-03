@@ -15,8 +15,8 @@ class Chart extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Men: 0,
-      Women: 0,
+      Men: null,
+      Women: null,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
