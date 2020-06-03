@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`work correctly match snapshout 1`] = `
+<div
+  className="App"
+>
+  <button
+    className="button"
+    onClick={[Function]}
+    type="button"
+  >
+    Moscow
+  </button>
+  <button
+    className="button"
+    onClick={[Function]}
+    type="button"
+  >
+    Krasnoyarsk
+  </button>
+  <div>
+    Loading
+  </div>
+</div>
+`;

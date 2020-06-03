@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.calculator {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    width: 320px;
+    height: 520px;
+    padding: 120px 0 0;
+    background: #2a2929;
+    position: relative;
+    box-sizing: border-box;
+  
+    margin: 20px auto 0;
+}
+
+.display {
+    height: 80px;
+    box-sizing: border-box;
+    padding: 20px 20px 0;
+    font-size: 48px;
+    color: #fff;
+    text-align: right;
+    font-weight: 300;
+    position: absolute;
+    top: 30px;
+    right:0;
+}
+
+.keypad {
+    border-top: 0 none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 401px;
+}
+
+.key {
+    width: 80px;
+    height: 80px;
+    display: block;
+    float: left;
+    background: #e0e0e0;
+    color: #000;
+    line-height: 80px;
+    text-align: center;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+    border: 0 none;
+    border-left: 1px solid #8e8e8e;
+    border-bottom: 1px solid #8e8e8e;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 32px;
+    font-weight: 100;
+
+    outline: 0 none;
+}
+
+.keyChild {
+    border-right: 1px solid #8e8e8e;
+}
+
+.keyFunction { background: #d6d6d6; }
+
+.keyOperation {
+    background: #f7a357;
+    color: #fff;
+}
+
+.keyOpActive {
+    border-top: 2px solid #8e8e8e;
+    border-left: 2px solid #8e8e8e;
+    border-bottom: 2px solid #8e8e8e;
+}
+
+.keyzero {
+    width: 160px;
+    padding-right: 80px;
+}
+
+/* active */
+.key:active {
+    background: #b2b2b2;
+}
+
+.keyFunction:active {
+    background: #a9a9a9;
+}
+
+.keyOperation:active {
+    background: #c2732f;
+    color: #686868;
+}
+
+@media (min-width:800px) {
+    .calculator {
+        border-radius: 5px;
+        box-shadow: 0 10px 50px rgba(0, 0, 0, .25);
+    }
+
+    .keypad {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .keyzero {
+        border-bottom-left-radius: 5px;
+    }
+
+    .keyEqual {
+        border-bottom-right-radius: 5px;
+    }
+}

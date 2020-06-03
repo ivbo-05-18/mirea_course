@@ -3,11 +3,13 @@ import './App.css';
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import MednyNYController from './components/MednyNY/MednyNYController';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <MednyNYController />
 
         <PerederiyVAController />
 
