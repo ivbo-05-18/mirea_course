@@ -1,6 +1,6 @@
 import React from 'react';
+import AvatarGenerator from 'react-avatar-generator';
 import Nekotube from './nekotube/nekotube';
-import AvatarGenerator from './react-avatar-generator/index';
 
 const MironovaAAElement = () => {
   const TEXT_STYLE = {
@@ -14,7 +14,10 @@ const MironovaAAElement = () => {
       <p style={TEXT_STYLE}>Собственный компонент</p>
       <Nekotube />
       <p style={TEXT_STYLE}>Компонент из GitHub</p>
-      <AvatarGenerator />
+      <AvatarGenerator
+        colors={['#333', '#222', '#ccc']}
+        backgroundColor="#000"
+      />
     </div>
   );
 };

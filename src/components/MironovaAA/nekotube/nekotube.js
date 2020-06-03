@@ -7,38 +7,40 @@ import Video from './components/Video/Video';
 
 const YOUTUBE_API_KEY = process.env.REACT_APP_NOT_SECRET_ID;
 
-//Вынести в отдельный файл
+// Вынести в отдельный файл
 class Nekotube extends Component {
   state = {
     videos: [],
-    selectedVideo: null
+    selectedVideo: null,
   }
 
-  componentDidMount(){
-    console.log("componentDidMount");
-    YSearch({ key: YOUTUBE_API_KEY, term: '猫　きゅうり'}, (data) => {
- 　    this.setState({ videos: data, selectedVideo: data[2] });
-　  });
-}
+  componentDidMount() {
+    console.log('componentDidMount');
+    YSearch({ key: YOUTUBE_API_KEY, term: '猫　きゅうり' }, (data) => {
+      this.setState({ videos: data, selectedVideo: data[2] });
+    });
+  }
 
   onVideoClickedHandler = (video) => {
-    console.log("onVideoClickHandler");
-    console.log("video : " + video);
-    this.setState({ selectedVideo: video })
+    console.log('onVideoClickHandler');
+    console.log(`video : ${video}`);
+    this.setState({ selectedVideo: video });
   }
 
   onKeywordChangedHandler = (keyword) => {
-    console.log("onKeywordChangedHandler");
-    console.log("keyword : " + keyword);
-    var newTerm = keyword.replace(/\s+/g, "");
+    console.log('onKeywordChangedHandler');
+    console.log(`keyword : ${keyword}`);
+    let newTerm = keyword.replace(/\s+/g, '');
 
     if (newTerm === '') {
       newTerm = 'Miron';
     }
     YSearch({ key: YOUTUBE_API_KEY, term: newTerm }, (data) => {
-      this.setState({videos: data, selectedVideo: data[0]})
+      this.setState({ videos: data, selectedVideo: data[0] });
     });
   }
+
+  //const {selectedVideo, videos} = this.state;
 
   render() {
     return (

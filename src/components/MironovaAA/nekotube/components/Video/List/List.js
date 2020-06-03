@@ -1,8 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Item from '../Item/Item';
 
 const List = (props) => {
-
   const Items = props.videos.map((video) => {
     if (props.selectedVideo !== video) {
       return (
@@ -20,6 +19,6 @@ const List = (props) => {
       {Items}
     </ul>
   );
-}
+};
 
 export default List;
