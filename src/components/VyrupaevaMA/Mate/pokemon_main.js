@@ -12,6 +12,14 @@ class Pokemon extends Component {
     this.magic();
   }
 
+  componentDidMount() {
+    this.magic();
+  }
+
+  handleClick() {
+    this.magic();
+  }
+
   async magic() {
     const url = `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 20)}${1}`;
     const data = await (await fetch(url)).json();
@@ -36,7 +44,7 @@ class Pokemon extends Component {
       <div className={styles.pokemon_root}>
         <div align="center" className={styles.conv_board}>
           <div id="poke">
-            <button className={styles.pokebutton} type="button" onClick={() => { this.magic(); }}>Тык</button>
+            <button className={styles.pokebutton} type="button" onClick={() => { this.handleClick(); }}>Тык</button>
             <br />
             <div className={styles.pokemon}>
               <span id="name">{ renderpokemon.name }</span>

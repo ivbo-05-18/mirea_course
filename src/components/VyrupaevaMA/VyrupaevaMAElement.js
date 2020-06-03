@@ -4,9 +4,9 @@ import Sentences from './Sentences/Sentences';
 import PokeElement from './Mate/pokemon_main';
 
 const DEFAULT_STYLE = {
-  'border-radius': '2px',
-  'font-size': '14px',
-  'font-family': 'courier',
+  borderRadius: '2px',
+  fontSize: '14px',
+  fontFamily: 'courier',
   color: 'black',
   background: '#DFDFDF',
   margin: '10px',
@@ -23,14 +23,13 @@ const VyrupaevaMAElement = () => (
     <div>
       <DiceRoller />
     </div>
-    <h2>Элемент от одногруппника</h2>
+    <h2>Элемент от одногруппника: покемоны</h2>
     <div className="mate">
       <PokeElement />
     </div>
   </div>
 );
 
-// add router for external links?
 // original link: https://github.com/rileyjohngibbs/react-roller
 
 export default VyrupaevaMAElement;

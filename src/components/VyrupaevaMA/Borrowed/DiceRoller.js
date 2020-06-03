@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './Dice.module.css';
-
 import Die from './Die';
 
 class DiceRoller extends Component {
@@ -81,7 +80,7 @@ class DiceRoller extends Component {
       <div className={styles.vyrupaeva}>
         <div id="adders">
           {[4, 6, 8, 10, 100, 12, 20].map((faces) => (
-            <button type="button" className="col" key={faces.key} onClick={() => { this.addDie(faces); }}>
+            <button type="button" className="col" key={faces} onClick={() => { this.addDie(faces); }}>
               +d
               {faces}
             </button>
