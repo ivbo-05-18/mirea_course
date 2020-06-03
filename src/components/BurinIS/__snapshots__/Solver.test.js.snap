@@ -3,6 +3,11 @@
 exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
 <div
   className="input"
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
 >
   <input
     id="aCoef"
@@ -10,7 +15,13 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     type="number"
     value=""
   />
-  <h4>
+  <h4
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
      *x^2+ 
   </h4>
   <input
@@ -19,7 +30,13 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     type="number"
     value=""
   />
-  <h4>
+  <h4
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
      *x+ 
   </h4>
   <input
@@ -28,7 +45,13 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     type="number"
     value=""
   />
-  <h4>
+  <h4
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
      =0 
   </h4>
   <div

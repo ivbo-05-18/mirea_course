@@ -1,6 +1,9 @@
 import React from 'react';
 import calculate from './calculate';
-import './Solver.css';
+
+const STYLE = {
+  display: 'inline-block',
+};
 
 class Solver extends React.Component {
   constructor(props) {
@@ -45,13 +48,13 @@ class Solver extends React.Component {
     const { bCoef } = this.state;
     const { cCoef } = this.state;
     return (
-      <div className="input">
+      <div className="input" style={STYLE}>
         <input type="number" id="aCoef" onInput={this.aCoefC} value={aCoef} />
-        <h4> *x^2+ </h4>
+        <h4 style={STYLE}> *x^2+ </h4>
         <input type="number" id="bCoef" onChange={this.bCoefC} value={bCoef} />
-        <h4> *x+ </h4>
+        <h4 style={STYLE}> *x+ </h4>
         <input type="number" id="cCoef" onChange={this.cCoefC} value={cCoef} />
-        <h4> =0 </h4>
+        <h4 style={STYLE}> =0 </h4>
         <div id="solve" className="solve">
           <h4>Корни: </h4>
           {solve}
