@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render correctly 1`] = `
+<div
+  className="input"
+>
+  <table>
+    <tr>
+      <td>
+        <form>
+          Men:
+          <input
+            name="Men"
+            onChange={[Function]}
+            type="number"
+            value={null}
+          />
+        </form>
+      </td>
+      <td>
+        <form>
+          Women:
+          <input
+            name="Women"
+            onChange={[Function]}
+            type="number"
+            value={null}
+          />
+        </form>
+      </td>
+    </tr>
+  </table>
+  <div>
+    <svg>
+      <g
+        className="graph"
+      />
+    </svg>
+  </div>
+</div>
+`;
