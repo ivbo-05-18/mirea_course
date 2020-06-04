@@ -1,17 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Item from '../Item/Item';
 
 const List = (props) => {
-  const Items = props.videos.map((video) => {
-    if (props.selectedVideo !== video) {
+  const { videos, selectedVideo, onVideoClicked } = props;
+  console.log(props);
+  const Items = videos.map((video) => {
+    if (selectedVideo !== video) {
       return (
         <Item
           video={video}
           key={video.id.videoId}
-          onVideoClicked={props.onVideoClicked}
+          onVideoClicked={onVideoClicked}
         />
       );
     }
+    return (<div>Hi</div>);
   });
 
   return (
@@ -19,6 +23,12 @@ const List = (props) => {
       {Items}
     </ul>
   );
+};
+
+List.propTypes = {
+  videos: PropTypes.shape.isRequired,
+  selectedVideo: PropTypes.shape.isRequired,
+  onVideoClicked: PropTypes.func.isRequired,
 };
 
 export default List;

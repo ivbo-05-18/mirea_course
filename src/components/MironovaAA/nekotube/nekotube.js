@@ -7,18 +7,22 @@ import Video from './components/Video/Video';
 
 const YOUTUBE_API_KEY = process.env.REACT_APP_NOT_SECRET_ID;
 
-// Вынести в отдельный файл
 class Nekotube extends Component {
-  state = {
-    videos: [],
-    selectedVideo: null,
+  constructor(props) {
+    super(props);
+    this.state = {
+      videos: [],
+      selectedVideo: null,
+    };
   }
+
 
   componentDidMount() {
     console.log('componentDidMount');
     YSearch({ key: YOUTUBE_API_KEY, term: '猫　きゅうり' }, (data) => {
       this.setState({ videos: data, selectedVideo: data[2] });
     });
+    console.log(this.state);
   }
 
   onVideoClickedHandler = (video) => {
@@ -40,18 +44,17 @@ class Nekotube extends Component {
     });
   }
 
-  //const {selectedVideo, videos} = this.state;
-
   render() {
+    const { selectedVideo, videos } = this.state;
     return (
       <div className="App">
         <Header onKeywordChanged={this.onKeywordChangedHandler} />
         <Body>
-          <Video video={this.state.selectedVideo} />
+          <Video video={selectedVideo} />
           <List
-            videos={this.state.videos}
+            videos={videos}
             onVideoClicked={this.onVideoClickedHandler}
-            selectedVideo={this.state.selectedVideo}
+            selectedVideo={selectedVideo}
           />
         </Body>
       </div>

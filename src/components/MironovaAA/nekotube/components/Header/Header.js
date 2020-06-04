@@ -1,14 +1,20 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
-  state = { keyword: '' };
+  constructor(props) {
+    super(props);
+    this.state = { keyword: '' };
+  }
 
   onInputChangeHandler = (event) => {
     console.log(`event : ${event}`);
     console.log(`event.target.value : ${event.target.value}`);
+    const { onKeywordChanged } = this.props;
 
     this.setState({ keyword: event.target.value });
-    this.props.onKeywordChanged(event.target.value);
+    onKeywordChanged(event.target.value);
   }
 
   render() {
@@ -44,5 +50,9 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  onKeywordChanged: PropTypes.func.isRequired,
+};
 
 export default Header;
