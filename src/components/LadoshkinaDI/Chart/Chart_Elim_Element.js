@@ -33,12 +33,14 @@ class Chart extends React.Component {
     if (name === 'Men') { data[0].value = value; }
     if (name === 'Women') { data[1].value = value; }
 
-    console.log(data[0].value);
-    console.log(data[1].value);
+    //    console.log(data[0].value);
+    //    console.log(data[1].value);
   }
 
 
   render() {
+    const { Men } = this.state;
+    const { Women } = this.state;
     return (
       <div className={styles.input}>
         <table>
@@ -49,7 +51,7 @@ class Chart extends React.Component {
                 <input
                   name="Men"
                   type="number"
-                  value={this.state.Men}
+                  value={Men}
                   onChange={this.handleInputChange}
                 />
               </form>
@@ -60,7 +62,7 @@ class Chart extends React.Component {
                 <input
                   name="Women"
                   type="number"
-                  value={this.state.Women}
+                  value={Women}
                   onChange={this.handleInputChange}
                 />
               </form>

@@ -1,6 +1,7 @@
 import React from 'react';
 import LadoshkinaDIElement from './LadoshkinaDIElement';
 
+
 class LadoshkinaDIController extends React.Component {
   constructor(props) {
     super(props);
@@ -13,11 +14,12 @@ class LadoshkinaDIController extends React.Component {
     }
 
     render() {
+      const { show } = this.state;
       return (
         <div className="">
           <button type="button" onClick={this.toggleDiv}> Ladoshkina D. I. </button>
 
-          { this.state.show && <LadoshkinaDIElement /> }
+          { show && <LadoshkinaDIElement /> }
         </div>
       );
     }

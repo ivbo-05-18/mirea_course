@@ -2,7 +2,7 @@ import React from 'react';
 
 import LightboxElimElement from './lightbox';
 import ChartElimElement from './Chart';
-import MusicPlayer from './Music_player/player';
+import GhibliElimElement from './Ghibli';
 
 const STYLE = {
   'border-radius': '2px',
@@ -17,7 +17,7 @@ const TEXT_STYLE = {
   margin: '10px 0px',
 };
 
-
+// eslint-disable-next-line react/prefer-stateless-function
 class LadoshkinaDIElement extends React.Component {
   render() {
     return (
@@ -34,9 +34,9 @@ class LadoshkinaDIElement extends React.Component {
         </div>
 
 
-        <h2 style={TEXT_STYLE}>Элемент от другого участника(Карпик А.А.) </h2>
+        <h2 style={TEXT_STYLE}>Элемент от другого участника </h2>
         <div>
-          <MusicPlayer />
+          <GhibliElimElement />
         </div>
       </div>
     );
