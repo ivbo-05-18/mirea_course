@@ -2,7 +2,7 @@ import React from 'react';
 
 import LightboxElimElement from './lightbox';
 import ChartElimElement from './Chart';
-import GhibliElimElement from './Ghibli';
+import Music_player from './Music_player';
 
 const STYLE = {
   'border-radius': '2px',
@@ -34,9 +34,9 @@ class LadoshkinaDIElement extends React.Component {
         </div>
 
 
-        <h2 style={TEXT_STYLE}>Элемент от другого участника </h2>
+        <h2 style={TEXT_STYLE}>Элемент от другого участника (Карпик А. А.)</h2>
         <div>
-          <GhibliElimElement />
+          <Music_player />
         </div>
       </div>
     );
