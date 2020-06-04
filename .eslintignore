@@ -1,3 +1,4 @@
 src/serviceWorker.js
 src/components/PerederiyVA/Snake
 src/components/LadoshkinaDI/lightbox
+src/components/LadoshkinaDI/Music_player
