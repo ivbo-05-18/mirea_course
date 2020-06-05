@@ -1,5 +1,6 @@
 import React from 'react';
 import AvatarGenerator from 'react-avatar-generator';
+import Calendar from 'react-calendar';
 import Nekotube from './nekotube/nekotube';
 
 const MironovaAAElement = () => {
@@ -18,6 +19,22 @@ const MironovaAAElement = () => {
         colors={['#333', '#222', '#ccc']}
         backgroundColor="#000"
       />
+      <p style={TEXT_STYLE}>Компонент другого студента (Бекина М.П.)</p>
+      <Calendar startDate={new Date() }
+          endDate={ new Date().getFullYear } 
+          weekNumbers={true}
+          size={12}
+          mods={
+            [                         
+              {
+                date: new Date(),
+                classNames: [ 'current' ],
+                component: [ 'day', 'month', 'week' ]
+              }
+            ]
+          }
+
+          />
     </div>
   );
 };
