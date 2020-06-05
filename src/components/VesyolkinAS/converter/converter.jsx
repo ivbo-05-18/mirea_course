@@ -15,25 +15,16 @@ class Converter extends React.Component {
       type2: '',
     };
     this.handleType = this.handleType.bind(this);
-    this.handleInput = this.handleInput.bind(this);
   }
 
-  handleType(event) {
-    const { name } = event.target;
-    this.setState({ [name]: event.target.value });
+  async handleType(event) {
+    const { name, value } = event.target;
+    const { num1, type1, type2 } = this.state;
+    const num2 = await converterl(name === 'num1' ? value : num1, name === 'type1' ? value : type1, name === 'type2' ? value : type2);
     this.setState(
-      (state) => ({
-        num2: converterl(state.num1, state.type1, state.type2),
-      }),
-    );
-  }
-
-  handleInput(event) {
-    const { name } = event.target;
-    this.setState({ [name]: event.target.value });
-    this.setState(
-      (state) => ({
-        num2: converterl(state.num1, state.type1, state.type2),
+      () => ({
+        [name]: value,
+        num2,
       }),
     );
   }
@@ -45,24 +36,23 @@ class Converter extends React.Component {
     return (
       <div style={STYLE}>
         <h3>
-          Конвертер валют
-          курс на 21.05.2020
+          Конвертер валют онлайн
         </h3>
         <p>
           <select name="type1" value={type1} onChange={this.handleType}>
-            <option selected="selected">Исходная валюта</option>
-            <option value="1">$</option>
-            <option value="1.1">€</option>
-            <option value="0.014">₽</option>
-            <option value="0.0093">￥</option>
+            <option selected="selected" value="">Исходная валюта</option>
+            <option value="USD">$</option>
+            <option value="EUR">€</option>
+            <option value="RUB">₽</option>
+            <option value="JPY">￥</option>
           </select>
-          <input type="number" name="num1" onInput={this.handleInput} placeholder="Число" value={num1} />
+          <input type="number" name="num1" onChange={this.handleType} placeholder="Число" value={num1} />
           <select name="type2" onChange={this.handleType} value={type2}>
-            <option selected="selected">Конвертированая валюта</option>
-            <option value="1">$</option>
-            <option value="1.1">€</option>
-            <option value="0.014">₽</option>
-            <option value="0.0093">￥</option>
+            <option selected="selected" value="">Конвертированая валюта</option>
+            <option value="USD">$</option>
+            <option value="EUR">€</option>
+            <option value="RUB">₽</option>
+            <option value="JPY">￥</option>
           </select>
           <p>{num2}</p>
         </p>

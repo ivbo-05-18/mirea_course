@@ -2,13 +2,12 @@ import converterl from './converter-logik';
 
 
 describe('Тесты математики', () => {
-  test('Standart numbers', () => {
-    expect(converterl(6, 2, 3)).toBe('4.00');
+  test('test USD=USD', async () => {
+    const result = await converterl(1, 'USD', 'USD');
+    expect(result).toBe(1);
   });
-  test('Nothing', () => {
-    expect(converterl('', '', '')).toBe(0);
-  });
-  test('Error', () => {
-    expect(converterl('dddd', 'fdf', 'fddf')).toBe('NaN');
+  test('should return 0 ', async () => {
+    const result = await converterl('', 'USD', 'USD');
+    expect(result).toBe(0);
   });
 });

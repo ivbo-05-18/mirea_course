@@ -9,7 +9,7 @@ exports[`[RENDER] Converter - Snapshot test Matches the snapshot 1`] = `
   }
 >
   <h3>
-    Конвертер валют курс на 21.05.2020
+    Конвертер валют онлайн
   </h3>
   <p>
     <select
@@ -19,33 +19,34 @@ exports[`[RENDER] Converter - Snapshot test Matches the snapshot 1`] = `
     >
       <option
         selected="selected"
+        value=""
       >
         Исходная валюта
       </option>
       <option
-        value="1"
+        value="USD"
       >
         $
       </option>
       <option
-        value="1.1"
+        value="EUR"
       >
         €
       </option>
       <option
-        value="0.014"
+        value="RUB"
       >
         ₽
       </option>
       <option
-        value="0.0093"
+        value="JPY"
       >
         ￥
       </option>
     </select>
     <input
       name="num1"
-      onInput={[Function]}
+      onChange={[Function]}
       placeholder="Число"
       type="number"
       value=""
@@ -57,26 +58,27 @@ exports[`[RENDER] Converter - Snapshot test Matches the snapshot 1`] = `
     >
       <option
         selected="selected"
+        value=""
       >
         Конвертированая валюта
       </option>
       <option
-        value="1"
+        value="USD"
       >
         $
       </option>
       <option
-        value="1.1"
+        value="EUR"
       >
         €
       </option>
       <option
-        value="0.014"
+        value="RUB"
       >
         ₽
       </option>
       <option
-        value="0.0093"
+        value="JPY"
       >
         ￥
       </option>
