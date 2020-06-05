@@ -13,6 +13,7 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     id="a"
     onChange={[Function]}
     type="number"
+    value=""
   />
   <h4
     style={
@@ -27,6 +28,7 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     id="b"
     onChange={[Function]}
     type="number"
+    value=""
   />
   <h4
     style={
@@ -41,6 +43,7 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     id="c"
     onChange={[Function]}
     type="number"
+    value=""
   />
   <h4
     style={

@@ -9,9 +9,9 @@ class Solver extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      aCoef: '',
-      bCoef: '',
-      cCoef: '',
+      a: '',
+      b: '',
+      c: '',
     };
     this.find = this.find.bind(this);
     this.setCoefficient = this.setCoefficient.bind(this);
