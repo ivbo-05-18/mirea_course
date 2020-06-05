@@ -23,8 +23,8 @@ class Answer extends Component {
     return (
       <Fragment>
         { this.state.Clickcheck ? this.state.Answers.map(ans => {
-          return <button class={styles.button} onClick={this.onAnswer}> {ans}</button>;
-        }) : <button class={styles.button}> {this.state.rightAnaswer}</button>  } 
+          return <button className={styles.button} onClick={this.onAnswer}> {ans}</button>;
+        }) : <button className={styles.button}> {this.state.rightAnaswer}</button>  } 
 
       </Fragment>
     );

@@ -8,15 +8,7 @@
     "rules": {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"]}],
       "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-      "curly": [2, "all"],
-      "react/destructuring-assignment": [0, "always"],
-      "react/no-string-refs": 0,
-      "jsx-a11y/no-static-element-interactions": 0,
-      "no-console": 0,
-      "react/no-access-state-in-setstate": 0,
-      "jsx-a11y/click-events-have-key-events": 0,
-      "dot-notation": 0,
-      "jsx-a11y/label-has-associated-control": 0
+      "curly": [2, "all"]
     },
     "parser": "babel-eslint"
   }

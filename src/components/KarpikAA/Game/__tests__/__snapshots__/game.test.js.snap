@@ -14,25 +14,33 @@ exports[`Render Game Render correctly 1`] = `
       <div
         className="inner"
       >
-        <div
+        <button
+          aria-label="green"
           className="green"
           id="green"
           onClick={[Function]}
+          type="button"
         />
-        <div
+        <button
+          aria-label="red"
           className="red"
           id="red"
           onClick={[Function]}
+          type="button"
         />
-        <div
+        <button
+          aria-label="yellow"
           className="yellow"
           id="yellow"
           onClick={[Function]}
+          type="button"
         />
-        <div
+        <button
+          aria-label="blue"
           className="blue"
           id="blue"
           onClick={[Function]}
+          type="button"
         />
         <div
           className="round"

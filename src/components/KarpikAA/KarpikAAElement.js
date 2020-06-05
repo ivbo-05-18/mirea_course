@@ -1,6 +1,6 @@
 import React from 'react';
-import App from './Quiz/src/quiz';
-import Game from './Game/game';
+import QuizApp from './Quiz/src/quiz';
+import SimonGame from './Game/game';
 import Uploader from './Uploader/uploader';
 
 const STYLE = {
@@ -32,11 +32,11 @@ const KarpikAAElement = () => (
   <div style={STYLE}>
     <h2 style={TEXT_STYLE}>Собственный элемент</h2>
     <div style={GAME_STYLE}>
-      <Game />
+      <SimonGame />
     </div>
     <h2 style={TEXT_STYLE}>Заимствованный элемент</h2>
     <div style={QUIZ_STYLE}>
-      <App />
+      <QuizApp />
     </div>
     <h2 style={TEXT_STYLE}>Элемент от другого участника(Медный Н.Ю.)</h2>
     <div>

@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import Header from './Components/Header';
 import Quiz from './Components/Quiz';
 
-function App() {
+function QuizApp() {
   return (
 
     <Fragment>
@@ -18,4 +18,4 @@ function App() {
   );
 }
 
-export default App;
+export default QuizApp;

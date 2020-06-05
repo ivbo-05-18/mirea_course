@@ -28,8 +28,9 @@ class Uploader extends React.Component {
     const { image } = this.state;
     return (
       <div className={styles.mainDiv}>
-        <label className={styles.inputLabel}>
+        <label htmlFor="inp" className={styles.inputLabel}>
           <input
+            id="inp"
             className={styles.input}
             type="file"
             onChange={(e) => this.handleUpload(e)}
