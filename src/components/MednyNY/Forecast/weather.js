@@ -19,13 +19,13 @@ class Forecast extends React.Component {
     const { activePlace } = this.state;
     return (
       <div className="App">
-        {this.PLACES.map((place, index) => (
+        {this.PLACES.map((place, PLACES) => (
           <button
             type="button"
             className={styles.button}
-            key={index}
+            key={PLACES.zip}
             onClick={() => {
-              this.setState({ activePlace: index });
+              this.setState({ activePlace: PLACES });
             }}
           >
             {place.name}

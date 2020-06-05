@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './weather.module.css';
 
 class WeatherInfo extends React.Component {
@@ -11,7 +12,8 @@ class WeatherInfo extends React.Component {
 
   componentDidMount() {
     const { zip } = this.props;
-    const URL = `http://api.openweathermap.org/data/2.5/weather?q=${zip}&appid=b1b35bba8b434a28a0be2a3e1071ae5b&units=imperial`;
+    const apiKey = 'b1b35bba8b434a28a0be2a3e1071ae5b';
+    const URL = `http://api.openweathermap.org/data/2.5/weather?q=${zip}&appid=${apiKey}&units=metric`;
     fetch(URL).then((res) => res.json()).then((json) => {
       this.setState({ weatherData: json });
     });
@@ -37,22 +39,22 @@ class WeatherInfo extends React.Component {
             </h1>
             <p className={styles.parag}>
               Temprature:
-              {((weatherData.main.temp - 32) / 1.8).toFixed(0)}
+              {(weatherData.main.temp).toFixed(0)}
               °С
             </p>
             <p className={styles.parag}>
               High Temp:
-              {((weatherData.main.temp_max - 32) / 1.8).toFixed(0)}
+              {(weatherData.main.temp_max).toFixed(0)}
               °С
             </p>
             <p className={styles.parag}>
               Low Temp:
-              {((weatherData.main.temp_min - 32) / 1.8).toFixed(0)}
+              {(weatherData.main.temp_min).toFixed(0)}
               °С
             </p>
             <p className={styles.parag}>
               Wind Speed:
-              {(weatherData.wind.speed).toFixed(1)}
+              {(weatherData.wind.speed).toFixed(0)}
               {' '}
               mi/hr
             </p>
@@ -66,5 +68,9 @@ class WeatherInfo extends React.Component {
     );
   }
 }
+
+WeatherInfo.propTypes = {
+  zip: PropTypes.string.isRequired,
+};
 
 export default WeatherInfo;
