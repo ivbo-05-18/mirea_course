@@ -17,7 +17,7 @@ const fetchData = async (dataUpdate) => {
     });
   } catch (error) {
     dataUpdate({
-      number: 'Fetching has failed',
+      info: 'Fetching has failed',
       isLoaded: false,
     });
   }
@@ -25,8 +25,9 @@ const fetchData = async (dataUpdate) => {
 
 const SpacePeople = () => {
   const [data, setData] = useState({
-    number: 'Fetching...',
-    people: ['name', 'name', 'name', '', '', ''],
+    info: 'Fetching...',
+    number: 0,
+    people: [],
     isLoaded: false,
   });
   useEffect(() => {
@@ -43,7 +44,7 @@ const SpacePeople = () => {
   }
 
   return (
-    <div>{data.number}</div>
+    <div>{data.info}</div>
   );
 };
 
