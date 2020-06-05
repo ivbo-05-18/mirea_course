@@ -14,46 +14,34 @@ class Solver extends React.Component {
       cCoef: '',
     };
     this.find = this.find.bind(this);
-    this.aCoefC = this.aCoefC.bind(this);
-    this.bCoefC = this.bCoefC.bind(this);
-    this.cCoefC = this.cCoefC.bind(this);
-  }
+    this.setCoefficient = this.setCoefficient.bind(this);
+     }
 
   find() {
     this.setState(
       (state) => ({
-        solve: calculate(state.aCoef, state.bCoef, state.cCoef),
+        solve: calculate(state.a, state.b, state.c),
       }),
     );
   }
 
-  aCoefC(event) {
-    this.setState({ aCoef: event.target.value });
-    this.find();
-  }
-
-  bCoefC(event) {
-    this.setState({ bCoef: event.target.value });
-    this.find();
-  }
-
-  cCoefC(event) {
-    this.setState({ cCoef: event.target.value });
+  setCoefficient(event, coefficient) {
+    this.setState({ [coefficient]: event.target.value });
     this.find();
   }
 
   render() {
     const { solve } = this.state;
-    const { aCoef } = this.state;
-    const { bCoef } = this.state;
-    const { cCoef } = this.state;
+    const { a } = this.state;
+    const { b } = this.state;
+    const { c } = this.state;
     return (
       <div className="input" style={STYLE}>
-        <input type="number" id="aCoef" onInput={this.aCoefC} value={aCoef} />
+        <input type="number" id="a" onChange={e => this.setCoefficient(e, 'a')} value={a} />
         <h4 style={STYLE}> *x^2+ </h4>
-        <input type="number" id="bCoef" onChange={this.bCoefC} value={bCoef} />
+        <input type="number" id="b" onChange={e => this.setCoefficient(e, 'b')} value={b} />
         <h4 style={STYLE}> *x+ </h4>
-        <input type="number" id="cCoef" onChange={this.cCoefC} value={cCoef} />
+        <input type="number" id="c" onChange={e => this.setCoefficient(e, 'c')} value={c} />
         <h4 style={STYLE}> =0 </h4>
         <div id="solve" className="solve">
           <h4>Корни: </h4>

@@ -10,10 +10,9 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
   }
 >
   <input
-    id="aCoef"
-    onInput={[Function]}
+    id="a"
+    onChange={[Function]}
     type="number"
-    value=""
   />
   <h4
     style={
@@ -25,10 +24,9 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
      *x^2+ 
   </h4>
   <input
-    id="bCoef"
+    id="b"
     onChange={[Function]}
     type="number"
-    value=""
   />
   <h4
     style={
@@ -40,10 +38,9 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
      *x+ 
   </h4>
   <input
-    id="cCoef"
+    id="c"
     onChange={[Function]}
     type="number"
-    value=""
   />
   <h4
     style={
