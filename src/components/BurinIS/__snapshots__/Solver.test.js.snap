@@ -59,7 +59,7 @@ exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
     id="solve"
   >
     <h4>
-      Корни: 
+      Введите коэффициент
     </h4>
   </div>
 </div>

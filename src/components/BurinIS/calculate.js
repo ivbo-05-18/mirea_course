@@ -1,15 +1,33 @@
 function calculate(a, b, c) {
+  let answer = {};
   if ((a === '0' || a === '') && (b === '0' || b === '')) {
-    return ('Введите коэффициент');
-  } if (a === '0' || a === '') {
-    return (`x1=${-c / b}`);
+    answer = {
+      flag: 3,
+    };
+    return answer;
+  }
+  if (a === '0' || a === '') {
+    const x1 = -c / b;
+    answer = {
+      x1,
+      flag: 2,
+    };
+    return answer;
   }
   const D = b * b - 4 * a * c;
-  if (D < 0) {
-    return ('Нет действительных корней');
-  } if (D === 0) {
-    return (`x1=x2=${-b / (2 * a)}`);
+  if (D >= 0) {
+    const x1 = (-b + Math.sqrt(D)) / (2 * a);
+    const x2 = (-b - Math.sqrt(D)) / (2 * a);
+    answer = {
+      flag: 1,
+      x1,
+      x2,
+    };
+  } else {
+    answer = {
+      flag: 0,
+    };
   }
-  return (`x1=${(-b + Math.sqrt(D)) / (2 * a)};x2=${(-b - Math.sqrt(D)) / (2 * a)}`);
+  return answer;
 }
 export default calculate;

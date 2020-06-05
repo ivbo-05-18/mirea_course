@@ -13,7 +13,6 @@ function App() {
   return (
     <Container>
       <BinaryMode></BinaryMode>
-      {/*<DecimalMode></DecimalMode>*/}
     </Container>
   )
 }
