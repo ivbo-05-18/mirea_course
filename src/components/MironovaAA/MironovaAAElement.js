@@ -20,21 +20,21 @@ const MironovaAAElement = () => {
         backgroundColor="#000"
       />
       <p style={TEXT_STYLE}>Компонент другого студента (Бекина М.П.)</p>
-      <Calendar startDate={new Date() }
-          endDate={ new Date().getFullYear } 
-          weekNumbers={true}
-          size={12}
-          mods={
-            [                         
+      <Calendar
+        startDate={new Date()}
+        endDate={new Date().getFullYear}
+        weekNumbers
+        size={12}
+        mods={
+            [
               {
                 date: new Date(),
-                classNames: [ 'current' ],
-                component: [ 'day', 'month', 'week' ]
-              }
+                classNames: ['current'],
+                component: ['day', 'month', 'week'],
+              },
             ]
           }
-
-          />
+      />
     </div>
   );
 };
