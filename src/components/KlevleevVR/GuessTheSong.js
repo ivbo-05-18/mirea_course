@@ -35,7 +35,7 @@ const BUTTON_STYLE = {
   padding: '10px',
 };
 
-const apikey = process.env.REACT_APP_NOT_SECRET_ID;
+const apikey = process.env.REACT_APP_MUSICXMATCH_KEY;
 const apiLink = 'http://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/';
 
 class GuessTheSong extends Component {
