@@ -1,11 +1,11 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import Header from './Components/Header';
 import Quiz from './Components/Quiz';
 
 function QuizApp() {
   return (
 
-    <Fragment>
+    <div>
 
       {/* header Components */}
       <Header />
@@ -13,7 +13,7 @@ function QuizApp() {
       {/* Quiz Components */}
       <Quiz />
 
-    </Fragment>
+    </div>
 
   );
 }

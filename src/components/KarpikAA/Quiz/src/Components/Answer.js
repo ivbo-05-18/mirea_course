@@ -1,34 +1,50 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from '../quiz_styles.module.css';
 
 class Answer extends Component {
- 
 //  create state
-  state = {
-    Answers: this.props.anwer,
-    Clickcheck:true,
-    rightAnaswer: this.props.rightAnaswer
-  };
+  constructor(props) {
+    super(props);
+    const { anwer, rightAnaswer } = this.props;
+    this.state = {
+      Answers: anwer,
+      Clickcheck: true,
+      rightAnaswer,
+    };
+  }
 
   // Event on button
   onAnswer = () => {
-   
-    this.setState({ 
-      Clickcheck:false
+    this.setState({
+      Clickcheck: false,
     });
-  
   };
-  
-  render() {
-    return (
-      <Fragment>
-        { this.state.Clickcheck ? this.state.Answers.map(ans => {
-          return <button className={styles.button} onClick={this.onAnswer}> {ans}</button>;
-        }) : <button className={styles.button}> {this.state.rightAnaswer}</button>  } 
 
-      </Fragment>
+  render() {
+    const { Clickcheck, Answers, rightAnaswer } = this.state;
+    return (
+      <div>
+        { Clickcheck ? Answers.map((ans) => (
+          <button type="submit" className={styles.button} onClick={this.onAnswer}>
+            {' '}
+            {ans}
+          </button>
+        )) : (
+          <button type="submit" className={styles.button}>
+            {' '}
+            {rightAnaswer}
+          </button>
+        ) }
+
+      </div>
     );
   }
 }
 
 export default Answer;
+
+Answer.propTypes = {
+  anwer: PropTypes.string.isRequired,
+  rightAnaswer: PropTypes.string.isRequired,
+};
