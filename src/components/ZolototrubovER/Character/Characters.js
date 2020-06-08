@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-const fetchChar = async (props, link, stateUpdate) => {
-  fetch(link)
+const fetchChar = async (props, stateUpdate) => {
+  fetch(null)
     .then((response) => response.json());
   stateUpdate(
     {
@@ -26,14 +26,14 @@ const Characters = (props) => {
   });
 
   useEffect(() => {
-    fetchChar(props, props.loadLink, setState);
+    fetchChar(props, setState);
   }, [props]);
 
   if (state.isLoading === false) {
     return (
       <tr className="zolototrubov_er_tr">
         <th className="zolototrubov_er_th">{state.name}</th>
-        <th className="zolototrubov_er_th"><img src={state.head_shot} alt="" /></th>
+        <th className="zolototrubov_er_th" aria-label=" "><img src={state.head_shot} alt="" /></th>
         <th className="zolototrubov_er_th">{state.universe}</th>
         <th className="zolototrubov_er_th">
           <a href={state.info} target="_blank" rel="noopener noreferrer">
