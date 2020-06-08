@@ -1,7 +1,7 @@
 import React from 'react';
 import ForeignGreetings from './Greetings/ForeignGreetings';
 import Clock from './Clock/Clock';
-import Money from './Money/money';
+import Color from './Color/Color';
 
 
 const TarasovAAElement = () => {
@@ -19,8 +19,8 @@ const TarasovAAElement = () => {
       <p style={TEXT_STYLE}>Заимствованный компонент с github</p>
       <Clock />
 
-      <p style={TEXT_STYLE}>Заимствованный компонент у Капырина К.А.</p>
-      <Money />
+      <p style={TEXT_STYLE}>Заимствованный компонент у Мирошника Г.К.</p>
+      <Color />
     </div>
   );
 };
