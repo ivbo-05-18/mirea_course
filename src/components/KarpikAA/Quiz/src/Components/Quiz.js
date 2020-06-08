@@ -7,26 +7,15 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataQuestion: [],
+      dataQuestion: quizdata,
     };
   }
 
-  componentDidMount() {
-    this.setStatefunstion();
-  }
-
- setStatefunstion = () => {
-   //  use reactjs setState
-   this.setState({
-     dataQuestion: quizdata,
-   });
- }
-
- render() {
-   const { dataQuestion } = this.state;
-   return (
-     <div>
-       {
+  render() {
+    const { dataQuestion } = this.state;
+    return (
+      <div>
+        {
           dataQuestion.map((data) => (
             <div key={data.id} className={styles.mainDiv}>
               <h2>
@@ -38,9 +27,9 @@ class Quiz extends Component {
           ))
          }
 
-     </div>
-   );
- }
+      </div>
+    );
+  }
 }
 
 export default Quiz;
