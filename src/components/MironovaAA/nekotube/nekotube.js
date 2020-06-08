@@ -5,7 +5,7 @@ import Body from './components/Body/Body';
 import List from './components/Video/List/List';
 import Video from './components/Video/Video';
 
-const YOUTUBE_API_KEY = process.env.REACT_APP_NOT_SECRET_ID;
+const YOUTUBE_API_KEY = process.env.REACT_APP_NEKOTUBE;
 
 class Nekotube extends Component {
   constructor(props) {
