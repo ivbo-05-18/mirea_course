@@ -1,7 +1,7 @@
 import React from 'react';
-import ExampleElement from './ExampleElement';
+import KarpikAAElement from './KarpikAAElement';
 
-class ExampleController extends React.Component {
+class KarpikAAController extends React.Component {
   constructor(props) {
     super(props);
     this.state = { show: false };
@@ -15,12 +15,12 @@ class ExampleController extends React.Component {
   render() {
     const { show } = this.state;
     return (
-      <div className="ExampleDiv">
-        <button type="button" onClick={this.toggleDiv}> Example </button>
-        { show && <ExampleElement /> }
+      <div>
+        <button type="button" onClick={this.toggleDiv}> Карпик А.А. </button>
+        { show && <KarpikAAElement /> }
       </div>
     );
   }
 }
 
-export default ExampleController;
+export default KarpikAAController;

@@ -11,17 +11,11 @@ class GaussianElimElement extends React.Component {
   }
 
     updateMatrix = (e, i, index) => {
-      const updatedMatrix = new Array(3);
-      const { matrix } = this.state;
-      for (let j = 0; j < 3; j++) {
-        updatedMatrix[j] = matrix[j].slice();
-      }
+      const updatedMatrix = this.state.matrix;
 
       if (parseFloat(e.target.value) || parseFloat(e.target.value) === 0) {
         updatedMatrix[i][index] = parseFloat(e.target.value);
-      } else {
-        // Для удобства ввода оставить пользователю возможность вводить строки, которые не
-        // пройдут parse в float (функция GaussianElim при таких входных данных вернёт исключение)
+      } else { // Для удобства ввода оставить пользователю возможность вводить строки, которые не пройдут parse в float (функция GaussianElim при таких входных данных вернёт исключение)
         updatedMatrix[i][index] = e.target.value;
       }
 
@@ -31,11 +25,10 @@ class GaussianElimElement extends React.Component {
     }
 
     render() {
-      const { matrix } = this.state;
       return (
         <div className="perederiyva_gauss_input">
           <table>
-            {matrix.map((item, i) => (
+            {this.state.matrix.map((item, i) => (
               <tr>
                 <td>
                   <input type="number" step="any" value={item[0]} onChange={(e) => this.updateMatrix(e, i, 0)} />
@@ -55,7 +48,7 @@ class GaussianElimElement extends React.Component {
               </tr>
             ))}
           </table>
-          <GaussianElimResult input={matrix} />
+          <GaussianElimResult input={this.state.matrix} />
         </div>
       );
     }

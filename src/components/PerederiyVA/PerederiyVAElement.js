@@ -3,6 +3,7 @@ import Snake from './Snake';
 import GaussianElimElement from './Gauss';
 import Captcha from './Captcha/Captcha';
 
+
 const STYLE = {
   'border-radius': '2px',
   background: '#DFDFDF',
@@ -22,22 +23,26 @@ const SNAKE_STYLE = {
   width: 600,
 };
 
-const PerederiyVAElement = () => (
-  <div style={STYLE}>
-    <h2 style={TEXT_STYLE}>Собственный элемент - решение СЛАУ 3-го порядка методом Гаусса</h2>
-    <div>
-      <GaussianElimElement />
-    </div>
-    <h2 style={TEXT_STYLE}>Заимствованный элемент - игра &quot;Змейка&quot;</h2>
-    <p style={TEXT_STYLE}>Управление: W S A D.</p>
-    <div style={SNAKE_STYLE}>
-      <Snake sound={false} />
-    </div>
-    <h2 style={TEXT_STYLE}>Элемент от другого участника (Петров С.Д.)</h2>
-    <div className="playerplayer">
-      <Captcha />
-    </div>
-  </div>
-);
+class PerederiyVAElement extends React.Component {
+  render() {
+    return (
+      <div style={STYLE}>
+        <h2 style={TEXT_STYLE}>Собственный элемент - решение СЛАУ 3-го порядка методом Гаусса</h2>
+        <div>
+          <GaussianElimElement />
+        </div>
+        <h2 style={TEXT_STYLE}>Заимствованный элемент - игра "Змейка"</h2>
+        <p style={TEXT_STYLE}>Управление: W S A D.</p>
+        <div style={SNAKE_STYLE}>
+          <Snake sound={false} />
+        </div>
+        <h2 style={TEXT_STYLE}>Элемент от другого участника (Петров С.Д.)</h2>
+        <div className="playerplayer">
+          <Captcha />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default PerederiyVAElement;

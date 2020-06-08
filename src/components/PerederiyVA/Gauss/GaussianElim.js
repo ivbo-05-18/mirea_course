@@ -1,52 +1,34 @@
-function GaussianElim(matrixToSolve) {
+function GaussianElim(matrix) {
   // Матрица на входе включает n строк, где n - кол-во уравнений.
   // Элемент из вектора результатов записывается как (n + 1)ый элемент строки.
   // Например, система из одного ур-ия 2x = 3 в виде матрицы будет выглядеть как [2, 3].
 
   // Проверка входных данных
-  // Проверить является ли объект на входе массивом
-  // (массив может быть матрицей, если все его эл-ты - массивы)
+  // Проверить является ли объект на входе массивом (массив может быть матрицей, если все его эл-ты - массивы)
+  if (Array.isArray(matrix)) {
+    var n = matrix.length; // Кол-во строк матрицы - кол-во уравнений
 
-  if (Array.isArray(matrixToSolve)) {
-    const n = matrixToSolve.length; // Кол-во строк матрицы - кол-во уравнений
     // Проверить, матрица ли на входе
     for (let i = 0; i < n; i++) {
-      if (!Array.isArray(matrixToSolve[i])) {
-        throw new Error('неверный формат данных');
-      }
+      if (!Array.isArray(matrix[i])) { throw new Error('неверный формат данных'); }
     }
 
     // Проверка формата матрицы и типов данных, идём по строкам
     for (let i = 0; i < n; i++) {
       // Проверяем, что матрица имеет правильный формат в этой строке - n+1 стоблцов
-      if (matrixToSolve[i].length !== n + 1) {
-        throw new Error('неверный формат матрицы');
-      }
+      if (matrix[i].length !== n + 1) { throw new Error('неверный формат матрицы'); }
       // Проверяем типы данных в текущей строке
       for (let j = 0; j < n + 1; j++) {
-        if (typeof (matrixToSolve[i][j]) !== 'number' || Number.isNaN(matrixToSolve[i][j])) {
-          throw new Error('неверный формат данных в матрице'); // Проверяем, что в кажой ячейке строки хранится число
-        }
-        if (Math.abs(matrixToSolve[i][j]) === Infinity) {
-          throw new Error('входные данные слишком велики по модулю');
-        }
+        if (typeof (matrix[i][j]) !== 'number' || isNaN(matrix[i][j])) { throw new Error('неверный формат данных в матрице'); } // Проверяем, что в кажой ячейке строки хранится число
+        if (Math.abs(matrix[i][j]) === Infinity) { throw new Error('входные данные слишком велики по модулю'); }
       }
     }
-  } else {
-    throw new Error('неверный формат данных');
-  }
+  } else { throw new Error('неверный формат данных'); }
 
-  // Создаём копию двумерного массива, чтобы не менять исходный
-  const n = matrixToSolve.length;
-  const matrix = new Array(n);
-  for (let i = 0; i < n; i++) {
-    matrix[i] = matrixToSolve[i].slice();
-  }
 
   // Прямой ход - преобразование матрицы, идём по главной диагонали
   for (let i = 0; i < n; i++) {
-    // Будем выбирать максимальный по модулю элемент в столбце как опорный
-    // (иначе возникают погрешности и проблемы, если элемент в текущем ряду = 0)
+    // Будем выбирать максимальный по модулю элемент в столбце как опорный (иначе возникают погрешности и проблемы, если элемент в текущем ряду = 0)
     // Ищем максимальный по модулю элемент в столбце
     let maxElem = Math.abs(matrix[i][i]);
     let maxElemRow = i;
@@ -57,10 +39,7 @@ function GaussianElim(matrixToSolve) {
       }
     }
 
-    // Если максимальный по модулю элемент = 0, то весь столбец нулевой и решений нет
-    if (maxElem === 0) {
-      return undefined;
-    }
+    if (maxElem === 0) { return undefined; } // Если максимальный по модулю элемент = 0, то весь столбец нулевой и решений нет
 
     // Поменять местами ряды, чтобы сверху стоял ряд с максимальным элементом
     const rowToSwap = matrix[i];
@@ -79,24 +58,11 @@ function GaussianElim(matrixToSolve) {
   // Решить уравнение
   const x = new Array(n);
   for (let i = n - 1; i >= 0; i--) {
-    // Если коэффициент или значение ур-ия равны бесконечности, то ответ нельзя посчитать
-    if (Math.abs(matrix[i][i]) === Infinity || Math.abs(matrix[i][n]) === Infinity) {
-      throw new Error('входные данные слишком велики по модулю');
-    }
-
-    // Если коэффициент = 0, то у системы нет однозначных решений
-    if (matrix[i][i] === 0) {
-      return undefined;
-    }
-
+    if (Math.abs(matrix[i][i]) === Infinity || Math.abs(matrix[i][n]) === Infinity) { throw new Error('входные данные слишком велики по модулю'); } // Если коэффициент или значение ур-ия равны бесконечности, то ответ нельзя посчитать
+    if (matrix[i][i] === 0) { return undefined; } // Если коэффициент = 0, то у системы нет однозначных решений
     x[i] = matrix[i][n] / matrix[i][i];
-
-    // Если x = Infinity, то ответ слишом большой
-    if (Math.abs(x[i]) === Infinity) {
-      throw new Error('ответ - слишком большое число по модулю');
-    }
-
-    // Подставить значение найденого корня (вычесть из значений оставшихся выражений)
+    if (Math.abs(x[i]) === Infinity) { throw new Error('ответ - слишком большое число по модулю'); } // Если x = Infinity, то ответ слишом большой
+    // Подставить значение найденого корня (вычесть из значений оставшихся выражений )
     for (let j = i - 1; j >= 0; j--) {
       matrix[j][n] -= matrix[j][i] * x[i];
     }
@@ -105,4 +71,4 @@ function GaussianElim(matrixToSolve) {
   return x;
 }
 
-export default GaussianElim;
+module.exports = GaussianElim;

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Game Render correctly 1`] = `
+<div>
+  <h1>
+    Simon Says
+  </h1>
+  <div
+    className="simon"
+  >
+    <div
+      className="circle"
+    >
+      <div
+        className="inner"
+      >
+        <button
+          aria-label="green"
+          className="green"
+          id="green"
+          onClick={[Function]}
+          type="button"
+        />
+        <button
+          aria-label="red"
+          className="red"
+          id="red"
+          onClick={[Function]}
+          type="button"
+        />
+        <button
+          aria-label="yellow"
+          className="yellow"
+          id="yellow"
+          onClick={[Function]}
+          type="button"
+        />
+        <button
+          aria-label="blue"
+          className="blue"
+          id="blue"
+          onClick={[Function]}
+          type="button"
+        />
+        <div
+          className="round"
+        >
+          0
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="controls"
+  >
+    <div
+      className="text"
+    >
+      
+    </div>
+    <button
+      id="start"
+      onClick={[Function]}
+      type="button"
+    >
+      Start Game
+    </button>
+  </div>
+</div>
+`;

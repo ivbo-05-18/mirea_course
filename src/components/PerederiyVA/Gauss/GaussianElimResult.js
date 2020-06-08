@@ -1,15 +1,16 @@
 import React from 'react';
-import GaussianElim from './GaussianElim';
+
+const GaussianElim = require('./GaussianElim');
 
 const GaussianElimResult = (props) => {
   try {
-    if (props.input === undefined) {
-      throw new Error("matrix wasn't passed");
-    } else {
-      const resultVector = GaussianElim(props.input);
-      if (resultVector === undefined) {
-        throw new Error('решений нет');
+    if (props.input === undefined) { throw new Error("matrix wasn't passed"); } else {
+      const matrixToPass = new Array(3); // Создаём копию двумерного массива, чтобы не менять исходный
+      for (let i = 0; i < 3; i++) {
+        matrixToPass[i] = props.input[i].slice();
       }
+      const resultVector = GaussianElim(matrixToPass);
+      if (resultVector === undefined) { throw new Error('решений нет'); }
       return (
         <p className="result">
           x =

@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import ExampleController from './components/ExampleController';
+import KarpikAAController from './components/KarpikAA/KarpikAAController';
+import ExampleController from './components/Example';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
 
@@ -14,6 +15,8 @@ function App() {
         <PetrovSDController />
 
         <ExampleController />
+
+        <KarpikAAController />
 
       </header>
     </div>

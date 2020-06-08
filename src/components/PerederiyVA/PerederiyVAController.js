@@ -1,5 +1,5 @@
 import React from 'react';
-import PerederiyVAElement from './PerederiyVAElement';
+import PerederiyVAElement from './PerederiyVAElement.js';
 
 class PerederiyVAController extends React.Component {
   constructor(props) {
@@ -13,11 +13,11 @@ class PerederiyVAController extends React.Component {
     }
 
     render() {
-      const { show } = this.state;
       return (
-        <div>
-          <button type="button" onClick={this.toggleDiv}> Передерий В.А. </button>
-          { show && <PerederiyVAElement /> }
+        <div className="">
+          <button onClick={this.toggleDiv}> Передерий В.А. </button>
+
+          { this.state.show && <PerederiyVAElement /> }
         </div>
       );
     }

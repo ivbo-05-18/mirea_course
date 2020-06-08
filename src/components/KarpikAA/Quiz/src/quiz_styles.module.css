@@ -1,0 +1,41 @@
+/* for header  */
+
+.Header {
+  height: 70px;
+  color: blueviolet;
+  margin-bottom: 18px;
+  border-bottom: 1.6px solid rgba(0, 0, 0, 0.363);
+}
+
+
+/* css for card  */
+.mainDiv{
+  font-family: monospace;
+  padding: 0px;
+  box-sizing: border-box;
+  height: auto;
+  font-size: 30px;
+  background-color: blueviolet;
+  color: white;
+  margin:auto;
+  width: 600px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+/* css for button  */
+.button {
+  border:none;
+  background-color:black;
+  color: white;
+  margin-right: 3px;
+  padding: 8px;
+}
+
+.button:hover {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  font-size: 17.5px; 
+}

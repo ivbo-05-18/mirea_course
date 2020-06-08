@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box
+}
+
+*:focus {
+    outline: none
+}
+
+h1 {
+    color: #36383f;
+    font-size: 30px;
+	text-align: center;
+}
+
+.simon {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.circle {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #36383f;
+    border-radius: 50%;
+    box-shadow: 0 0 5px black;
+    border-bottom: 1px solid black;
+}
+
+.inner {
+    margin: 30px;
+}
+
+.buttons {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
+}
+
+.green {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
+    border-radius: 100% 3% 0 3%;
+    background-color: #1ecd34;
+}
+
+.red {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
+    border-radius: 3% 100% 3% 0;
+    background-color: #fe3e2b;
+}
+
+.yellow {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
+    border-radius: 3% 0 3% 100%;
+    background-color: #fedd00;
+}
+
+.blue {
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+	cursor: pointer;
+    border-radius: 0 3% 100% 3%;
+    background-color: #0070db;
+}
+
+.green:hover,
+.red:hover,
+.yellow:hover,
+.blue:hover,
+.hover {
+    box-shadow: 0 0 30px #979caf;
+}
+
+.green:active,
+.red:active,
+.yellow:active,
+.blue:active {
+    box-shadow: 0 0 15px #585b66;
+    opacity: 0.9;
+}
+
+.controls {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.text {
+    padding: 15px;
+	color: #36383f;
+    border-radius: 5px;
+    margin: 30px;
+}
+
+#start {
+    border: 0;
+    background-color: #36383f;
+    padding: 15px 30px;
+    color: #fff;
+	font-weight: 700;
+	box-shadow: 0 0 1px black;
+    border-radius: 5px;
+	cursor: pointer;
+	
+}
+
+#start:hover {
+    box-shadow: 0 0 0 black;
+}
+
+#start:active {
+    background-color: #2c2e34;
+}
+
