@@ -7,6 +7,7 @@ import VelikanovKYController from './components/VelikanovKY/VelikanovKYControlle
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import VesyolkinASController from './components/VesyolkinAS/VesyolkinASController';
 import MurashevController from './components/MurashevAS/controller';
 import KlevleevVRController from './components/KlevleevVR/KlevleevVRController';
 import MiroshnikGKController from './components/MiroshnikGK/MiroshnikGKController';
@@ -24,6 +25,8 @@ function App() {
         <PerederiyVAController />
 
         <PetrovSDController />
+
+        <VesyolkinASController />
 
         <KapyrinKAcontroller />
 
