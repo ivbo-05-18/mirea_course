@@ -4,14 +4,14 @@ import GaussianElimElement from './Gauss';
 import Captcha from './Captcha/Captcha';
 
 const STYLE = {
-  'border-radius': '2px',
+  borderRadius: '2px',
   background: '#DFDFDF',
   margin: '10px',
   padding: '5px 25px',
 };
 
 const TEXT_STYLE = {
-  'font-size': '16px',
+  fontSize: '16px',
   color: 'black',
   margin: '10px 0px',
 };

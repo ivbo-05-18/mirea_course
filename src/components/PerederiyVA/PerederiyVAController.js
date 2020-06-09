@@ -15,7 +15,7 @@ class PerederiyVAController extends React.Component {
     render() {
       const { show } = this.state;
       return (
-        <div>
+        <div className="perederiy_va">
           <button type="button" onClick={this.toggleDiv}> Передерий В.А. </button>
           { show && <PerederiyVAElement /> }
         </div>

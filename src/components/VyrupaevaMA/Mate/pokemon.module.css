@@ -1,0 +1,83 @@
+@import url(http://fonts.googleapis.com/css?family=Philosopher&subset=cyrillic);
+
+.conv_board {
+  padding: 10px;
+}
+
+.pokemon_root{
+  display: block;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pokebutton {
+  height: 40px;
+  width: 210px;
+  background-color:#0c224d;
+  color: white;
+  border-radius:3px;
+}
+
+.pokebutton:hover {
+  cursor: pointer;
+  height: 40px;
+  width: 210px;
+  background-color:#4885ff;
+  color: white;
+  border-radius:3px;
+}
+
+.pokemon {
+  margin-top: 10px;
+  border-radius: 3px;
+  border: solid 1px gray;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: bold;
+  width: 210px;
+  background-color: #fbff00;
+}
+
+.photo {
+  display: block;
+  margin: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  width: 200px;
+  border-radius: 3px;
+  border: solid 3px gray;
+  background-color: #449eda;
+}
+
+.abil{
+  font-size: 10px;
+}
+
+.plus{
+  background-size: cover;
+  height:15px;
+  width:15px;
+}
+
+.hp{
+  color: green;
+  margin-right:100px;
+}
+
+.attack{
+  color: red;
+  text-align: right;
+}
+
+.sword{
+  background-size: cover;
+  height:15px;
+  width:15px;
+}
+
+.field {
+  width: 200px;
+  height : 30px;
+  color: black;
+}
