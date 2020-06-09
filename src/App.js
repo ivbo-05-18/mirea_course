@@ -4,9 +4,11 @@ import VelikanovKYController from './components/VelikanovKY/VelikanovKYControlle
 import ExampleController from './components/ExampleController';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import KlevleevVRController from './components/KlevleevVR/KlevleevVRController';
 import MiroshnikGKController from './components/MiroshnikGK/MiroshnikGKController';
 import IvanovDSController from './components/IvanovDS/IvanovDSController';
 import OleynikovAPController from './components/OleynikovAP/OleynikovAPController';
+
 
 function App() {
   return (
@@ -19,6 +21,9 @@ function App() {
 
         <PetrovSDController />
 
+
+        <KlevleevVRController />
+
         <MiroshnikGKController />
 
         <IvanovDSController />
@@ -26,7 +31,6 @@ function App() {
         <OleynikovAPController />
 
         <ExampleController />
-
       </header>
     </div>
   );
