@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[RENDER] Converter - Snapshot test Matches the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "background": "#73716e",
+    }
+  }
+>
+  <h3>
+    Конвертер валют онлайн
+  </h3>
+  <p>
+    <select
+      name="type1"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        selected="selected"
+        value=""
+      >
+        Исходная валюта
+      </option>
+      <option
+        value="USD"
+      >
+        $
+      </option>
+      <option
+        value="EUR"
+      >
+        €
+      </option>
+      <option
+        value="RUB"
+      >
+        ₽
+      </option>
+      <option
+        value="JPY"
+      >
+        ￥
+      </option>
+    </select>
+    <input
+      name="num1"
+      onChange={[Function]}
+      placeholder="Число"
+      type="number"
+      value=""
+    />
+    <select
+      name="type2"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        selected="selected"
+        value=""
+      >
+        Конвертированая валюта
+      </option>
+      <option
+        value="USD"
+      >
+        $
+      </option>
+      <option
+        value="EUR"
+      >
+        €
+      </option>
+      <option
+        value="RUB"
+      >
+        ₽
+      </option>
+      <option
+        value="JPY"
+      >
+        ￥
+      </option>
+    </select>
+    <p>
+      0
+    </p>
+  </p>
+</div>
+`;
