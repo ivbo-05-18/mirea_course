@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[RENDER] Solver - Snapshot test Matches the snapshot 1`] = `
+<div
+  className="input"
+  style={
+    Object {
+      "display": "inline-block",
+    }
+  }
+>
+  <input
+    id="a"
+    onChange={[Function]}
+    type="number"
+    value=""
+  />
+  <h4
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+     *x^2+ 
+  </h4>
+  <input
+    id="b"
+    onChange={[Function]}
+    type="number"
+    value=""
+  />
+  <h4
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+     *x+ 
+  </h4>
+  <input
+    id="c"
+    onChange={[Function]}
+    type="number"
+    value=""
+  />
+  <h4
+    style={
+      Object {
+        "display": "inline-block",
+      }
+    }
+  >
+     =0 
+  </h4>
+  <div
+    className="solve"
+    id="solve"
+  >
+    <h4>
+      Введите коэффициент
+    </h4>
+  </div>
+</div>
+`;
