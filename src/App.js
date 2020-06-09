@@ -4,6 +4,7 @@ import './App.css';
 import VyrupaevaMAController from './components/VyrupaevaMA';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import BekinaMPController from './components/BekinaMP/BekinaMPController';
 import TarasovAAController from './components/TarasovAA/TarasovAAController';
 import BurinISController from './components/BurinIS/BurinISController';
 import KomarBGController from './components/KomarBG/KomarBGController';
@@ -25,6 +26,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <BekinaMPController />
+
         <VeselayaEAController />
 
         <VelikanovKYController />
@@ -58,6 +62,7 @@ function App() {
         <OleynikovAPController />
 
         <ExampleController />
+
       </header>
     </div>
   );
