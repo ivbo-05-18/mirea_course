@@ -11,7 +11,7 @@ const GaussianElimResult = (props) => {
         throw new Error('решений нет');
       }
       return (
-        <p className="result">
+        <p>
           x =
           {resultVector[0].toFixed(2)}
           , y =
@@ -23,7 +23,7 @@ const GaussianElimResult = (props) => {
     }
   } catch (e) {
     return (
-      <p className="result">
+      <p>
         Ошибка:
         {e.message}
         !
