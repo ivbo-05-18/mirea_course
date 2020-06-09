@@ -1,0 +1,44 @@
+.blue_picker {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-color: blue;
+}
+
+.red_picker {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-color: red;
+}
+
+.green_picker {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-color: green;
+}
+
+.yellow_picker {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-color: yellow;
+}
+
+.orange_picker {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-color: orange;
+}
