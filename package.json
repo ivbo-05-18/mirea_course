@@ -21,6 +21,8 @@
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.0.1",
     "react-scripts": "3.4.1",
+    "react-test-renderer": "^16.13.1",
+    "victory": "^34.3.9"
     "react-trend": "^1.2.5"
   },
   "scripts": {

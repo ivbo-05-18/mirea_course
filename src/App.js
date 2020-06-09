@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import VeselayaEAController from './components/VeselayaEA/VeselayaEAController';
 import KapyrinKAcontroller from './components/KapyrinKA/KapyrinKAcontroller';
 import VelikanovKYController from './components/VelikanovKY/VelikanovKYController';
 import ExampleController from './components/ExampleController';
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <VeselayaEAController />
 
         <VelikanovKYController />
 
