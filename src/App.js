@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import KomarBGController from './components/KomarBG/KomarBGController';
 import VeselayaEAController from './components/VeselayaEA/VeselayaEAController';
 import KapyrinKAcontroller from './components/KapyrinKA/KapyrinKAcontroller';
 import VelikanovKYController from './components/VelikanovKY/VelikanovKYController';
@@ -27,6 +28,8 @@ function App() {
         <PerederiyVAController />
 
         <PetrovSDController />
+
+        <KomarBGController />
 
         <KuzminLOController />
 
