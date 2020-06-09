@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+
+import VyrupaevaMAController from './components/VyrupaevaMA';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
 import BurinISController from './components/BurinIS/BurinISController';
@@ -28,7 +30,7 @@ function App() {
 
         <BurinISController />
 
-        <PerederiyVAController />
+        <VyrupaevaMAController />
 
         <PetrovSDController />
 

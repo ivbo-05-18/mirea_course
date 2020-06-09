@@ -1,0 +1,33 @@
+.vyrupaeva button {
+  font-family: courier;
+  background-color: #EEE;
+}
+
+.DiceRoller {
+  text-align: center;
+}
+
+.vyrupaeva_die {
+  margin: 5px 0;
+  background-color: #EEE;
+  border: 1px solid white;
+  padding: 0;
+}
+
+.vyrupaeva_die button {
+  font-family: courier;
+  background-color: #EEE;
+  padding: 5px;
+  width: 100%;
+}
+
+.vyrupaeva die-label {
+  font-size: small;
+}
+
+.dieRemAdd button {
+  font-family: courier;
+  font-size: small;
+  padding: 5px;
+  width: 80%;
+}
