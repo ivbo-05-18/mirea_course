@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "chess.js": "^0.10.3",
     "chessboardjsx": "^2.4.2",
+    "cypress": "^4.5.0",
     "prop-types": "^15.7.2",
     "radium": "^0.26.0",
     "react": "^16.13.1",
@@ -15,12 +16,13 @@
     "react-dom": "^16.13.1",
     "react-google-recaptcha": "^2.0.1",
     "react-scripts": "3.4.1",
-    "react-test-renderer": "^16.13.1"
+    "react-trend": "^1.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test_cypress": "npx cypress run --spec cypress/integration/*.spec.js",
     "lint": "eslint './src/**/*.{js,jsx}'",
     "eject": "react-scripts eject"
   },
@@ -40,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "react-test-renderer": "^16.13.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-plugin-import": "^2.20.2",
