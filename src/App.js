@@ -4,6 +4,7 @@ import './App.css';
 import VyrupaevaMAController from './components/VyrupaevaMA';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import TarasovAAController from './components/TarasovAA/TarasovAAController';
 import BurinISController from './components/BurinIS/BurinISController';
 import KomarBGController from './components/KomarBG/KomarBGController';
 import VeselayaEAController from './components/VeselayaEA/VeselayaEAController';
@@ -33,6 +34,8 @@ function App() {
         <VyrupaevaMAController />
 
         <PetrovSDController />
+
+        <TarasovAAController />
 
         <KomarBGController />
 
