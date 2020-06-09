@@ -5,8 +5,7 @@ import PetrovSDController from './components/PetrovSD/PetrovSDController';
 import KapyrinKAcontroller from './components/KapyrinKA/KapyrinKAcontroller';
 import VelikanovKYController from './components/VelikanovKY/VelikanovKYController';
 import ExampleController from './components/ExampleController';
-import PerederiyVAController from './components/PerederiyVA';
-import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import KuzminLOController from './components/KuzminLO/KuzminLOController';
 import KorneevDSController from './components/KorneevDS';
 import VesyolkinASController from './components/VesyolkinAS/VesyolkinASController';
 import MurashevController from './components/MurashevAS/controller';
@@ -26,6 +25,8 @@ function App() {
         <PerederiyVAController />
 
         <PetrovSDController />
+
+        <KuzminLOController />
 
         <KorneevDSController />
 
