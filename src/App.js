@@ -4,6 +4,7 @@ import './App.css';
 import VyrupaevaMAController from './components/VyrupaevaMA';
 import PerederiyVAController from './components/PerederiyVA';
 import PetrovSDController from './components/PetrovSD/PetrovSDController';
+import MironovaAAController from './components/MironovaAA/MironovaAAController';
 import MednyNYController from './components/MednyNY/MednyNYController';
 import BekinaMPController from './components/BekinaMP/BekinaMPController';
 import TarasovAAController from './components/TarasovAA/TarasovAAController';
@@ -22,6 +23,7 @@ import MiroshnikGKController from './components/MiroshnikGK/MiroshnikGKControlle
 import IvanovDSController from './components/IvanovDS/IvanovDSController';
 import OleynikovAPController from './components/OleynikovAP/OleynikovAPController';
 
+
 function App() {
   return (
     <div className="App">
@@ -39,6 +41,8 @@ function App() {
         <VyrupaevaMAController />
 
         <PetrovSDController />
+
+        <MironovaAAController />
 
         <TarasovAAController />
 
