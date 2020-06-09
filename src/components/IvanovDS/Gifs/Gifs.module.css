@@ -1,0 +1,19 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 54px;
+    height: 508px;
+}
+
+.border {
+    margin-top: 32px;
+    border: 4px solid white;
+}
+
+.border img{
+    width: 500px;
+    height: 300px;
+}
