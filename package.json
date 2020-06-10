@@ -30,7 +30,7 @@
     "react-google-recaptcha": "^2.0.1",
     "react-scripts": "3.4.1",
     "react-test-renderer": "^16.13.1",
-    "youtube-api-search": "0.0.5"
+    "youtube-api-search": "0.0.5",
     "react-timeago": "^4.4.0",
     "react-select": "^3.1.0",
     "victory": "^34.3.9",
