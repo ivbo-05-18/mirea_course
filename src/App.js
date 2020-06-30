@@ -22,12 +22,15 @@ import KlevleevVRController from './components/KlevleevVR/KlevleevVRController';
 import MiroshnikGKController from './components/MiroshnikGK/MiroshnikGKController';
 import IvanovDSController from './components/IvanovDS/IvanovDSController';
 import OleynikovAPController from './components/OleynikovAP/OleynikovAPController';
+import ChernyshevVVController from './components/ChernyshevVV/ChernyshevVVController';
 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <ChernyshevVVController />
+
         <MednyNYController />
 
         <BekinaMPController />
